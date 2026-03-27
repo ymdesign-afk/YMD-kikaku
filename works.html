@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORKS | YMデザイン企画 – 制作実績</title>
+  <meta name="description" content="YMデザイン企画の制作実績一覧。HP制作・LP制作・SNS運用サポート・バナー制作など。どんな課題に向き合いどう形にしたかも合わせてご覧いただけます。">
+  <meta property="og:title" content="WORKS | YMデザイン企画 – 制作実績">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://ymdesign.example.com/works.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* WORKS ページ固有スタイル */
+    .works-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 3rem;
+    }
+    .filter-btn {
+      padding: 0.45rem 1.1rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: 2px;
+      background: var(--color-white);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: var(--font-sans);
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: var(--color-white);
+    }
+    /* Works grid */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .works-grid-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .works-grid-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-5px);
+    }
+    .works-grid-card__img {
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, var(--color-primary-pale), #e0eaf4);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: var(--color-primary-light);
+    }
+    .works-grid-card__img .icon { font-size: 2.5rem; opacity: 0.4; }
+    .works-grid-card__img .label { font-size: 0.72rem; letter-spacing: 0.1em; opacity: 0.55; }
+    .works-grid-card__img img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      transition: transform 0.5s ease;
+    }
+    .works-grid-card__img img.works-grid-card__img--banner {
+      object-fit: cover;
+      object-position: center center;
+      background: none;
+      padding: 0;
+    }
+    .works-cta-title-sp {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .works-cta-title-sp {
+        display: inline;
+      }
+    }
+    .works-grid-card:hover .works-grid-card__img img { transform: scale(1.05); }
+    .works-grid-card__body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .works-grid-card__tags {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin-bottom: 0.75rem;
+    }
+    .works-grid-card__tag {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: 2px;
+      background: var(--color-primary-pale);
+      color: var(--color-primary);
+      letter-spacing: 0.06em;
+    }
+    .works-grid-card__title {
+      font-family: var(--font-ja);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+    .works-grid-card__desc {
+      font-size: 0.84rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      flex: 1;
+    }
+    /* Expand detail */
+    .works-grid-card__detail {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .works-grid-card__detail-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--color-primary-light);
+      font-family: var(--font-en);
+      margin-bottom: 0.5rem;
+    }
+    .works-grid-card__detail-text {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+    }
+    /* Portfolio link */
+    .portfolio-link-box {
+      margin-top: 3rem;
+      padding: 2.5rem;
+      background: var(--color-off-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+    .portfolio-link-box h3 {
+      font-family: var(--font-ja);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+    .portfolio-link-box p {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 2.0;
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+      margin-inline: auto;
+    }
+    @media (max-width: 768px) {
+      .portfolio-link-box p {
+        font-size: 0.84rem;
+        line-height: 1.95;
+        max-width: 100%;
+        text-align: left;
+      }
+      /* モバイルでは手動改行を非表示にして自然折り返しに任せる */
+      .portfolio-link-box p br {
+        display: none;
+      }
+    }
+    .portfolio-link-box .btn {
+      display: inline-block;
+      width: auto;
+      max-width: 100%;
+    }
+    .portfolio-link-box__btn {
+      line-height: 1.5;
+      padding-block: 0.85rem;
+    }
+    .portfolio-link-box__sub {
+      display: block;
+      font-size: 0.72em;
+      opacity: 0.7;
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 768px) {
+      .portfolio-link-box .btn {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+    }
+    /* Filter hide */
+    .works-grid-card[data-hidden="true"] { display: none; }
+    @media (max-width: 900px) {
+      .works-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .works-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="page-works">
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__top">
+          <img src="images/rogo.png" alt="" class="site-logo__mark" width="26" height="26">
+          <span class="site-logo__ja">YMデザイン企画</span>
+        </span>
+        <span class="site-logo__en">YM Design &amp; Co.</span>
+      </a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <ul class="site-nav__list">
+          <li><a href="about.html"   class="site-nav__link">ABOUT</a></li>
+          <li><a href="service.html" class="site-nav__link">SERVICE</a></li>
+          <li><a href="works.html"   class="site-nav__link active">WORKS</a></li>
+          <li><a href="flow.html"    class="site-nav__link">FLOW</a></li>
+          <li><a href="faq.html"     class="site-nav__link">FAQ</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary nav-cta">お問い合わせ</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <ul class="mobile-nav__list">
+      <li><a href="index.html"   class="mobile-nav__link">TOP<span class="en">Home</span></a></li>
+      <li><a href="about.html"   class="mobile-nav__link">ABOUT<span class="en">想い・プロフィール</span></a></li>
+      <li><a href="service.html" class="mobile-nav__link">SERVICE<span class="en">サービス</span></a></li>
+      <li><a href="works.html"   class="mobile-nav__link">WORKS<span class="en">実績</span></a></li>
+      <li><a href="flow.html"    class="mobile-nav__link">FLOW<span class="en">ご依頼の流れ</span></a></li>
+      <li><a href="faq.html"     class="mobile-nav__link">FAQ<span class="en">よくある質問</span></a></li>
+    </ul>
+    <div class="mobile-nav__cta">
+      <a href="contact.html" class="btn btn--primary btn--lg">お問い合わせはこちら</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <span class="page-header__en">Works</span>
+        <h1 class="page-header__title">制作実績</h1>
+        <p class="page-header__desc">
+          業種や目的に合わせ、伝わりやすさと見やすさを意識して制作しています。<br class="pc-br">
+          どんな課題に向き合い、どう考えて形にしたかも合わせてご覧ください。
+        </p>
+        <nav class="breadcrumb" aria-label="パンくずリスト">
+          <a href="index.html">TOP</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+          <span>WORKS</span>
+        </nav>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- フィルター -->
+        <div class="works-filter" role="group" aria-label="カテゴリフィルター">
+          <button class="filter-btn active" data-filter="all">すべて</button>
+          <button class="filter-btn" data-filter="hp">HP制作</button>
+          <button class="filter-btn" data-filter="lp">LP制作</button>
+          <button class="filter-btn" data-filter="instagram">SNS運用</button>
+          <button class="filter-btn" data-filter="design">デザイン</button>
+        </div>
+
+        <!-- 実績グリッド -->
+        <div class="works-grid" id="worksGrid">
+
+          <!-- 01 -->
+          <article class="works-grid-card fade-up delay-1" data-category="lp">
+            <div class="works-grid-card__img">
+              <img src="images/works/works-01.webp" alt="集客LP制作" loading="lazy" decoding="async">
+            </div>
+            <div class="works-grid-card__body">
+              <div class="works-grid-card__tags">
+                <span class="works-grid-card__tag">LP制作</span>
+                <span class="works-grid-card__tag">コピー改善</span>
+              </div>
+              <h2 class="works-grid-card__title">集客LP制作</h2>
+              <p class="works-grid-card__desc">
+                リスト獲得を目的としたLPを、ターゲットの悩みに寄り添う構成に全面見直し。読んで行動したくなる流れを意識して制作しました。
+              </p>
+              <div class="works-grid-card__detail">
+                <p class="works-grid-card__detail-title">▸ 課題と取り組み</p>
+                <p class="works-grid-card__detail-text">
+                  既存のLPで「刺さらない」という課題をヒアリング。ターゲット像を再定義し、ファーストビューと構成を全面改善。<strong style="color:var(--color-primary);">リスト獲得単価が約半分に。</strong>その後も、継続してご依頼をいただいています。
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02 -->
+          <article class="works-grid-card fade-up delay-2" data-category="hp">
+            <div class="works-grid-card__img">
+              <img src="images/works/works-02.webp" alt="事業者向けホームページ" loading="lazy" decoding="async">
+            </div>
+            <div class="works-grid-card__body">
+              <div class="works-grid-card__tags">
+                <span class="works-grid-card__tag">HP制作</span>
+                <span class="works-grid-card__tag">AI活用</span>
+              </div>
+              <h2 class="works-grid-card__title">事業者向けホームページ</h2>
+              <p class="works-grid-card__desc">
+                AIツールを活用したスピード制作で、クライアントの世界観をくみ取ったシンプルで伝わるホームページを制作しました。
+              </p>
+              <div class="works-grid-card__detail">
+                <p class="works-grid-card__detail-title">▸ 課題と取り組み</p>
+                <p class="works-grid-card__detail-text">
+                  「何を伝えればいいかわからない」という状態からスタート。ヒアリングで想いを整理し、AIツールを活用しながら短期間でクオリティの高いサイトを完成させました。
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03 -->
+          <article class="works-grid-card fade-up delay-3" data-category="hp">
+            <div class="works-grid-card__img">
+              <img src="images/works/works-03.webp" alt="コーポレートサイト" loading="lazy" decoding="async">
+            </div>
+            <div class="works-grid-card__body">
+              <div class="works-grid-card__tags">
+                <span class="works-grid-card__tag">HP制作</span>
+                <span class="works-grid-card__tag">AI活用</span>
+                <span class="works-grid-card__tag">継続依頼</span>
+              </div>
+              <h2 class="works-grid-card__title">コーポレートサイト</h2>
+              <p class="works-grid-card__desc">
+                AIを使ったコンテンツ制作と組み合わせ、短納期でクオリティの高いコーポレートサイトを制作。継続依頼につながっています。
+              </p>
+              <div class="works-grid-card__detail">
+                <p class="works-grid-card__detail-title">▸ 課題と取り組み</p>
+                <p class="works-grid-card__detail-text">
+                  短納期・低コストでの制作希望に対し、AIツールを積極活用。デザインの丁寧さは落とさず、スピーディに納品。継続サポートへとつながっています。
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04 -->
+          <article class="works-grid-card fade-up delay-1" data-category="instagram">
+            <div class="works-grid-card__img">
+              <img src="images/works/works-04.webp" alt="SNS運用サポート" loading="lazy" decoding="async">
+            </div>
+            <div class="works-grid-card__body">
+              <div class="works-grid-card__tags">
+                <span class="works-grid-card__tag">SNS運用</span>
+                <span class="works-grid-card__tag">アカウント設計</span>
+              </div>
+              <h2 class="works-grid-card__title">SNS運用サポート（進行中）</h2>
+              <p class="works-grid-card__desc">
+                アカウント設計から投稿画像・テキスト作成まで一括サポート。ブランドの雰囲気を統一したフィードを目指して運用中です。
+              </p>
+              <div class="works-grid-card__detail">
+                <p class="works-grid-card__detail-title">▸ 取り組みの方針</p>
+                <p class="works-grid-card__detail-text">
+                  「何を投稿すればいいかわからない」という状態から、ターゲット・世界観・投稿テーマを一緒に設計。開始したばかりですが、継続発信の仕組みをつくっています。
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05 -->
+          <article class="works-grid-card fade-up delay-2" data-category="design">
+            <div class="works-grid-card__img">
+              <img src="images/works/works-05.webp" alt="WEB広告バナー制作" class="works-grid-card__img--banner" loading="lazy" decoding="async">
+            </div>
+            <div class="works-grid-card__body">
+              <div class="works-grid-card__tags">
+                <span class="works-grid-card__tag">バナー制作</span>
+                <span class="works-grid-card__tag">Web広告</span>
+              </div>
+              <h2 class="works-grid-card__title">WEB広告バナー制作</h2>
+              <p class="works-grid-card__desc">
+                複数サイズのバナーをシリーズで制作。ターゲットに響くビジュアルとコピーの組み合わせで、クリック率向上に貢献しました。
+              </p>
+              <div class="works-grid-card__detail">
+                <p class="works-grid-card__detail-title">▸ 課題と取り組み</p>
+                <p class="works-grid-card__detail-text">
+                  既存バナーの数値が伸び悩んでいる状況から依頼。ビジュアルとコピーを複数パターン制作・ABテストを提案し、効果的な組み合わせを見つけるサポートをしました。
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 06 -->
+          <article class="works-grid-card fade-up delay-3" data-category="design">
+            <div class="works-grid-card__img">
+              <img src="images/works/works-06.webp" alt="チラシ・名刺制作" loading="lazy" decoding="async">
+            </div>
+            <div class="works-grid-card__body">
+              <div class="works-grid-card__tags">
+                <span class="works-grid-card__tag">チラシ制作</span>
+                <span class="works-grid-card__tag">名刺制作</span>
+              </div>
+              <h2 class="works-grid-card__title">店舗向けチラシ・名刺制作</h2>
+              <p class="works-grid-card__desc">
+                小規模店舗のブランドイメージを整えるため、チラシと名刺をセットで制作。統一感のあるビジュアルに仕上げました。
+              </p>
+              <div class="works-grid-card__detail">
+                <p class="works-grid-card__detail-title">▸ 課題と取り組み</p>
+                <p class="works-grid-card__detail-text">
+                  「バラバラな印象」という課題に対し、カラーパレット・フォント・レイアウトを統一してブランドの雰囲気を整備。印刷入稿まで一括対応しました。
+                </p>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /works-grid -->
+
+        <!-- ポートフォリオ外部リンク -->
+        <div class="portfolio-link-box fade-up">
+          <h3>
+            ポートフォリオサイト<span class="sp-break"></span>公開中
+          </h3>
+          <p>
+            その他の制作実績は、ポートフォリオサイトからもご覧いただけます。
+          </p>
+          <a href="https://fori.io/YM-DesignLab" target="_blank" rel="noopener noreferrer" class="btn btn--outline portfolio-link-box__btn">
+            ポートフォリオを見る<br><span class="portfolio-link-box__sub">（外部サイト）</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+      <div class="container">
+        <h2 class="section-title fade-up">
+          <span class="sp-hide">実績に近いイメージがあれば、<br class="pc-br">お気軽にご相談ください。</span>
+          <span class="works-cta-title-sp">実績に近いイメージがあれば<br>お気軽にご相談ください。</span>
+        </h2>
+        <p class="section-lead fade-up delay-1">
+          「こんな感じにしたい」というイメージをもとに、<br class="sp-break"><br>
+          一緒に最善の形を考えていきます。
+        </p>
+        <div class="btn-group fade-up delay-2" style="justify-content:center; margin-top:2.5rem;">
+          <a href="contact.html" class="btn btn--outline-white btn--lg">お問い合わせはこちら</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo__ja">YMデザイン企画</span>
+          <span class="footer-logo__en">YM Design &amp; Co.</span>
+          <p class="footer-desc">想いをくみ取り、伝わる形に。<br>Web制作・SNS運用サポート・企業コンサルまで。</p>
+          <a href="mailto:ymdesign.kikaku@gmail.com" class="footer-contact-link">
+            <svg aria-hidden="true" style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            ymdesign.kikaku@gmail.com
+          </a>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav__title">Menu</p>
+          <ul class="footer-nav__list">
+            <li><a href="index.html"   class="footer-nav__link">TOP</a></li>
+            <li><a href="about.html"   class="footer-nav__link">ABOUT</a></li>
+            <li><a href="service.html" class="footer-nav__link">SERVICE</a></li>
+            <li><a href="works.html"   class="footer-nav__link">WORKS</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav__title">Info</p>
+          <ul class="footer-nav__list">
+            <li><a href="flow.html"    class="footer-nav__link">FLOW</a></li>
+            <li><a href="faq.html"     class="footer-nav__link">FAQ</a></li>
+            <li><a href="contact.html" class="footer-nav__link">CONTACT</a></li>
+            <li><a href="privacy.html" class="footer-nav__link">PRIVACY POLICY</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 YMデザイン企画 / YM Design&amp;Co. All rights reserved.</p>
+        <a href="privacy.html" class="footer-policy">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Works filter
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.works-grid-card');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const filter = this.dataset.filter;
+          cards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.removeAttribute('data-hidden');
+              card.style.display = '';
+            } else {
+              card.setAttribute('data-hidden', 'true');
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

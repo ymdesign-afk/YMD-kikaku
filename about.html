@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABOUT | YMデザイン企画 – 想い・プロフィール</title>
+  <meta name="description" content="YMデザイン企画・金沢由紀のプロフィールと想いをご紹介します。さまざまな現場を経てWebデザインの道へ。関わる人が笑顔になれることを大切に、丁寧に伴走します。">
+  <meta property="og:title" content="ABOUT | YMデザイン企画">
+  <meta property="og:description" content="金沢由紀のプロフィールと、仕事への想いをご紹介します。">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://ymdesign.example.com/about.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <style>
+    /* ABOUT ページ固有スタイル */
+    .profile-section {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .profile-photo {
+      position: sticky;
+      top: 100px;
+    }
+    .profile-photo__frame {
+      aspect-ratio: 3/4;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--color-primary-pale), #e2ecf5);
+      margin-bottom: 1.5rem;
+    }
+    .profile-photo__frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 28%;
+      display: block;
+    }
+    .profile-photo__placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.75rem;
+      color: var(--color-primary-light);
+    }
+    .profile-photo__placeholder .icon { font-size: 4rem; opacity: 0.35; }
+    .profile-photo__placeholder span { font-size: 0.78rem; letter-spacing: 0.1em; opacity: 0.55; }
+    .profile-photo__name {
+      font-family: var(--font-ja);
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+    .profile-photo__role {
+      font-family: var(--font-en);
+      font-size: 0.78rem; letter-spacing: 0.14em;
+      color: var(--color-text-muted);
+    }
+    .profile-body h2 {
+      font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+      color: var(--color-primary);
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+    }
+    .profile-body p {
+      font-size: 0.95rem;
+      line-height: 2;
+      color: var(--color-text);
+      margin-bottom: 1.5rem;
+    }
+    .profile-body p:last-of-type { margin-bottom: 0; }
+    .profile-quote {
+      border-left: 3px solid var(--color-primary-light);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+      background-color: var(--color-off-white);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .profile-quote p {
+      font-family: var(--font-ja);
+      font-size: 1.05rem !important;
+      font-weight: 500;
+      color: var(--color-primary) !important;
+      line-height: 1.8 !important;
+      margin-bottom: 0 !important;
+    }
+    .career-list {
+      display: flex; flex-direction: column; gap: 0;
+      border-top: 1px solid var(--color-border);
+      margin-top: 1rem;
+    }
+    .career-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 1.5rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .career-item__period {
+      font-family: var(--font-en);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: var(--color-primary-light);
+      padding-top: 0.15rem;
+    }
+    .career-item__desc {
+      font-size: 0.88rem;
+      color: var(--color-text);
+      line-height: 1.75;
+    }
+    .value-list {
+      display: flex; flex-direction: column; gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .value-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    .value-item__icon { font-size: 1.5rem; flex-shrink: 0; }
+    .value-item__title {
+      font-weight: 600; font-size: 0.95rem;
+      color: var(--color-primary);
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.04em;
+    }
+    .value-item__text {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+    }
+    /* Skills tags */
+    .skill-tags {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .skill-tag {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.85rem;
+      border: 1px solid var(--color-primary-pale);
+      border-radius: 2px;
+      color: var(--color-primary);
+      background: var(--color-white);
+      letter-spacing: 0.06em;
+    }
+    @media (max-width: 900px) {
+      .profile-section { grid-template-columns: 1fr; gap: 3rem; }
+      .profile-photo { position: static; max-width: 320px; margin-inline: auto; }
+    }
+    @media (max-width: 640px) {
+      .career-item { grid-template-columns: 1fr; gap: 0.3rem; }
+      .profile-quote p {
+        font-size: 0.88rem !important;
+        line-height: 1.75 !important;
+      }
+      .profile-quote p br { display: none; }
+      .value-item__title--long {
+        font-size: 0.82rem;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body class="page-about">
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__top">
+          <img src="images/rogo.png" alt="" class="site-logo__mark" width="26" height="26">
+          <span class="site-logo__ja">YMデザイン企画</span>
+        </span>
+        <span class="site-logo__en">YM Design &amp; Co.</span>
+      </a>
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <ul class="site-nav__list">
+          <li><a href="about.html"   class="site-nav__link active">ABOUT</a></li>
+          <li><a href="service.html" class="site-nav__link">SERVICE</a></li>
+          <li><a href="works.html"   class="site-nav__link">WORKS</a></li>
+          <li><a href="flow.html"    class="site-nav__link">FLOW</a></li>
+          <li><a href="faq.html"     class="site-nav__link">FAQ</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary nav-cta">お問い合わせ</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <ul class="mobile-nav__list">
+      <li><a href="index.html"   class="mobile-nav__link">TOP<span class="en">Home</span></a></li>
+      <li><a href="about.html"   class="mobile-nav__link">ABOUT<span class="en">想い・プロフィール</span></a></li>
+      <li><a href="service.html" class="mobile-nav__link">SERVICE<span class="en">サービス</span></a></li>
+      <li><a href="works.html"   class="mobile-nav__link">WORKS<span class="en">実績</span></a></li>
+      <li><a href="flow.html"    class="mobile-nav__link">FLOW<span class="en">ご依頼の流れ</span></a></li>
+      <li><a href="faq.html"     class="mobile-nav__link">FAQ<span class="en">よくある質問</span></a></li>
+    </ul>
+    <div class="mobile-nav__cta">
+      <a href="contact.html" class="btn btn--primary btn--lg">お問い合わせはこちら</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <span class="page-header__en">About</span>
+        <h1 class="page-header__title">想いに寄り添い、<br>前へ進む力を。</h1>
+        <p class="page-header__desc">
+          関わるすべての人が笑顔になれるように。<br class="pc-br sp-break">
+          そのために、諦めずに力になりたいと思っています。
+        </p>
+        <nav class="breadcrumb" aria-label="パンくずリスト">
+          <a href="index.html">TOP</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+          <span>ABOUT</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Profile Section -->
+    <section class="section">
+      <div class="container">
+        <div class="profile-section">
+
+          <!-- 写真サイドバー -->
+          <div class="profile-photo fade-in">
+            <div class="profile-photo__frame">
+              <img src="images/profile.webp" alt="金沢 由紀のプロフィール写真" loading="eager" decoding="async">
+            </div>
+            <p class="profile-photo__name">金沢 由紀</p>
+            <p class="profile-photo__role">代表 / クリエイティブ担当</p>
+
+            <div class="skill-tags" style="margin-top:1.25rem;">
+              <span class="skill-tag">HP制作</span>
+              <span class="skill-tag">LP制作</span>
+              <span class="skill-tag">バナー制作</span>
+              <span class="skill-tag">SNS運用サポート</span>
+              <span class="skill-tag">チラシ・名刺</span>
+              <span class="skill-tag">集客サポート</span>
+              <span class="skill-tag">AIツール活用</span>
+              <span class="skill-tag">SEO基礎</span>
+            </div>
+          </div>
+
+          <!-- プロフィール本文 -->
+          <div class="profile-body">
+            <span class="en-label">Profile</span>
+            <h2 class="fade-up">もう一度、自分らしく。<br class="pc-br sp-break">その一歩から、今があります。</h2>
+
+            <p class="fade-up delay-1">
+              金融機関、運送会社、産業廃棄物リサイクル業など、さまざまな現場を経験したのち、子どもたちの独立をきっかけに、「もう一度自分の人生を自分らしく創ろうと」Webデザインの学びをスタートしました。
+            </p>
+
+            <p class="fade-up delay-2">
+              現在はWeb制作だけでなく、AIやSEOも学びながら、クライアントの想いを形にするお手伝いをしています。<br class="pc-br">営業担当と連携しながら、制作と提案の両面でサポートしています。
+            </p>
+
+            <div class="profile-quote fade-up delay-2">
+              <p>「関わる人が笑顔になれること」を、いちばん大切にしています。<br>ただ作るだけではなく、想いや状況を丁寧に受け取りながら、<br>一緒に前へ進んでいける存在でありたいと思っています。</p>
+            </div>
+
+            <p class="fade-up delay-3">
+              大変なことも前向きに取り組み、笑顔の先に幸せがある——そう信じながら、<br class="pc-br sp-break">関わるすべての方と一緒に、新しい未来を楽しみながら育てていきたいと考えています。
+            </p>
+
+            <!-- 経歴 -->
+            <div style="margin-top: 3rem;">
+              <span class="en-label">Career</span>
+              <h3 class="fade-up" style="font-size:1.1rem; color:var(--color-primary); margin-bottom:0.5rem; letter-spacing:0.06em;">歩んできた道のり</h3>
+
+              <div class="career-list fade-up delay-1">
+                <div class="career-item">
+                  <span class="career-item__period">過去</span>
+                  <span class="career-item__desc">金融機関にて勤務。お客様との信頼構築や丁寧なコミュニケーションを大切にする姿勢を培う。</span>
+                </div>
+                <div class="career-item">
+                  <span class="career-item__period">過去</span>
+                  <span class="career-item__desc">運送会社・産業廃棄物リサイクル業などの現場を経験。多様な業種・現場感覚を身につける。</span>
+                </div>
+                <div class="career-item">
+                  <span class="career-item__period">転機</span>
+                  <span class="career-item__desc">子どもたちの独立をきっかけに、もう一度自分らしく生きようとWebデザインの学習をスタート。</span>
+                </div>
+                <div class="career-item">
+                  <span class="career-item__period">現在</span>
+                  <span class="career-item__desc">Web制作・LP・デザイン・SNS運用サポート・企業コンサルなど幅広く対応。<br class="pc-br">AIやSEOも学習継続中。</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 大切にしていること -->
+    <section class="section section--alt">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <span class="en-label">Values</span>
+          <h2 class="section-title fade-up">大切にしていること</h2>
+          <p class="section-lead mt-md fade-up delay-1">
+            <span class="sp-hide">仕事を通じて、</span>関わるすべての方に笑顔になってほしい。<br class="sp-break"><br>
+            その想いが、すべての行動の根底にあります。
+          </p>
+        </header>
+
+        <div class="value-list" style="max-width:720px; margin-inline:auto;">
+          <div class="value-item fade-up delay-1">
+            <span class="value-item__icon-wrap" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 9a6 6 0 1 0-9.33 5c.27.28.47.59.6.93L10 17a2 2 0 0 0 4 0v-1h1a3 3 0 0 0 3-3V9z"/><line x1="10" y1="13" x2="14" y2="13"/></svg>
+            </span>
+            <div>
+              <p class="value-item__title">想いを丁寧にくみ取る</p>
+              <p class="value-item__text">「うまく言葉にできない」という状態でも、一緒に時間をかけて整理します。あなたの事業や想いをしっかり受け取ることが、すべての出発点です。</p>
+            </div>
+          </div>
+          <div class="value-item fade-up delay-2">
+            <span class="value-item__icon-wrap" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="6" r="2"/><circle cx="16" cy="6" r="2"/><path d="M5 20v-5a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v5"/><line x1="12" y1="12" x2="12" y2="20"/></svg>
+            </span>
+            <div>
+              <p class="value-item__title">一緒に考えながら進める</p>
+              <p class="value-item__text">決まっていないことがあっても大丈夫。進めながら一緒に整理していく伴走型のスタイルを大切にしています。「丸投げ」ではなく「一緒に」が私のスタンスです。</p>
+            </div>
+          </div>
+          <div class="value-item fade-up delay-3">
+            <span class="value-item__icon-wrap" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5s1 2 3.5 2 3.5-2 3.5-2"/><line x1="9" y1="10" x2="9.01" y2="10"/><line x1="15" y1="10" x2="15.01" y2="10"/></svg>
+            </span>
+            <div>
+              <p class="value-item__title">関わる人に笑顔になってほしい</p>
+              <p class="value-item__text">仕事を通じてお客様が笑顔になれること、それが私のいちばんの喜びです。大変なことも前向きに取り組み、笑顔の先に幸せがあると信じています。</p>
+            </div>
+          </div>
+          <div class="value-item fade-up delay-4">
+            <span class="value-item__icon-wrap" aria-hidden="true">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 8 9 5 5 5c0 4 2.5 7 7 7z"/><path d="M12 12c0-4 3-7 7-7-1 4-3.5 7-7 7z"/><path d="M8 22h8"/></svg>
+            </span>
+            <div>
+              <p class="value-item__title value-item__title--long">新しい未来を、一緒に楽しみながら</p>
+              <p class="value-item__text">制作が終わったあとも、共に育てていける存在でありたいと思っています。想いを形にし、その先の未来も一緒に楽しみながら前に進んでいきましょう。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+      <div class="container">
+        <h2 class="section-title fade-up">まずはお気軽に<br>ご相談ください。</h2>
+        <p class="section-lead fade-up delay-1">
+          どんな小さなことでも、お気軽にご連絡ください。<br class="sp-break"><br>
+          一緒に考えながら、前に進みましょう。
+        </p>
+        <div class="btn-group fade-up delay-2" style="justify-content:center; margin-top:2.5rem;">
+          <a href="contact.html" class="btn btn--outline-white btn--lg">お問い合わせはこちら</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo__ja">YMデザイン企画</span>
+          <span class="footer-logo__en">YM Design &amp; Co.</span>
+          <p class="footer-desc">想いをくみ取り、伝わる形に。<br>Web制作・SNS運用サポート・企業コンサルまで。</p>
+          <a href="mailto:ymdesign.kikaku@gmail.com" class="footer-contact-link">
+            <svg aria-hidden="true" style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            ymdesign.kikaku@gmail.com
+          </a>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav__title">Menu</p>
+          <ul class="footer-nav__list">
+            <li><a href="index.html"   class="footer-nav__link">TOP</a></li>
+            <li><a href="about.html"   class="footer-nav__link">ABOUT</a></li>
+            <li><a href="service.html" class="footer-nav__link">SERVICE</a></li>
+            <li><a href="works.html"   class="footer-nav__link">WORKS</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav__title">Info</p>
+          <ul class="footer-nav__list">
+            <li><a href="flow.html"    class="footer-nav__link">FLOW</a></li>
+            <li><a href="faq.html"     class="footer-nav__link">FAQ</a></li>
+            <li><a href="contact.html" class="footer-nav__link">CONTACT</a></li>
+            <li><a href="privacy.html" class="footer-nav__link">PRIVACY POLICY</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 YMデザイン企画 / YM Design&amp;Co. All rights reserved.</p>
+        <a href="privacy.html" class="footer-policy">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

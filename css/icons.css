@@ -1,0 +1,148 @@
+/* ============================================================
+   YMデザイン企画 — SVG Icon System
+   全アイコンはインラインSVG（stroke-only / 藍色ベース）
+   stroke="currentColor" で親要素の color を継承します
+   ============================================================ */
+
+/* --- 共通ベース --- */
+.icon-svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  /* color は親から継承（藍色・グレーなど） */
+  color: var(--color-primary-light);
+  transition: color var(--transition);
+}
+
+/* サイズバリエーション */
+.icon-svg--sm  { width: 18px; height: 18px; }
+.icon-svg--md  { width: 24px; height: 24px; }
+.icon-svg--lg  { width: 36px; height: 36px; }
+.icon-svg--xl  { width: 48px; height: 48px; }
+
+/* --- concern アイコンラッパー --- */
+.concern-item__icon-wrap {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-primary-pale);
+  color: var(--color-primary-light);
+  transition: background-color var(--transition), color var(--transition);
+}
+.concern-item:hover .concern-item__icon-wrap {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.concern-item__icon-wrap .icon-svg {
+  color: inherit;
+  width: 20px;
+  height: 20px;
+}
+
+/* --- service card アイコンラッパー --- */
+.service-card__icon-wrap {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary-pale);
+  color: var(--color-primary-light);
+  margin-bottom: 1.25rem;
+  transition: background-color var(--transition), color var(--transition);
+}
+.service-card:hover .service-card__icon-wrap {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.service-card__icon-wrap .icon-svg {
+  color: inherit;
+  width: 24px;
+  height: 24px;
+}
+
+/* --- strength item アイコン --- */
+.strength-item__icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+.strength-item__icon-wrap .icon-svg {
+  color: inherit;
+  width: 22px;
+  height: 22px;
+}
+
+/* --- flow step アイコン --- */
+.flow-step__icon-wrap,
+.flow-step-large__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-light);
+  margin-bottom: 0.6rem;
+}
+.flow-step__icon-wrap .icon-svg,
+.flow-step-large__icon-wrap .icon-svg {
+  color: inherit;
+  width: 26px;
+  height: 26px;
+}
+
+/* --- value item アイコン --- */
+.value-item__icon-wrap {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-primary-pale);
+  color: var(--color-primary-light);
+}
+.value-item__icon-wrap .icon-svg {
+  color: inherit;
+  width: 22px;
+  height: 22px;
+}
+
+/* --- contact info アイコン --- */
+.contact-info-row__icon-wrap {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-light);
+}
+.contact-info-row__icon-wrap .icon-svg {
+  color: inherit;
+  width: 18px;
+  height: 18px;
+}
+
+/* --- sidebar / footer etc. --- */
+.icon-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.icon-inline .icon-svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-primary-light);
+}

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YMデザイン企画 | Web制作・SNS運用サポート・営業コンサル</title>
+  <meta name="description" content="YMデザイン企画は、ホームページ制作・LP制作・SNS運用サポート・チラシ制作・集客サポートまで、個人事業主・中小企業の想いを形にするWebデザイン事務所です。まずはお気軽にご相談ください。">
+  <meta name="keywords" content="Webデザイン,ホームページ制作,LP制作,SNS運用サポート,集客サポート,バナー制作,チラシ制作,個人事業主">
+  <meta property="og:title" content="YMデザイン企画 | 想いをくみ取り、伝わる形に。">
+  <meta property="og:description" content="Web制作・SNS運用サポート・営業コンサルまで。お客様の想いに寄り添い、伝わる形にするお手伝いをしています。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <link rel="canonical" href="https://ymdesign.example.com/">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="images/hero-bg.mp4" as="video" type="video/mp4">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+
+  <!-- ============================================================
+       Header
+      ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="YMデザイン企画 トップへ">
+        <span class="site-logo__top">
+          <img src="images/rogo.png" alt="" class="site-logo__mark" width="26" height="26">
+          <span class="site-logo__ja">YMデザイン企画</span>
+        </span>
+        <span class="site-logo__en">YM Design &amp; Co.</span>
+      </a>
+
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <ul class="site-nav__list">
+          <li><a href="about.html"   class="site-nav__link">ABOUT</a></li>
+          <li><a href="service.html" class="site-nav__link">SERVICE</a></li>
+          <li><a href="works.html"   class="site-nav__link">WORKS</a></li>
+          <li><a href="flow.html"    class="site-nav__link">FLOW</a></li>
+          <li><a href="faq.html"     class="site-nav__link">FAQ</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary nav-cta">お問い合わせ</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="モバイルナビゲーション">
+    <ul class="mobile-nav__list">
+      <li><a href="index.html"   class="mobile-nav__link">TOP<span class="en">Home</span></a></li>
+      <li><a href="about.html"   class="mobile-nav__link">ABOUT<span class="en">想い・プロフィール</span></a></li>
+      <li><a href="service.html" class="mobile-nav__link">SERVICE<span class="en">サービス</span></a></li>
+      <li><a href="works.html"   class="mobile-nav__link">WORKS<span class="en">実績</span></a></li>
+      <li><a href="flow.html"    class="mobile-nav__link">FLOW<span class="en">ご依頼の流れ</span></a></li>
+      <li><a href="faq.html"     class="mobile-nav__link">FAQ<span class="en">よくある質問</span></a></li>
+    </ul>
+    <div class="mobile-nav__cta">
+      <a href="contact.html" class="btn btn--primary btn--lg">お問い合わせはこちら</a>
+    </div>
+  </nav>
+
+  <main class="home-main">
+
+    <!-- ============================================================
+         1. Hero / First View
+         ============================================================ -->
+    <section class="hero" aria-label="ファーストビュー">
+
+      <!-- ① 背景動画レイヤー（最背面） -->
+      <video
+        class="hero__video"
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        x5-playsinline
+        preload="auto"
+        fetchpriority="high"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <source src="images/hero-bg.mp4" type="video/mp4">
+      </video>
+
+      <!-- ② オーバーレイレイヤー（動画の上、文字の下） -->
+      <!-- 全体：薄い藍色 / 左側：文字可読性のため追加グラデーション -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__overlay-left" aria-hidden="true"></div>
+
+      <!-- ③ コンテンツレイヤー（最前面） -->
+      <div class="hero__content">
+        <p class="hero__eyebrow">YM Design &amp; Co.</p>
+
+        <h1 class="hero__title">
+          <span>想いをくみ取り、</span>
+          <span>伝わる形に。</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Web制作・SNS運用サポート・営業コンサルまで。<br class="pc-br"><br class="sp-break">
+          お客様の想いに寄り添い、未来づくりを支えます。
+        </p>
+
+        <div class="hero__cta">
+          <a href="contact.html" class="btn btn--hero-primary btn--lg">
+            お問い合わせはこちら
+          </a>
+          <a href="service.html" class="btn btn--hero-ghost">
+            サービスを見る
+          </a>
+        </div>
+      </div>
+
+      <!-- ④ スクロールインジケーター -->
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>SCROLL</span>
+      </div>
+    </section>
+
+    <div class="home-main__body">
+      <div class="home-main__ambient" aria-hidden="true">
+        <div class="home-main__ambient-orb home-main__ambient-orb--1"></div>
+        <div class="home-main__ambient-orb home-main__ambient-orb--2"></div>
+        <div class="home-main__ambient-orb home-main__ambient-orb--3"></div>
+        <div class="home-main__ambient-orb home-main__ambient-orb--4"></div>
+        <div class="home-main__ambient-orb home-main__ambient-orb--5"></div>
+        <div class="home-main__ambient-orb home-main__ambient-orb--6"></div>
+        <div class="home-main__ambient-orb home-main__ambient-orb--7"></div>
+        <div class="home-main__ambient-copy home-main__ambient-copy--upper">
+          <span>YM Design Kikaku</span>
+          <span>YM Design &amp; Co.</span>
+          <span>YM Design Kikaku</span>
+          <span>YM Design &amp; Co.</span>
+        </div>
+        <div class="home-main__ambient-copy home-main__ambient-copy--lower">
+          <span>YM Design &amp; Co.</span>
+          <span>YM Design Kikaku</span>
+          <span>YM Design &amp; Co.</span>
+          <span>YM Design Kikaku</span>
+        </div>
+      </div>
+
+    <!-- ============================================================
+         2. お悩み共感セクション
+         ============================================================ -->
+    <section class="section concerns" id="concerns">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <span class="en-label">Your Concerns</span>
+          <h2 class="section-title fade-up">こんなお悩みに寄り添います。</h2>
+          <p class="section-lead mt-md fade-up delay-1">
+            「何から始めればいいかわからない」そんな段階でも大丈夫です。<br class="pc-br">
+            作ることだけでなく、今の状況や想いを整理しながら、<br class="pc-br">
+            必要な形を一緒に考えていきます。
+          </p>
+        </header>
+
+        <ul class="concern-list">
+          <li class="concern-item fade-up delay-1">
+            <span class="concern-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg>
+            </span>
+            <span class="concern-item__text"><span class="sp-hide">集客が思うようにいかない、<br>何が原因かわからない</span><span class="pc-br"></span><span class="sp-br">集客が伸びない原因がわからない</span></span>
+          </li>
+          <li class="concern-item fade-up delay-2">
+            <span class="concern-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>
+            </span>
+            <span class="concern-item__text"><span class="sp-hide">ホームページを見直したい・<br>リニューアルしたい</span><span class="pc-br"></span><span class="sp-br">ホームページを見直し更新したい</span></span>
+          </li>
+          <li class="concern-item fade-up delay-3">
+            <span class="concern-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/><line x1="15" y1="5" x2="19" y2="9"/></svg>
+            </span>
+            <span class="concern-item__text"><span class="sp-hide">発信やデザインをもっと<br>整えたい・統一したい</span><span class="pc-br"></span><span class="sp-br">発信とデザインを整え統一したい</span></span>
+          </li>
+          <li class="concern-item fade-up delay-4">
+            <span class="concern-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+            </span>
+            <span class="concern-item__text"><span class="sp-hide">忙しくてデザインや発信に<br>手が回らない</span><span class="pc-br"></span><span class="sp-br">忙しくて発信や制作に手が回らない</span></span>
+          </li>
+          <li class="concern-item fade-up delay-5">
+            <span class="concern-item__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+            </span>
+            <span class="concern-item__text"><span class="sp-hide">何から始めればいいか<br>わからない・相談したい</span><span class="pc-br"></span><span class="sp-br">何から始めるか分からず相談したい</span></span>
+          </li>
+          <li class="concern-item fade-up delay-6">
+            <span class="concern-item__icon" aria-hidden="true">
+              <!-- 吹き出し＋内側に3本線：「想いを言葉にする」イメージ -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="13" y2="13"/></svg>
+            </span>
+            <span class="concern-item__text"><span class="sp-hide">想いはあるのに、<br>うまく伝えられない</span><span class="pc-br"></span><span class="sp-br">想いはあるのにうまく伝わらない</span></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. サービス概要セクション
+         ============================================================ -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <span class="en-label">Services</span>
+          <h2 class="section-title fade-up">目的に合わせて、必要な形を<br class="sp-br"><span style="white-space: nowrap;">ご提案します。</span></h2>
+          <p class="section-lead mt-md fade-up delay-1">
+            Web制作からデザイン、SNS運用サポート、集客のご相談まで。<br>
+            事業の規模やご予算に合わせて、一番合った方法を一緒に考えます。
+          </p>
+        </header>
+
+        <div class="service-cards">
+          <article class="service-card fade-up delay-1">
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9"/><path d="M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+            </span>
+            <span class="service-card__en">Web Production</span>
+            <h3 class="service-card__title">Web制作</h3>
+            <p class="service-card__desc">
+              ホームページ・LP制作など。目的と想いをくみ取り、見やすく伝わるサイトを丁寧に制作します。
+            </p>
+            <a href="service.html#web" class="service-card__link">詳しく見る →</a>
+          </article>
+
+          <article class="service-card fade-up delay-2">
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/><line x1="15" y1="5" x2="19" y2="9"/></svg>
+            </span>
+            <span class="service-card__en">Design</span>
+            <h3 class="service-card__title">デザイン制作</h3>
+            <p class="service-card__desc">
+              バナー・チラシ・名刺・Instagram投稿画像など。ブランド雰囲気を大切にしながら、伝わるビジュアルに仕上げます。
+            </p>
+            <a href="service.html#design" class="service-card__link">詳しく見る →</a>
+          </article>
+
+          <article class="service-card fade-up delay-3">
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><circle cx="12" cy="14" r="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </span>
+            <span class="service-card__en">SNS Management</span>
+            <h3 class="service-card__title">SNS運用サポート</h3>
+            <p class="service-card__desc">
+              InstagramをはじめとしたSNSの投稿制作から運用サポートまで。
+              継続的な発信を支え、伝わるアカウントづくりをお手伝いします。
+            </p>
+            <a href="service.html#instagram" class="service-card__link">詳しく見る →</a>
+          </article>
+
+          <article class="service-card fade-up delay-4">
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </span>
+            <span class="service-card__en">Business Consulting</span>
+            <h3 class="service-card__title">営業コンサル</h3>
+            <p class="service-card__desc">
+              営業代行を含む販促・集客サポートとして、チラシ・名刺・販促ツール制作から、集客相談まで幅広く対応しています。
+            </p>
+            <a href="service.html#marketing" class="service-card__link">詳しく見る →</a>
+          </article>
+        </div>
+
+        <div class="text-center mt-lg">
+          <a href="service.html" class="btn btn--outline">サービス一覧を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. 強みセクション
+         ============================================================ -->
+    <section class="section strengths" id="strengths">
+      <div class="container">
+        <header class="section-header">
+          <span class="en-label">Why Choose Us</span>
+          <h2 class="section-title fade-up">相談しやすさと、<br class="pc-br">伴走する姿勢を大切にしています。</h2>
+          <p class="section-lead mt-md fade-up delay-1">
+            「ちゃんと向き合ってもらえた」と感じてもらえることを、<br class="pc-br">
+            いちばん大切にしています。
+          </p>
+        </header>
+
+        <div class="strength-list">
+          <div class="strength-item fade-up delay-1">
+            <div class="strength-item__number">01</div>
+            <h3 class="strength-item__title">想いを丁寧にくみ取る</h3>
+            <p class="strength-item__desc">
+              ただ作業をこなすのではなく、あなたの事業や想い、伝えたいことを時間をかけて丁寧に受け取ります。「うまく言葉にできない」という状態でも、一緒に整理しながら進めていきます。
+            </p>
+          </div>
+
+          <div class="strength-item fade-up delay-2">
+            <div class="strength-item__number">02</div>
+            <h3 class="strength-item__title">一緒に考えながら進める伴走型</h3>
+            <p class="strength-item__desc">
+              「丸投げOK」ではなく、「一緒に考えながら形にしていく」スタイルを大切にしています。決まっていないことがあっても大丈夫。進めながら整理していきましょう。
+            </p>
+          </div>
+
+          <div class="strength-item fade-up delay-3">
+            <div class="strength-item__number">03</div>
+            <h3 class="strength-item__title">新しい未来を、楽しみながら</h3>
+            <p class="strength-item__desc">
+              大変なことも前向きに。関わるすべての方に笑顔になってほしい——そんな想いで仕事に向き合っています。制作が終わったあとも、共に育てていける存在でありたいと思っています。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. 実績紹介セクション
+         ============================================================ -->
+    <section class="section" id="works">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <span class="en-label">Works</span>
+          <h2 class="section-title fade-up">制作実績</h2>
+          <p class="section-lead mt-md fade-up delay-1">
+            業種や目的に合わせ、伝わりやすさと見やすさを意識して制作しています。<br class="pc-br">
+            どんな課題に向き合い、どう考えて形にしたかも合わせてご覧ください。
+          </p>
+        </header>
+
+        <div class="works-slider-wrapper fade-up delay-1">
+          <div class="works-slider" id="worksSlider">
+
+            <article class="work-card">
+              <div class="work-card__img">
+                <img src="images/works/works-01.webp" alt="集客LP制作" loading="lazy" decoding="async">
+              </div>
+              <div class="work-card__body">
+                <span class="work-card__cat">LP制作</span>
+                <h3 class="work-card__title">集客LP制作</h3>
+                <p class="work-card__desc">
+                  リスト獲得を目的としたLPを改善。ターゲットの悩みに寄り添う構成に見直すことで、リスト単価の半減を実現しました。
+                </p>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <div class="work-card__img">
+                <img src="images/works/works-02.webp" alt="事業者向けホームページ" loading="lazy" decoding="async">
+              </div>
+              <div class="work-card__body">
+                <span class="work-card__cat">HP制作（AI活用）</span>
+                <h3 class="work-card__title">事業者向けホームページ</h3>
+                <p class="work-card__desc">
+                  AIツールを活用したスピード制作。クライアントの世界観をくみ取り、シンプルで伝わるホームページに仕上げました。
+                </p>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <div class="work-card__img">
+                <img src="images/works/works-03.webp" alt="コーポレートサイト" loading="lazy" decoding="async">
+              </div>
+              <div class="work-card__body">
+                <span class="work-card__cat">HP制作（AI活用）</span>
+                <h3 class="work-card__title">コーポレートサイト</h3>
+                <p class="work-card__desc">
+                  AIを使ったコンテンツ制作と組み合わせ、短納期でクオリティの高いサービスサイトを制作。継続依頼につながっています。
+                </p>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <div class="work-card__img">
+                <img src="images/works/works-04.webp" alt="SNS運用サポート" loading="lazy" decoding="async">
+              </div>
+              <div class="work-card__body">
+                <span class="work-card__cat">SNS運用</span>
+                <h3 class="work-card__title">SNS運用サポート</h3>
+                <p class="work-card__desc">
+                  アカウント設計から投稿画像制作・テキスト作成まで一括サポート。ブランドの雰囲気が統一されたフィードを目指して運用中です。
+                </p>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <div class="work-card__img">
+                <img src="images/works/works-05.webp" alt="WEB広告バナー制作" class="work-card__img--banner" loading="lazy" decoding="async">
+              </div>
+              <div class="work-card__body">
+                <span class="work-card__cat">バナー・デザイン</span>
+                <h3 class="work-card__title">WEB広告バナー制作</h3>
+                <p class="work-card__desc">
+                  複数サイズのバナーをシリーズで制作。ターゲットに響くビジュアルとコピーで、クリック率の向上に貢献しました。
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="slider-controls" aria-label="スライダーコントロール">
+            <button class="slider-btn" id="sliderPrev" aria-label="前へ">&#8592;</button>
+            <div class="slider-dots" id="sliderDots" aria-hidden="true"></div>
+            <button class="slider-btn" id="sliderNext" aria-label="次へ">&#8594;</button>
+          </div>
+        </div>
+
+        <div class="text-center mt-lg">
+          <a href="works.html" class="btn btn--outline">実績をもっと見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. お客様の声・信頼要素
+         ============================================================ -->
+    <section class="section section--alt" id="voice">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <span class="en-label">Client Voice</span>
+          <h2 class="section-title fade-up">ご依頼いただいた方のお声</h2>
+          <p class="section-lead mt-md fade-up delay-1">
+            成果だけでなく、「また相談したい」と思っていただけることを大切にしています。
+          </p>
+        </header>
+
+        <div class="voice-cards">
+
+          <div class="voice-card fade-up delay-1">
+            <div class="voice-card__quote" aria-hidden="true">"</div>
+            <div class="voice-card__body">
+              <div class="voice-card__highlight">
+                <svg aria-hidden="true" style="width:14px;height:14px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,17 8,12 13,15 21,7"/><polyline points="17,7 21,7 21,11"/></svg>
+                リスト単価が半減しました
+              </div>
+              <p class="voice-card__text">
+                LP改善をお願いしたところ、ターゲットに刺さる構成に見直してもらい、リスト獲得単価が約半分になりました。数字に直結する提案をしてもらえて、本当に依頼してよかったです。
+              </p>
+              <p class="voice-card__meta">
+                30代・個人事業主様 ／ LP改善・継続依頼中
+              </p>
+            </div>
+          </div>
+
+          <div class="voice-card fade-up delay-2">
+            <div class="voice-card__quote" aria-hidden="true">"</div>
+            <div class="voice-card__body">
+              <div class="voice-card__highlight">
+                <svg aria-hidden="true" style="width:14px;height:14px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="17,1 21,5 17,9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7,23 3,19 7,15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                その後も継続してお願いしています
+              </div>
+              <p class="voice-card__text">
+                「作ったら終わり」ではなく、その後の反応を見ながら一緒に考えてもらえます。聞きやすい雰囲気で、細かな修正にも丁寧に対応してもらえるので、長くお付き合いできています。
+              </p>
+              <p class="voice-card__meta">
+                40代・小規模事業主様 ／ HP制作・継続サポート中
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. 想い・プロフィール導線
+         ============================================================ -->
+    <section class="section" id="about-teaser">
+      <div class="container">
+        <div class="about-teaser">
+          <div class="about-teaser__image fade-in">
+            <div class="about-teaser__img-wrapper">
+              <img src="images/profile.webp" alt="金沢 由紀のプロフィール写真" loading="lazy" decoding="async">
+            </div>
+            <div class="about-teaser__deco" aria-hidden="true"></div>
+          </div>
+
+          <div class="about-teaser__content">
+            <span class="en-label">About</span>
+            <h2 class="section-title fade-up">想いに寄り添い、<br class="about-title-break">前へ進む力を。</h2>
+
+            <div class="mt-md">
+              <p class="about-teaser__name fade-up delay-1">金沢 由紀</p>
+              <p class="about-teaser__role fade-up delay-1">代表 / クリエイティブ担当</p>
+            </div>
+
+            <blockquote class="about-teaser__message fade-up delay-2">
+              「関わる人が笑顔になれること」を、<br>いちばん大切にしています。
+            </blockquote>
+
+            <p class="about-teaser__text fade-up delay-3">
+              金融・運送・リサイクル業など様々な現場を経験したのち、子どもたちの独立をきっかけに、もう一度自分らしく生きようとWebデザインを学び始めました。ただ作るだけではなく、想いや状況を丁寧に受け取りながら、一緒に前へ進んでいける存在でありたいと思っています。
+            </p>
+
+            <a href="about.html" class="btn btn--outline fade-up delay-4">プロフィールを見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. ご依頼の流れ（ダイジェスト）
+         ============================================================ -->
+    <section class="section section--alt" id="flow-teaser">
+      <div class="container">
+        <header class="section-header section-header--center">
+          <span class="en-label">Flow</span>
+          <h2 class="section-title fade-up">ご相談から制作までの流れ</h2>
+          <p class="section-lead mt-md fade-up delay-1">
+            まだ内容がまとまっていない段階でも、お気軽にご相談ください。<br class="pc-br">
+            一緒に整理しながら進めていきます。
+          </p>
+        </header>
+
+        <div class="flow-steps" style="max-width:600px; margin-inline:auto;">
+          <div class="flow-step fade-up delay-1">
+            <div class="flow-step__left">
+              <div class="flow-step__number">01</div>
+              <div class="flow-step__line"></div>
+            </div>
+            <div class="flow-step__body">
+              <h3 class="flow-step__title">お問い合わせ</h3>
+              <p class="flow-step__desc">メールにてお気軽にご連絡ください。「まだ何も決まっていない」でも大丈夫です。</p>
+            </div>
+          </div>
+
+          <div class="flow-step fade-up delay-2">
+            <div class="flow-step__left">
+              <div class="flow-step__number">02</div>
+              <div class="flow-step__line"></div>
+            </div>
+            <div class="flow-step__body">
+              <h3 class="flow-step__title">ヒアリング</h3>
+              <p class="flow-step__desc">現状や目的、イメージをじっくりお伺いします。オンラインまたはメールなどでも対応いたします。</p>
+            </div>
+          </div>
+
+          <div class="flow-step fade-up delay-3">
+            <div class="flow-step__left">
+              <div class="flow-step__number">03</div>
+              <div class="flow-step__line"></div>
+            </div>
+            <div class="flow-step__body">
+              <h3 class="flow-step__title">ご提案・お見積もり</h3>
+              <p class="flow-step__desc">内容に合わせて丁寧にご提案します。ご納得いただいてから制作を進めます。</p>
+            </div>
+          </div>
+
+          <div class="flow-step fade-up delay-4">
+            <div class="flow-step__left">
+              <div class="flow-step__number">04</div>
+              <div class="flow-step__line"></div>
+            </div>
+            <div class="flow-step__body">
+              <h3 class="flow-step__title">制作・確認・納品</h3>
+              <p class="flow-step__desc">制作中も確認しながら進めます。納品後の運用サポートもご相談ください。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-lg">
+          <a href="flow.html" class="btn btn--outline">詳しい流れを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. FAQ（ダイジェスト）
+         ============================================================ -->
+    <section class="section" id="faq-teaser">
+      <div class="container container--narrow">
+        <header class="section-header section-header--center">
+          <span class="en-label">FAQ</span>
+          <h2 class="section-title fade-up">よくあるご質問</h2>
+        </header>
+
+        <div class="faq-list fade-up delay-1">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="q-mark">Q.</span>
+              <span class="q-text">相談だけでも大丈夫ですか？</span>
+              <span class="faq-icon" aria-hidden="true">＋</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                もちろんです。「まだ何も決まっていない」「相談だけしてみたい」という段階からお気軽にどうぞ。一緒に整理していきます。
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="q-mark">Q.</span>
+              <span class="q-text">対応エリアに制限はありますか？</span>
+              <span class="faq-icon" aria-hidden="true">＋</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                全国対応しております。打ち合わせはオンライン（メール・ビデオ通話）で進めますので、どちらにお住まいでも安心してご相談ください。
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="q-mark">Q.</span>
+              <span class="q-text">納期の目安はどれくらいですか？</span>
+              <span class="faq-icon" aria-hidden="true">＋</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                内容によって異なりますが、LPで2〜4週間、ホームページで4〜8週間が目安です。お急ぎの場合はご相談ください。
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span class="q-mark">Q.</span>
+              <span class="q-text">Web制作以外の相談も可能ですか？</span>
+              <span class="faq-icon" aria-hidden="true">＋</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                はい、集客・販促まわりのご相談や、企業の営業・発信についてのご相談も承っています。「こんなことも聞いていいの？」と思うようなことでもお気軽にどうぞ。
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-lg">
+          <a href="faq.html" class="btn btn--outline">FAQ一覧を見る</a>
+        </div>
+      </div>
+    </section>
+
+    </div>
+
+    <!-- ============================================================
+         10. 最終CTAセクション
+         ============================================================ -->
+    <section class="section cta-section" id="cta">
+      <div class="container">
+        <h2 class="section-title fade-up">まずはお気軽に<br class="cta-title-break">ご相談ください。</h2>
+        <p class="section-lead fade-up delay-1">
+          <span class="sp-hide">「こんなこと頼めるかな？」という段階でも大丈夫です。<br class="pc-br">
+          目的や状況に合わせて、丁寧にお話を伺います。</span>
+          <span class="sp-br">「こんなこと頼めるかな？」という段階でも大丈夫。<br class="sp-break">目的や状況に合わせて、丁寧にお話を伺います。</span>
+        </p>
+
+        <div class="btn-group fade-up delay-2" style="justify-content:center; margin-top:2.5rem;">
+          <a href="contact.html" class="btn btn--outline-white btn--lg">
+            お問い合わせはこちら
+          </a>
+        </div>
+
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       Footer
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+
+        <div class="footer-brand">
+          <span class="footer-logo__ja">YMデザイン企画</span>
+          <span class="footer-logo__en">YM Design &amp; Co.</span>
+          <p class="footer-desc">
+            想いをくみ取り、伝わる形に。<br>
+            Web制作・SNS運用サポート・営業コンサルまで。
+          </p>
+          <a href="mailto:ymdesign.kikaku@gmail.com" class="footer-contact-link">
+            <svg aria-hidden="true" style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+            ymdesign.kikaku@gmail.com
+          </a>
+        </div>
+
+        <div class="footer-nav-col">
+          <p class="footer-nav__title">Menu</p>
+          <ul class="footer-nav__list">
+            <li><a href="index.html"   class="footer-nav__link">TOP</a></li>
+            <li><a href="about.html"   class="footer-nav__link">ABOUT</a></li>
+            <li><a href="service.html" class="footer-nav__link">SERVICE</a></li>
+            <li><a href="works.html"   class="footer-nav__link">WORKS</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <p class="footer-nav__title">Info</p>
+          <ul class="footer-nav__list">
+            <li><a href="flow.html"    class="footer-nav__link">FLOW</a></li>
+            <li><a href="faq.html"     class="footer-nav__link">FAQ</a></li>
+            <li><a href="contact.html" class="footer-nav__link">CONTACT</a></li>
+            <li><a href="privacy.html" class="footer-nav__link">PRIVACY POLICY</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 YMデザイン企画 / YM Design&amp;Co. All rights reserved.</p>
+        <a href="privacy.html" class="footer-policy">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
