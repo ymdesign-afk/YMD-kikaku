@@ -630,8 +630,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .home-page .home-main__ambient-copy--lower {
-  top: 60%;
-  font-size: clamp(3.4rem, 7.2vw, 6.6rem);
+  top: 27%; /* お悩み―サービスセクション境目中央 */
+  font-size: clamp(4.2rem, 9vw, 8rem); /* 少し大きく */
   color: rgba(112, 128, 142, 0.064);
   animation: heroCopyDriftReverse 34s linear infinite;
 }
@@ -846,7 +846,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: clamp(1.55rem, 5.8vw, 2.2rem);
     gap: 1.75rem;
     letter-spacing: 0.11em;
-    color: rgba(88, 109, 126, 0.068);
+    color: rgba(88, 109, 126, 0.38); /* スマホ：視認できる濃さに調整 */
   }
 
   .home-page .home-main__ambient-copy--upper {
@@ -854,9 +854,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .home-page .home-main__ambient-copy--lower {
-    top: 62%;
-    font-size: clamp(1.45rem, 5.2vw, 2.05rem);
-    color: rgba(112, 128, 142, 0.06);
+    top: 52%; /* スマホ版: サービスセクション頭付近 */
+    font-size: clamp(1.8rem, 6.5vw, 2.4rem); /* スマホ少し大きく */
+    color: rgba(112, 128, 142, 0.32);
   }
 
   .home-page .home-main__ambient-orb--1 {
@@ -884,16 +884,39 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .home-page .home-main__ambient-orb--4 {
-    display: none;
+    display: block;
+    right: 12%;
+    top: 72%;
+    width: 90px;
+    height: 90px;
+    opacity: 0.18;
   }
 
   .home-page .home-main__ambient-orb--5 {
-    display: none;
+    display: block;
+    left: -5%;
+    top: 78%;
+    width: 100px;
+    height: 100px;
+    opacity: 0.16;
   }
 
-  .home-page .home-main__ambient-orb--6,
+  .home-page .home-main__ambient-orb--6 {
+    display: block;
+    left: 38%;
+    top: 20%;
+    width: 75px;
+    height: 75px;
+    opacity: 0.14;
+  }
+
   .home-page .home-main__ambient-orb--7 {
-    display: none;
+    display: block;
+    right: 3%;
+    top: 85%;
+    width: 70px;
+    height: 70px;
+    opacity: 0.13;
   }
 
   .hero__content {

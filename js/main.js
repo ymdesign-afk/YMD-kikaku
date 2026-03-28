@@ -195,7 +195,50 @@
 
 
   /* ============================================================
-     7. Service nav anchor highlight（service.html）
+     7. Ambient copy position — セクション位置に合わせて英字テキストを配置
+     ============================================================ */
+  (function positionAmbientCopy() {
+    const body = document.querySelector('.home-main__body');
+    const upper = document.querySelector('.home-main__ambient-copy--upper');
+    const lower = document.querySelector('.home-main__ambient-copy--lower');
+    const servicesSec = document.getElementById('services');
+    const aboutSec = document.getElementById('about-teaser');
+
+    if (!body || !upper || !lower || !servicesSec || !aboutSec) return;
+
+    function update() {
+      const bodyTop = body.getBoundingClientRect().top + window.scrollY;
+      const totalH = body.offsetHeight;
+      if (totalH === 0) return;
+
+      // upper: #services セクション上部
+      const servicesTop = servicesSec.getBoundingClientRect().top + window.scrollY - bodyTop;
+      const upperPct = (servicesTop / totalH) * 100;
+      upper.style.top = upperPct.toFixed(2) + '%';
+
+      // lower: #about-teaser セクション上部
+      const aboutTop = aboutSec.getBoundingClientRect().top + window.scrollY - bodyTop;
+      const lowerPct = (aboutTop / totalH) * 100;
+      lower.style.top = lowerPct.toFixed(2) + '%';
+    }
+
+    // 初期計算（フォント・画像読み込み後に実行）
+    if (document.readyState === 'complete') {
+      update();
+    } else {
+      window.addEventListener('load', update, { once: true });
+    }
+
+    // リサイズ時に再計算
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(update, 150);
+    }, { passive: true });
+  })();
+
+  /* ============================================================
+     8. Service nav anchor highlight（service.html）
      ============================================================ */
   const serviceAnchors = document.querySelectorAll('[href^="#web"],[href^="#design"],[href^="#instagram"],[href^="#marketing"]');
   if (serviceAnchors.length) {
