@@ -3,7 +3,7 @@
 > 想いをくみ取り、伝わる形に。
 > Web制作・SNS運用サポート・企業コンサルティングまで。個人事業主・中小企業に寄り添うWebデザイン事務所のコーポレートサイトです。
 
-**バージョン：v0.3**（2026-03-27 更新）
+**バージョン：v0.4**（2026-03-31 更新）
 
 ---
 
@@ -55,6 +55,24 @@
 | SEO基本設定 | title/meta description/OGP/canonical 全ページ設定済み |
 | セキュリティヘッダー | vercel.json でX-Frame-Options等設定済み |
 | クリーンURL | `/about` → `about.html` 等のリライト設定済み |
+
+---
+
+## 📄 v0.4 変更ログ（2026-03-31）
+
+### 独自ドメイン公開
+- `ymd-kikaku.net` でサイト公開完了
+- お名前.comのネームサーバー設定を修正して反映
+- GitHub Pages の CNAME ファイル設定済み
+
+### 英字アニメーション（ambient-copy）3箇所固定化
+- ambient-copy を2本→3本に増加（upper・middle・lower）
+- JSで各セクション上部に正確にピン留め：
+  - upper → `#services`（サービスセクション上部）
+  - middle → `#works`（制作実績セクション上部）
+  - lower → `#about-teaser`（Aboutセクション上部）
+- どの画面サイズでも同じ位置に表示されるようリサイズ時も再計算
+- アニメ方向：upper 左→右 / middle 右→左 / lower 左→右
 
 ---
 

@@ -625,15 +625,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .home-page .home-main__ambient-copy--upper {
-  top: 8.5%;
+  top: 8.5%; /* フォールバック：JSで #services 上部に上書き */
   animation: heroCopyDrift 28s linear infinite;
 }
 
-.home-page .home-main__ambient-copy--lower {
-  top: 27%; /* お悩み―サービスセクション境目中央 */
-  font-size: clamp(4.2rem, 9vw, 8rem); /* 少し大きく */
+.home-page .home-main__ambient-copy--middle {
+  top: 50%; /* フォールバック：JSで #works 上部に上書き */
+  font-size: clamp(4.2rem, 9vw, 8rem);
   color: rgba(112, 128, 142, 0.064);
-  animation: heroCopyDriftReverse 34s linear infinite;
+  animation: heroCopyDriftReverse 32s linear infinite;
+}
+
+.home-page .home-main__ambient-copy--lower {
+  top: 75%; /* フォールバック：JSで #about-teaser 上部に上書き */
+  font-size: clamp(4.2rem, 9vw, 8rem);
+  color: rgba(112, 128, 142, 0.064);
+  animation: heroCopyDrift 34s linear infinite;
 }
 
 /* ─── コンテンツ（最前面） ─── */
@@ -850,13 +857,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .home-page .home-main__ambient-copy--upper {
-    top: 8.3%;
+    top: 8.3%; /* フォールバック：JSで上書き */
+  }
+
+  .home-page .home-main__ambient-copy--middle {
+    font-size: clamp(1.8rem, 6.5vw, 2.4rem);
+    color: rgba(112, 128, 142, 0.32);
+    /* フォールバック：JSで上書き */
   }
 
   .home-page .home-main__ambient-copy--lower {
-    top: 52%; /* スマホ版: サービスセクション頭付近 */
-    font-size: clamp(1.8rem, 6.5vw, 2.4rem); /* スマホ少し大きく */
+    font-size: clamp(1.8rem, 6.5vw, 2.4rem);
     color: rgba(112, 128, 142, 0.32);
+    /* フォールバック：JSで上書き */
   }
 
   .home-page .home-main__ambient-orb--1 {

@@ -199,27 +199,28 @@
      ============================================================ */
   (function positionAmbientCopy() {
     const body = document.querySelector('.home-main__body');
-    const upper = document.querySelector('.home-main__ambient-copy--upper');
-    const lower = document.querySelector('.home-main__ambient-copy--lower');
+    const upper  = document.querySelector('.home-main__ambient-copy--upper');
+    const middle = document.querySelector('.home-main__ambient-copy--middle');
+    const lower  = document.querySelector('.home-main__ambient-copy--lower');
     const servicesSec = document.getElementById('services');
-    const aboutSec = document.getElementById('about-teaser');
+    const worksSec    = document.getElementById('works');
+    const aboutSec    = document.getElementById('about-teaser');
 
-    if (!body || !upper || !lower || !servicesSec || !aboutSec) return;
+    if (!body || !upper || !middle || !lower) return;
+
+    function setTop(el, targetSec, offsetPx) {
+      if (!targetSec) return;
+      const bodyTop = body.getBoundingClientRect().top + window.scrollY;
+      const totalH  = body.offsetHeight;
+      if (totalH === 0) return;
+      const secTop = targetSec.getBoundingClientRect().top + window.scrollY - bodyTop + (offsetPx || 0);
+      el.style.top = ((secTop / totalH) * 100).toFixed(2) + '%';
+    }
 
     function update() {
-      const bodyTop = body.getBoundingClientRect().top + window.scrollY;
-      const totalH = body.offsetHeight;
-      if (totalH === 0) return;
-
-      // upper: #services セクション上部
-      const servicesTop = servicesSec.getBoundingClientRect().top + window.scrollY - bodyTop;
-      const upperPct = (servicesTop / totalH) * 100;
-      upper.style.top = upperPct.toFixed(2) + '%';
-
-      // lower: #about-teaser セクション上部
-      const aboutTop = aboutSec.getBoundingClientRect().top + window.scrollY - bodyTop;
-      const lowerPct = (aboutTop / totalH) * 100;
-      lower.style.top = lowerPct.toFixed(2) + '%';
+      setTop(upper,  servicesSec);       // upper  → #services  上部
+      setTop(middle, worksSec);          // middle → #works      上部
+      setTop(lower,  aboutSec, 0);     // lower  → #about-teaser 上部ぴったり
     }
 
     // 初期計算（フォント・画像読み込み後に実行）
