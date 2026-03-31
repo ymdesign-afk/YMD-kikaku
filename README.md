@@ -3,7 +3,7 @@
 > 想いをくみ取り、伝わる形に。
 > Web制作・SNS運用サポート・企業コンサルティングまで。個人事業主・中小企業に寄り添うWebデザイン事務所のコーポレートサイトです。
 
-**バージョン：v0.1**（2026-03-20 更新）
+**バージョン：v0.3**（2026-03-27 更新）
 
 ---
 
@@ -55,6 +55,45 @@
 | SEO基本設定 | title/meta description/OGP/canonical 全ページ設定済み |
 | セキュリティヘッダー | vercel.json でX-Frame-Options等設定済み |
 | クリーンURL | `/about` → `about.html` 等のリライト設定済み |
+
+---
+
+## 📄 v0.3 変更ログ（2026-03-27）
+
+### v0.3 変更内容
+- **スマホ版 ambient-copy lower を `top: 52%` に変更**（サービスセクション頭付近に移動）
+- **「営業コンサル」→「企業コンサル」に全ファイル統一**（index.html ヒーロー・フッター、service.html フッター）
+- **FAQ「After Support（納品後のサポート）」セクションに上余白 `margin-top: 2.5rem` を追加**
+- **各ファイルの修正適用状況を再確認**（全箇所正常適用済みを確認）
+
+---
+
+## 📄 v0.2 変更ログ（2026-03-27）
+
+### SEO対応（全ページ）
+- canonical URLを `ymdesign.example.com` → `ymd-kikaku.net` に更新
+- title表記を「企業コンサル」に統一（「営業コンサル」を廃止）
+- `og:url` を全ページに追加
+- `og:image` を `https://ymd-kikaku.net/images/ogp.png` に設定
+- Twitter Card（`summary_large_image`）を全ページに追加
+- `og:site_name`・`og:locale` を全ページに追加
+- JSON-LD ProfessionalService スキーマを index.html に追加
+- ロゴ `alt` 属性を `"YMデザイン企画"` に全ページ設定
+- `sitemap.xml` 作成（7ページ・優先度設定）
+- `robots.txt` 作成（クロール許可・privacy.html noindex・sitemap パス設定）
+- OGP画像 `images/ogp.png` 取得・配置
+
+### デザイン・アニメーション
+- ambient-copy（英字テキスト）の不透明度をスマホで増加（upper: 0.38、lower: 0.32）
+- ambient-orb 4〜7番をスマホで表示（`display:none` → 個別サイズ・位置設定）
+- ambient-copy lower の PC位置を `top: 27%`（悩み／サービス境界線上）に移動
+- ambient-copy lower の PC/スマホのフォントサイズを拡大
+
+### flow.htmlレイアウト
+- 各ステップの border を削除
+- アイコンをタイトル左横に横並び配置
+- ナンバリングフォントサイズを拡大（元の2倍相当）
+- CTA セクションの改行を削除（1行表示）
 
 ---
 
@@ -169,14 +208,11 @@ vercel --prod
 
 ---
 
-## 📝 v0.2 以降の推奨作業
+## 📝 v0.4 以降の推奨作業
 
-- [ ] 顔写真・実績画像の実素材への差し替え
 - [ ] Formspree によるメール送信設定
 - [ ] Googleアナリティクス（GA4）設置
-- [ ] 独自ドメイン設定
-- [ ] OGP画像（og:image）作成・設置
-- [ ] Googleサーチコンソール登録・sitemap.xml 作成
+- [ ] Googleサーチコンソール登録・sitemap.xml 送信
 - [ ] favicon.ico / apple-touch-icon 設置
 - [ ] NEWS / BLOG ページの追加（将来的に）
 
