@@ -614,7 +614,7 @@
             return;
           }
 
-          if (!action || action.includes('YOUR_FORM_ID')) {
+          if (!action) {
             throw new Error('FORM_ENDPOINT_MISSING');
           }
 
