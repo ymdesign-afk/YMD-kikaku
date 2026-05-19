@@ -2010,7 +2010,7 @@
     if (!targetEl) return;
     const headerEl = document.querySelector('.site-header');
     const headerHeight = headerEl ? headerEl.getBoundingClientRect().height : 0;
-    const offset = headerHeight + 16;
+    const offset = headerHeight + 64;
     const y = targetEl.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top: Math.max(0, y), left: 0, behavior: 'smooth' });
     if (typeof targetEl.focus === 'function') {
