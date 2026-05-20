@@ -20,10 +20,10 @@
   <meta name="twitter:image" content="https://ymd-kikaku.net/assets/rogo_01.png">
   <script>
     (function () {
-      const OPENING_STORAGE_KEY = 'ym_opening_seen_v1';
+      const OPENING_STORAGE_KEY = 'ym_opening_seen_session_v1';
       let shouldShowOpening = true;
       try {
-        shouldShowOpening = localStorage.getItem(OPENING_STORAGE_KEY) !== '1';
+        shouldShowOpening = sessionStorage.getItem(OPENING_STORAGE_KEY) !== '1';
       } catch (e) {
         shouldShowOpening = true;
       }
@@ -1927,15 +1927,15 @@
   const openingLayer = document.getElementById('openingLayer');
   const openingVideo = document.getElementById('openingVideo');
   const openingSkip = document.getElementById('openingSkip');
-  const OPENING_STORAGE_KEY = 'ym_opening_seen_v1';
+  const OPENING_STORAGE_KEY = 'ym_opening_seen_session_v1';
   const shouldShowOpening = document.documentElement.classList.contains('opening-enabled');
   let openingClosed = false;
 
   function markOpeningSeen() {
     try {
-      localStorage.setItem(OPENING_STORAGE_KEY, '1');
+      sessionStorage.setItem(OPENING_STORAGE_KEY, '1');
     } catch (e) {
-      // localStorage が利用できない環境では毎回表示を許容
+      // sessionStorage が利用できない環境では毎回表示を許容
     }
   }
 
