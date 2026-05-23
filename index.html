@@ -242,13 +242,17 @@
     .section-heading { font-family:'Noto Serif JP',serif; font-weight:700; font-size:1.9rem; color:var(--navy); text-align:center; margin-bottom:1.15rem; line-height:1.55; }
     .section-sub { font-size:1rem; font-weight:500; color:var(--g500); text-align:center; margin-bottom:4rem; line-height:1.9; }
     .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .service-card-wide { grid-column:1 / -1; }
     .service-card { display:flex; flex-direction:column; justify-content:space-between; }
     .service-card-body { background:#fff; border:1px solid #dbe4ee; border-radius:10px; overflow:hidden; margin-bottom:.8rem; flex:1; display:flex; flex-direction:column; box-shadow:0 2px 6px rgba(18,48,84,.04); transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
     .service-photo { width:100%; height:192px; object-fit:cover; flex-shrink:0; transition:transform .3s ease; }
     .service-info { padding:20px 20px 12px; flex:1; display:flex; flex-direction:column; justify-content:flex-start; background:#fff; border-bottom:10px solid transparent; }
     .service-info.blue { border-bottom-color:#0F4C81; }
+    .service-info.sky { border-bottom-color:#66A9CF; }
     .service-info.yellow { border-bottom-color:#D8BE6A; }
     .service-info.teal { border-bottom-color:#078C95; }
+    .service-info.coral { border-bottom-color:#C78478; }
+    .service-info.indigo { border-bottom-color:#0F4C81; }
     .service-info.gray { border-bottom-color:#9AA5B1; justify-content:flex-start; }
     #page-top .service-info.s06 {
       border-bottom-color:#6F7EA6;
@@ -263,9 +267,16 @@
     #page-top .service-info.s06 .service-other-list svg path { stroke:#6F7EA6; }
     .service-num { font-family:'Cormorant Garamond',serif; font-size:.75rem; letter-spacing:1.68px; margin-bottom:8px; }
     .service-info.blue .service-num,
+    .service-info.sky .service-num,
     .service-info.yellow .service-num,
     .service-info.teal .service-num,
+    .service-info.coral .service-num,
+    .service-info.indigo .service-num,
     .service-info.gray .service-num { color:#7b8ea5; font-size:.6875rem; letter-spacing:1.5px; }
+    .service-info.sky .service-num { color:#6B98BA; }
+    .service-info.yellow .service-num { color:#A88B3A; }
+    .service-info.teal .service-num { color:#2A7F86; }
+    .service-info.coral .service-num { color:#9B7069; }
     .service-title { font-family:'Noto Serif JP',serif; font-weight:700; font-size:1.15rem; line-height:1.55; margin-bottom:10px; color:var(--navy); }
     .service-desc { font-size:.875rem; line-height:1.72; color:var(--g600); margin-bottom:14px; }
     .service-link { display:inline-flex; align-items:center; gap:4px; font-size:.8125rem; font-weight:500; color:#516476; border-bottom:1px solid #cad7e5; padding:0 0 6px; transition:border-color .28s, color .28s; background:none; border-left:none; border-right:none; border-top:none; margin-top:auto; align-self:flex-end; }
@@ -280,16 +291,31 @@
     .service-card:focus-within .service-photo { transform:scale(1.035); }
     .service-card:hover .service-info.blue,
     .service-card:focus-within .service-info.blue { border-bottom-color:#125891; }
+    .service-card:hover .service-info.sky,
+    .service-card:focus-within .service-info.sky { border-bottom-color:#5D9EC4; }
     .service-card:hover .service-info.yellow,
     .service-card:focus-within .service-info.yellow { border-bottom-color:#dfc677; }
     .service-card:hover .service-info.teal,
     .service-card:focus-within .service-info.teal { border-bottom-color:#0a99a3; }
+    .service-card:hover .service-info.coral,
+    .service-card:focus-within .service-info.coral { border-bottom-color:#B97467; }
+    .service-card:hover .service-info.indigo,
+    .service-card:focus-within .service-info.indigo { border-bottom-color:#125891; }
     .service-card:hover .service-info.gray,
     .service-card:focus-within .service-info.gray { border-bottom-color:#a8b2bd; }
     #page-top .service-card:hover .service-info.s06,
     #page-top .service-card:focus-within .service-info.s06 { border-bottom-color:#7b89b0; }
     .service-card:hover .service-link svg,
     .service-card:focus-within .service-link svg { transform:translateX(3px); }
+    .service-card-wide .service-info { padding-bottom:16px; }
+    .service-info.s07-compact { padding:14px 20px 11px; }
+    .s07-layout { display:grid; grid-template-columns:1.12fr .95fr .95fr auto; gap:18px; align-items:center; }
+    .s07-col-head .service-num { margin-bottom:6px; }
+    .s07-col-head .service-title { margin-bottom:0; line-height:1.45; }
+    .s07-compact .service-other-list { margin:0; }
+    .s07-compact .service-other-list li { padding:3px 0; font-size:.96rem; line-height:1.6; }
+    .s07-link-col { display:flex; align-items:flex-end; justify-content:flex-end; }
+    .s07-link { margin-top:0; align-self:auto; white-space:nowrap; }
 
     /* ===== POINTS ===== */
     .points { position:relative; border-top:1px solid var(--g300); border-bottom:1px solid var(--g300); padding:97px 208px 161px; overflow:hidden; background:linear-gradient(180deg, #f4fbff 0%, #e9f6ff 100%); }
@@ -533,13 +559,13 @@
     .svc-detail__box--points { background:#f7fbff; border-color:#d7e4f0; }
     .svc-detail__list.tight li { font-size:.90625rem; line-height:1.65; }
     /* SERVICE accent system (01-06) */
-    #service-01 { --service-accent:#0f4c81; --service-accent-soft:#f4f8fc; --service-accent-border:#d6e3f0; --service-accent-icon:#2b6b9f; }
+    #service-01 { --service-accent:#66A9CF; --service-accent-soft:#f3f9fd; --service-accent-border:#d4e8f4; --service-accent-icon:#5d9ec4; }
     #service-02 { --service-accent:#d8be6a; --service-accent-soft:#fcf8ee; --service-accent-border:#eadfbd; --service-accent-icon:#a2832f; }
-    #service-03 { --service-accent:#0f4c81; --service-accent-soft:#f4f8fc; --service-accent-border:#d6e3f0; --service-accent-icon:#2b6b9f; }
+    #service-03 { --service-accent:#66A9CF; --service-accent-soft:#f3f9fd; --service-accent-border:#d4e8f4; --service-accent-icon:#5d9ec4; }
     #service-04 { --service-accent:#078c95; --service-accent-soft:#f1fafb; --service-accent-border:#cfe9eb; --service-accent-icon:#12727a; }
-    #service-05 { --service-accent:#078c95; --service-accent-soft:#f1fafb; --service-accent-border:#cfe9eb; --service-accent-icon:#12727a; }
+    #service-05 { --service-accent:#C78478; --service-accent-soft:#fcf6f5; --service-accent-border:#edd9d5; --service-accent-icon:#b97467; }
     #service-06 {
-      --service-accent:#8b97b8;
+      --service-accent:#6F7EA6;
       --service-accent-soft:#f4f6fb;
       --service-accent-border:#d8dfec;
       --service-accent-icon:#6f7ea6;
@@ -615,13 +641,125 @@
     #page-service .svc01-body .svc-detail__img-panel-text { color:#556678; line-height:1.9; font-size:.9375rem; }
     #service-06 .svc01-body { align-items:start; }
     #service-06 .svc01-body .svc-detail__img { align-self:start; }
-    #service-06 .svc01-body .svc-detail__img { border-color:#fff; }
+    #service-06 .svc01-body .svc-detail__img { border-color:var(--service-accent-border); }
     #service-06 .svc01-body .svc-detail__img { padding:10px 10px 20px; background:#fff; }
     #service-06 .svc01-body .svc-detail__img img { height:auto; object-fit:contain; transform:scale(1.06); transform-origin:center center; }
     #service-06.svc-detail { border-bottom:none; }
     #service-01.svc-detail { padding-bottom:68px; }
+    #service-05 .svc-partner-cta {
+      margin-top:12px;
+      padding:12px 14px 12px 46px;
+      min-height:108px;
+      border:1px solid color-mix(in srgb, var(--service-accent-border) 84%, #fff 16%);
+      border-left:none;
+      border-radius:7px;
+      background:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    #service-05 .svc-partner-label {
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:34px;
+      margin:0;
+      writing-mode:vertical-rl;
+      text-orientation:mixed;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 0;
+      font-size:.66rem;
+      letter-spacing:.08em;
+      font-weight:700;
+      line-height:1.2;
+      color:#fff;
+      background:color-mix(in srgb, var(--service-accent) 88%, #fff 12%);
+      border-radius:0;
+    }
+    #service-05 .svc-partner-card {
+      display:grid;
+      grid-template-columns:120px 1fr;
+      gap:12px;
+      align-items:center;
+      margin-top:8px;
+    }
+    #service-05 .svc-partner-info {
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    #service-05 .svc-partner-logo {
+      border:none;
+      border-radius:6px;
+      background:#fff;
+      padding:6px;
+    }
+    #service-05 .svc-partner-logo img {
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    #service-05 .svc-partner-name {
+      font-size:.94rem;
+      font-weight:700;
+      color:#3d4f62;
+      line-height:1.4;
+      margin-bottom:4px;
+      white-space:nowrap;
+    }
+    #service-05 .svc-partner-desc {
+      font-size:.875rem;
+      color:#5f6f83;
+      line-height:1.62;
+      margin-bottom:8px;
+    }
+    #service-05 .svc-partner-link {
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      font-size:.86rem;
+      font-weight:600;
+      color:#8f5e57;
+      text-decoration:underline;
+      text-decoration-color:color-mix(in srgb, var(--service-accent-border) 88%, #fff 12%);
+      text-underline-offset:4px;
+      text-decoration-thickness:1px;
+    }
+    #service-05 .svc-partner-link:hover {
+      color:#81534d;
+      text-decoration-color:color-mix(in srgb, var(--service-accent) 42%, #fff 58%);
+    }
+    #service-05 .svc-partner-link:focus-visible {
+      outline:2px solid color-mix(in srgb, var(--service-accent) 52%, #fff 48%);
+      outline-offset:2px;
+      border-radius:2px;
+    }
+    @media (max-width:768px) {
+      #service-05 .svc-partner-cta {
+        padding-left:44px;
+      }
+      #service-05 .svc-partner-card {
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+      #service-05 .svc-partner-logo {
+        max-width:180px;
+      }
+    }
     .svc-note { background:var(--g100); border:1px solid var(--g300); border-radius:6px; padding:16px 20px; font-size:.875rem; color:var(--g600); line-height:1.7; }
     .svc-note strong { display:block; font-size:.875rem; color:var(--navy); margin-bottom:4px; }
+    #page-service .svc-note.svc-note--web {
+      background:#f4f8fc;
+      border-color:#d6e3f0;
+      border-left:3px solid #3F6692;
+    }
+    #page-service .svc-note.svc-note--web a {
+      color:#2f5c8d;
+      text-decoration-color:#9db7d4;
+      text-underline-offset:3px;
+    }
 
     /* ===== ABOUT PAGE ===== */
     .about-story {
@@ -829,6 +967,10 @@
       .problems-grid { grid-template-columns:1fr; }
       .services { padding:60px 40px; }
       .services-grid { grid-template-columns:1fr 1fr; }
+      .service-card-wide { grid-column:1 / -1; }
+      .s07-layout { grid-template-columns:1fr 1fr; gap:14px 20px; align-items:start; }
+      .s07-col-head { grid-column:1 / -1; }
+      .s07-link-col { grid-column:1 / -1; justify-content:flex-start; }
       .points { padding:60px 40px 80px; }
       .points-flow { flex-direction:column; }
       .points-arrow { transform:rotate(90deg); }
@@ -946,6 +1088,11 @@
       .points-box-list { gap:8px; }
       .points-box-list li { font-size:.9rem; line-height:1.65; }
       .services-grid { grid-template-columns:1fr; }
+      .service-card-wide { grid-column:auto; }
+      .s07-layout { grid-template-columns:1fr; gap:8px; }
+      .s07-col-head { grid-column:auto; }
+      .service-info.s07-compact { padding:12px 14px 10px; }
+      .s07-link-col { grid-column:auto; justify-content:flex-start; }
       .flow-card { padding:26px 20px; }
       .flow-step { grid-template-columns:60px 108px minmax(0,1fr); justify-content:center; column-gap:14px; padding:18px 0 22px; }
       .flow-step-num, .flow-step-media { min-height:111px; }
@@ -1327,12 +1474,13 @@
     <h2 class="section-heading">対応可能な相談領域</h2>
     <p class="section-sub">産廃・リサイクル、工事・設備を中心に<br class="sp-only">幅広くご相談いただけます</p>
     <div class="services-grid">
-      <div class="service-card"><div class="service-card-body"><img src="assets/service_01.png" alt="建設廃材・焼却物処分" class="service-photo"><div class="service-info blue"><div class="service-num">SERVICE 01</div><h3 class="service-title">建設廃材・焼却物処分</h3><p class="service-desc">処分先・相談先のご案内</p><button onclick="navigate('service','service-01')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
+      <div class="service-card"><div class="service-card-body"><img src="assets/service_01.png" alt="建設廃材・焼却物処分" class="service-photo"><div class="service-info sky"><div class="service-num">SERVICE 01</div><h3 class="service-title">建設廃材・焼却物処分</h3><p class="service-desc">処分先・相談先のご案内</p><button onclick="navigate('service','service-01')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
       <div class="service-card"><div class="service-card-body"><img src="assets/service_02.png" alt="太陽光パネル関連" class="service-photo"><div class="service-info yellow"><div class="service-num">SERVICE 02</div><h3 class="service-title">太陽光パネル関連</h3><p class="service-desc">設置・撤去・処分に関するご相談</p><button onclick="navigate('service','service-02')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
-      <div class="service-card"><div class="service-card-body"><img src="assets/service_03.png" alt="廃油・塩ビ樹脂廃材買取" class="service-photo"><div class="service-info blue"><div class="service-num">SERVICE 03</div><h3 class="service-title">廃油・塩ビ樹脂廃材買取</h3><p class="service-desc">買取・リサイクルに関するご相談</p><button onclick="navigate('service','service-03')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
+      <div class="service-card"><div class="service-card-body"><img src="assets/service_03.png" alt="廃油・塩ビ樹脂廃材買取" class="service-photo"><div class="service-info sky"><div class="service-num">SERVICE 03</div><h3 class="service-title">廃油・塩ビ樹脂廃材買取</h3><p class="service-desc">買取・リサイクルに関するご相談</p><button onclick="navigate('service','service-03')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
       <div class="service-card"><div class="service-card-body"><img src="assets/service_04.png" alt="電気工事" class="service-photo"><div class="service-info teal"><div class="service-num">SERVICE 04</div><h3 class="service-title">電気工事</h3><p class="service-desc">設備まわりの工事相談・依頼先のご案内</p><button onclick="navigate('service','service-04')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
-      <div class="service-card"><div class="service-card-body"><img src="assets/service_05.png" alt="足場工事" class="service-photo"><div class="service-info teal"><div class="service-num">SERVICE 05</div><h3 class="service-title">足場工事</h3><p class="service-desc">足場計画や施工相談・依頼先のご案内</p><button onclick="navigate('service','service-05')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
-      <div class="service-card"><div class="service-card-body"><div class="service-info gray s06"><div class="service-num">SERVICE 06</div><h3 class="service-title">その他の相談領域</h3><ul class="service-other-list"><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>お片付け</li><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>粗大ゴミ回収</li><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>遺品整理</li><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>中古車関連事業</li><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>WEB制作（HP・バナー・LP）</li></ul><button onclick="navigate('service','service-06')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
+      <div class="service-card"><div class="service-card-body"><img src="assets/service_05.png" alt="中古車販売・買取" class="service-photo"><div class="service-info coral"><div class="service-num">SERVICE 05</div><h3 class="service-title">中古車販売・買取</h3><p class="service-desc">購入・買い替え・買取のご相談</p><button onclick="navigate('service','service-05')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
+      <div class="service-card"><div class="service-card-body"><img src="assets/service_06.png" alt="WEB制作" class="service-photo"><div class="service-info indigo"><div class="service-num">SERVICE 06</div><h3 class="service-title">WEB制作</h3><p class="service-desc">HP・バナー・LP制作のご相談</p><a href="web-production.html" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+      <div class="service-card service-card-wide"><div class="service-card-body"><div class="service-info gray s06 s07-compact"><div class="s07-layout"><div class="s07-col s07-col-head"><div class="service-num">SERVICE 07</div><h3 class="service-title">その他の相談領域</h3></div><div class="s07-col"><ul class="service-other-list"><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>足場工事</li><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>粗大ゴミ回収</li></ul></div><div class="s07-col"><ul class="service-other-list"><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>お片付け</li><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>遺品整理</li></ul></div><div class="s07-link-col"><button onclick="navigate('service','service-06')" class="service-link s07-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div></div></div>
     </div>
   </div>
 </section>
@@ -1462,7 +1610,7 @@
 <!-- ================= SERVICEページ ================= -->
 <div id="page-service" class="page-content hidden">
   <div class="pg-hero"><span class="pg-hero__en">SERVICE</span><span class="pg-hero__ja">相談できること</span></div>
-  <div class="svc-intro"><h2><span class="svc-intro-main">産廃・リサイクル、<br class="sp-only">工事・設備</span><span class="svc-intro-tail">まわりの</span><br class="pc-only">「どこに相談すればいい？」<br class="sp-only">を整理してつなぎます。</h2><p>建設廃材・焼却物処分、太陽光パネル関連、廃油・塩ビ樹脂廃材買取、電気工事、足場工事を中心に、事業者様のお困りごとを丁寧にヒアリングし、内容に応じて必要な専門事業者・提携先へおつなぎします。</p></div>
+  <div class="svc-intro"><h2><span class="svc-intro-main">産廃・リサイクル、<br class="sp-only">工事・設備</span><span class="svc-intro-tail">まわりの</span><br class="pc-only">「どこに相談すればいい？」<br class="sp-only">を整理してつなぎます。</h2><p>建設廃材・焼却物処分、太陽光パネル関連、廃油・塩ビ樹脂廃材買取、電気工事、中古車販売・買取を中心に、事業者様のお困りごとを丁寧にヒアリングし、内容に応じて必要な専門事業者・提携先へおつなぎします。</p></div>
 
   <div id="service-01" class="svc-detail">
     <div class="svc-detail__inner">
@@ -1612,31 +1760,45 @@
     <div class="svc-detail__inner">
       <div class="svc-detail__body svc01-head">
         <span class="svc-detail__num">SERVICE 05</span>
-        <h3 class="svc-detail__title">足場工事</h3>
-        <p class="svc-detail__desc">工事現場や建物まわりの足場工事について、条件や現場状況を整理し、対応可能な専門先へおつなぎします。</p>
+        <h3 class="svc-detail__title">中古車販売・買取</h3>
+        <p class="svc-detail__desc">中古車の購入・買い替え・買取について、条件やご希望を整理し、対応可能な専門先へおつなぎします。ご相談内容に応じて、株式会社Solviaオート商会をご紹介します。</p>
       </div>
       <div class="svc01-body">
-        <div class="svc-detail__img">
-          <img src="assets/service_05.png" alt="足場工事">
+        <div>
+          <div class="svc-detail__img">
+            <img src="assets/service_05.png" alt="中古車販売・買取">
+          </div>
+          <div class="svc-partner-cta">
+            <span class="svc-partner-label">提携・ご紹介先</span>
+            <div class="svc-partner-card">
+              <div class="svc-partner-logo">
+                <img src="assets/solvia_2.webp" alt="株式会社Solviaオート商会 ロゴ">
+              </div>
+              <div class="svc-partner-info">
+                <div class="svc-partner-name">株式会社Solviaオート商会</div>
+                <a href="https://www.solviainfo.jp/" target="_blank" rel="noopener noreferrer" class="svc-partner-link">公式サイトを見る →</a>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="svc-detail__stack">
           <div class="svc-detail__box">
             <div class="svc-detail__box-label">こんなご相談に対応しています</div>
             <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>足場工事の依頼先を探している</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>現場に必要な足場の内容を相談したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>工事条件に合う専門事業者を探している</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>見積もり前に条件を整理したい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>中古車を探している</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>車を買い替えたい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>今の車を売りたい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>条件に合う車を相談したい</li>
             </ul>
           </div>
           <div class="svc-detail__box svc-detail__box--points">
             <div class="svc-detail__box-label">整理するポイント</div>
             <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>建物や現場の種類</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>足場が必要な範囲</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>作業場所や周辺環境</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>希望時期や工期</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>安全面で確認が必要な内容</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>希望車種・用途</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>ご予算</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>年式・走行距離</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>車検の有無</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>買取・下取りの希望</li>
             </ul>
           </div>
         </div>
@@ -1659,11 +1821,10 @@
           <div class="svc-detail__box">
             <div class="svc-detail__box-label">こんなご相談に対応しています</div>
             <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>お片付けについて相談したい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>足場工事について相談したい</li>
               <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>粗大ゴミ回収の依頼先を探している</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>お片付けについて相談したい</li>
               <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>遺品整理について相談したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>中古車関連事業について相談したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>WEB制作やバナー・LPについて相談したい</li>
             </ul>
           </div>
           <div class="svc-detail__box svc-detail__box--points">
@@ -1678,6 +1839,12 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="svc-note-wrap" style="max-width:900px;margin:0 auto 28px;padding:0 40px">
+    <div class="svc-note svc-note--web">
+      <strong>WEB制作について</strong>詳細ページを準備中です。<a href="web-production.html">WEB制作について詳しくはこちら</a>
     </div>
   </div>
 
