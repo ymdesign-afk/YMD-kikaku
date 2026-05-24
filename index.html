@@ -532,7 +532,17 @@
     .footer-copy { padding:2rem 0; text-align:center; font-size:.875rem; color:var(--g500); }
 
     /* ===== PAGE HERO (child pages) ===== */
-    .pg-hero { background:var(--navy); padding:62px 24px; text-align:center; border-bottom:1px solid rgba(255,255,255,.08); }
+    .pg-hero {
+      background:var(--navy);
+      padding:62px 24px;
+      min-height:220px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
     .pg-hero__en { display:block; font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:700; color:#fff; letter-spacing:4px; margin-bottom:8px; }
     .pg-hero__ja { display:block; font-size:.8125rem; color:rgba(255,255,255,.5); letter-spacing:3px; font-weight:700; }
 
@@ -642,48 +652,30 @@
     #service-06 .svc01-body { align-items:start; }
     #service-06 .svc01-body .svc-detail__img { align-self:start; }
     #service-06 .svc01-body .svc-detail__img { border-color:var(--service-accent-border); }
-    #service-06 .svc01-body .svc-detail__img { padding:10px 10px 20px; background:#fff; }
-    #service-06 .svc01-body .svc-detail__img img { height:auto; object-fit:contain; transform:scale(1.06); transform-origin:center center; }
+    #service-06 .svc01-body .svc-detail__img { padding:0; background:#fff; }
+    #service-06 .svc01-body .svc-detail__img img { height:300px; object-fit:cover; transform:none; }
     #service-06.svc-detail { border-bottom:none; }
     #service-01.svc-detail { padding-bottom:68px; }
     #service-05 .svc-partner-cta {
       margin-top:12px;
-      padding:12px 14px 12px 46px;
-      min-height:108px;
-      border:1px solid color-mix(in srgb, var(--service-accent-border) 84%, #fff 16%);
-      border-left:none;
-      border-radius:7px;
-      background:#fff;
-      position:relative;
-      overflow:hidden;
+      padding:0;
     }
     #service-05 .svc-partner-label {
-      position:absolute;
-      left:0;
-      top:0;
-      bottom:0;
-      width:34px;
-      margin:0;
-      writing-mode:vertical-rl;
-      text-orientation:mixed;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:8px 0;
-      font-size:.66rem;
+      display:block;
+      margin:0 0 8px;
+      font-size:.73rem;
       letter-spacing:.08em;
       font-weight:700;
       line-height:1.2;
-      color:#fff;
-      background:color-mix(in srgb, var(--service-accent) 88%, #fff 12%);
-      border-radius:0;
+      color:#7e5c56;
     }
     #service-05 .svc-partner-card {
       display:grid;
       grid-template-columns:120px 1fr;
       gap:12px;
       align-items:center;
-      margin-top:8px;
+      width:fit-content;
+      margin-left:auto;
     }
     #service-05 .svc-partner-info {
       display:flex;
@@ -692,21 +684,20 @@
     }
     #service-05 .svc-partner-logo {
       border:none;
-      border-radius:6px;
-      background:#fff;
-      padding:6px;
+      padding:0;
     }
     #service-05 .svc-partner-logo img {
       display:block;
-      width:100%;
+      width:85%;
       height:auto;
+      margin:0 auto;
     }
     #service-05 .svc-partner-name {
       font-size:.94rem;
       font-weight:700;
       color:#3d4f62;
-      line-height:1.4;
-      margin-bottom:4px;
+      line-height:1.3;
+      margin-bottom:2px;
       white-space:nowrap;
     }
     #service-05 .svc-partner-desc {
@@ -721,43 +712,52 @@
       gap:4px;
       font-size:.86rem;
       font-weight:600;
-      color:#8f5e57;
+      color:#3d4f62;
       text-decoration:underline;
-      text-decoration-color:color-mix(in srgb, var(--service-accent-border) 88%, #fff 12%);
+      text-decoration-color:#3d4f62;
       text-underline-offset:4px;
       text-decoration-thickness:1px;
     }
     #service-05 .svc-partner-link:hover {
-      color:#81534d;
-      text-decoration-color:color-mix(in srgb, var(--service-accent) 42%, #fff 58%);
+      color:#2f4257;
+      text-decoration-color:#2f4257;
     }
     #service-05 .svc-partner-link:focus-visible {
       outline:2px solid color-mix(in srgb, var(--service-accent) 52%, #fff 48%);
       outline-offset:2px;
       border-radius:2px;
     }
+    #service-05 .svc-partner-cta--sp { display:none; }
     @media (max-width:768px) {
-      #service-05 .svc-partner-cta {
-        padding-left:44px;
-      }
       #service-05 .svc-partner-card {
-        grid-template-columns:1fr;
-        gap:10px;
+        grid-template-columns:100px 1fr;
+        gap:12px;
+        align-items:center;
       }
       #service-05 .svc-partner-logo {
-        max-width:180px;
+        max-width:100px;
       }
+      #service-05 .svc-partner-logo img { width:100%; }
+      #service-05 .svc-partner-cta--pc { display:none; }
+      #service-05 .svc-partner-cta--sp { display:block; margin-top:14px; }
     }
     .svc-note { background:var(--g100); border:1px solid var(--g300); border-radius:6px; padding:16px 20px; font-size:.875rem; color:var(--g600); line-height:1.7; }
     .svc-note strong { display:block; font-size:.875rem; color:var(--navy); margin-bottom:4px; }
     #page-service .svc-note.svc-note--web {
-      background:#f4f8fc;
-      border-color:#d6e3f0;
-      border-left:3px solid #3F6692;
+      border:none;
+      border-radius:8px;
+      padding:18px 20px;
+      background:
+        linear-gradient(rgba(28,50,77,.48), rgba(28,50,77,.48)),
+        url('assets/haikei_m.jpg') center/cover no-repeat;
+      color:#fff;
+    }
+    #page-service .svc-note.svc-note--web strong {
+      color:#fff;
     }
     #page-service .svc-note.svc-note--web a {
-      color:#2f5c8d;
-      text-decoration-color:#9db7d4;
+      color:#fff;
+      text-decoration-color:rgba(255,255,255,.82);
       text-underline-offset:3px;
     }
 
@@ -881,6 +881,18 @@
     .contact-form__input, .contact-form__select, .contact-form__textarea { width:100%; border:1px solid var(--g400); border-radius:4px; padding:12px; font-family:inherit; font-size:.9375rem; color:var(--g800); background:#fff; outline:none; transition:border-color .2s; }
     .contact-form__input:focus, .contact-form__select:focus, .contact-form__textarea:focus { border-color:var(--navy); }
     .contact-form__textarea { height:180px; resize:vertical; }
+    @media (min-width:769px) {
+      #page-contact .contact-form__select {
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        appearance:none;
+        padding-right:48px;
+        background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3.5 6l4.5 4 4.5-4' stroke='%23374451' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat:no-repeat;
+        background-position:right 24px center;
+        background-size:14px 14px;
+      }
+    }
     .contact-form__radio-wrap { display:flex; gap:32px; border:1px solid var(--g400); border-radius:4px; padding:12px 16px; background:#fff; }
     .contact-form__radio { display:flex; align-items:center; gap:8px; font-size:.9375rem; color:var(--g800); }
     .contact-form__privacy { display:flex; align-items:center; gap:8px; font-size:.875rem; color:var(--g600); background:var(--g100); border:1px solid var(--g300); border-radius:4px; padding:16px; }
@@ -970,7 +982,7 @@
       .service-card-wide { grid-column:1 / -1; }
       .s07-layout { grid-template-columns:1fr 1fr; gap:14px 20px; align-items:start; }
       .s07-col-head { grid-column:1 / -1; }
-      .s07-link-col { grid-column:1 / -1; justify-content:flex-start; }
+      .s07-link-col { grid-column:1 / -1; justify-content:flex-end; }
       .points { padding:60px 40px 80px; }
       .points-flow { flex-direction:column; }
       .points-arrow { transform:rotate(90deg); }
@@ -1092,7 +1104,7 @@
       .s07-layout { grid-template-columns:1fr; gap:8px; }
       .s07-col-head { grid-column:auto; }
       .service-info.s07-compact { padding:12px 14px 10px; }
-      .s07-link-col { grid-column:auto; justify-content:flex-start; }
+      .s07-link-col { grid-column:auto; justify-content:flex-end; }
       .flow-card { padding:26px 20px; }
       .flow-step { grid-template-columns:60px 108px minmax(0,1fr); justify-content:center; column-gap:14px; padding:18px 0 22px; }
       .flow-step-num, .flow-step-media { min-height:111px; }
@@ -1181,7 +1193,7 @@
       #page-service .svc01-body .svc-detail__box-label { margin-bottom:10px; }
       #page-service .svc01-body .svc-detail__list { gap:7px; }
       #page-service .svc01-body .svc-detail__list.tight li { font-size:.9rem; line-height:1.72; }
-      #service-06 .svc01-body .svc-detail__img img { height:auto; transform:scale(1.04); }
+      #service-06 .svc01-body .svc-detail__img img { height:220px; object-fit:cover; transform:none; }
     }
     @media (max-width:480px) {
       .sp-only { display:inline; }
@@ -1322,7 +1334,7 @@
       .footer-nav a, .footer-nav button { font-size:.89rem; }
       .mobile-nav button, .mobile-nav a { padding:.95rem 1rem; font-size:.95rem; }
       .hamburger { padding:9px; margin-right:2px; }
-      .pg-hero { padding:42px 16px; }
+      .pg-hero { padding:42px 16px; min-height:170px; }
       .svc-detail__inner { padding:0 16px; }
       .svc-detail { padding:48px 0; }
       #page-service .svc-intro h2 { line-height:1.55; }
@@ -1337,8 +1349,8 @@
       #page-service .svc01-body .svc-detail__img img { height:198px; }
       #page-service .svc01-body .svc-detail__box { padding:14px 14px; border-radius:6px; }
       #page-service .svc01-body .svc-detail__list.tight li { font-size:.875rem; line-height:1.7; }
-      #service-06 .svc01-body .svc-detail__img { padding:8px 8px 20px; }
-      #service-06 .svc01-body .svc-detail__img img { transform:scale(1.02); }
+      #service-06 .svc01-body .svc-detail__img { padding:0; }
+      #service-06 .svc01-body .svc-detail__img img { height:198px; object-fit:cover; transform:none; }
       .about-story { padding:48px 16px 58px; }
       #page-about .about-story {
         padding:50px 16px 62px;
@@ -1404,6 +1416,7 @@
         <ul class="nav-list">
           <li><button onclick="navigate('top')"     class="nav-btn nav-top">TOP</button></li>
           <li><button onclick="navigate('service')" class="nav-btn nav-service">サービス</button></li>
+          <li><a href="web-production.html">WEB制作</a></li>
           <li><button onclick="navigate('about')"   class="nav-btn nav-about">会社概要</button></li>
           <li><button onclick="navigate('faq')"     class="nav-btn nav-faq">よくある相談・FAQ</button></li>
         </ul>
@@ -1418,6 +1431,7 @@
 <nav class="mobile-nav" id="mobileNav">
   <button onclick="navigate('top')">TOP</button>
   <button onclick="navigate('service')">サービス</button>
+  <a href="web-production.html">WEB制作</a>
   <button onclick="navigate('about')">会社概要</button>
   <button onclick="navigate('faq')">よくある相談・FAQ</button>
   <button onclick="navigate('contact')">お問い合わせ</button>
@@ -1768,7 +1782,7 @@
           <div class="svc-detail__img">
             <img src="assets/service_05.png" alt="中古車販売・買取">
           </div>
-          <div class="svc-partner-cta">
+          <div class="svc-partner-cta svc-partner-cta--pc">
             <span class="svc-partner-label">提携・ご紹介先</span>
             <div class="svc-partner-card">
               <div class="svc-partner-logo">
@@ -1800,6 +1814,18 @@
               <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>車検の有無</li>
               <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>買取・下取りの希望</li>
             </ul>
+          </div>
+        </div>
+      </div>
+      <div class="svc-partner-cta svc-partner-cta--sp">
+        <span class="svc-partner-label">提携・ご紹介先</span>
+        <div class="svc-partner-card">
+          <div class="svc-partner-logo">
+            <img src="assets/solvia_2.webp" alt="株式会社Solviaオート商会 ロゴ">
+          </div>
+          <div class="svc-partner-info">
+            <div class="svc-partner-name">株式会社Solviaオート商会</div>
+            <a href="https://www.solviainfo.jp/" target="_blank" rel="noopener noreferrer" class="svc-partner-link">公式サイトを見る →</a>
           </div>
         </div>
       </div>
@@ -1842,13 +1868,12 @@
     </div>
   </div>
 
-  <div class="svc-note-wrap" style="max-width:900px;margin:0 auto 28px;padding:0 40px">
+  <div class="svc-note-wrap" style="max-width:900px;margin:0 auto 28px;padding:0 40px"><div class="svc-note"><strong>※ご注意</strong>各種処分・工事等は、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。</div></div>
+  <div class="svc-note-wrap" style="max-width:900px;margin:0 auto 80px;padding:0 40px">
     <div class="svc-note svc-note--web">
       <strong>WEB制作について</strong>詳細ページを準備中です。<a href="web-production.html">WEB制作について詳しくはこちら</a>
     </div>
   </div>
-
-  <div class="svc-note-wrap" style="max-width:900px;margin:0 auto 80px;padding:0 40px"><div class="svc-note"><strong>※ご注意</strong>各種処分・工事等は、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。</div></div>
 </div><!-- /page-service -->
 
 <!-- ================= ABOUTページ ================= -->
@@ -2066,6 +2091,7 @@
           <button onclick="navigate('top')">TOP</button>
           <button onclick="navigate('about')">ABOUT</button>
           <button onclick="navigate('service')">SERVICE</button>
+          <a href="web-production.html">WEB PRODUCTION</a>
           <button onclick="navigate('faq')">FAQ</button>
         </nav>
       </div>
@@ -2220,6 +2246,10 @@
   }
 
   function parseHashState() {
+    const queryPage = new URLSearchParams(window.location.search).get('page');
+    if (queryPage && PAGE_IDS.includes(queryPage)) {
+      return { page: queryPage, hashId: null };
+    }
     const raw = window.location.hash.replace(/^#/, '').trim();
     if (!raw) return { page: 'top', hashId: null };
     const [page, hashId] = raw.split('/');

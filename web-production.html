@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEB制作 | YMデザイン企画</title>
+  <meta name="description" content="YMデザイン企画のWEB制作ページ。ホームページ・LP・バナー制作から導線設計、更新改善まで、目的に合わせて丁寧に制作します。">
+  <meta name="robots" content="index,follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:#1b3f69;
+      --blue:#2f7fc4;
+      --g100:#f9fafb;
+      --g200:#f3f4f6;
+      --g300:#e5e7eb;
+      --g500:#6b7280;
+      --g600:#4b5563;
+      --g700:#374151;
+      --g800:#1f2937;
+    }
+    *, *::before, *::after { box-sizing:border-box; }
+    body { margin:0; font-family:'Noto Sans JP',sans-serif; color:var(--g600); background:#fff; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
+    ul { margin:0; padding:0; list-style:none; }
+    h1,h2,h3,p { margin:0; }
+
+    .site-header { position:sticky; top:0; z-index:1000; background:#fff; border-bottom:1px solid var(--g300); }
+    .header-inner { max-width:1440px; margin:0 auto; height:78px; display:flex; align-items:center; justify-content:space-between; padding:0 24px; }
+    .header-logo img { height:52px; width:auto; }
+    .header-right { display:flex; align-items:center; }
+    .nav-list { display:flex; align-items:center; margin-right:34px; }
+    .nav-list a { display:flex; align-items:center; height:36px; padding:0 16px; font-size:.9375rem; font-weight:500; color:var(--navy); white-space:nowrap; }
+    .nav-list a:hover { opacity:.7; }
+    .nav-list a.active { text-decoration:underline; text-decoration-color:var(--navy); text-decoration-thickness:2px; text-underline-offset:11px; }
+    .header-cta { display:flex; align-items:center; justify-content:center; height:78px; padding:0 24px; background:var(--navy); color:#fff; font-size:.9375rem; font-weight:700; white-space:nowrap; }
+    .header-cta:hover { background:#0f2744; }
+    .hamburger { display:none; position:relative; width:40px; height:40px; padding:8px; margin-right:8px; background:none; border:none; }
+    .hamburger span { position:absolute; left:8px; width:24px; height:2px; background:var(--navy); transition:transform .24s ease, opacity .2s ease, top .24s ease; }
+    .hamburger span:nth-child(1) { top:12px; }
+    .hamburger span:nth-child(2) { top:19px; }
+    .hamburger span:nth-child(3) { top:26px; }
+    .hamburger.open span:nth-child(1) { top:19px; transform:rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+    .hamburger.open span:nth-child(3) { top:19px; transform:rotate(-45deg); }
+    .mobile-nav { display:none; flex-direction:column; background:#fff; border-bottom:1px solid var(--g300); }
+    .mobile-nav.open { display:flex; }
+    .mobile-nav a { padding:1rem 1.25rem; font-size:1rem; font-weight:500; color:var(--navy); border-bottom:1px solid var(--g300); }
+
+    .pg-hero {
+      background:var(--navy);
+      padding:62px 24px;
+      min-height:220px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .pg-hero__en { display:block; font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:700; color:#fff; letter-spacing:4px; margin-bottom:8px; }
+    .pg-hero__ja { display:block; font-size:.8125rem; color:rgba(255,255,255,.55); letter-spacing:3px; font-weight:700; }
+
+    .web-wrap { max-width:1080px; margin:0 auto; padding:72px 40px 88px; }
+    .web-intro {
+      max-width:760px;
+      margin:0 auto 38px;
+      font-size:1rem;
+      color:#5c6f84;
+      line-height:1.9;
+      text-align:center;
+    }
+    .web-intro-br-sp { display:none; }
+    .web-sec + .web-sec { margin-top:56px; }
+    .sec-heading { font-family:'Noto Serif JP',serif; font-size:1.75rem; line-height:1.5; color:var(--navy); margin-bottom:20px; }
+
+    .web-feature-sec {
+      background:linear-gradient(180deg, #f4faff 0%, #eef6ff 100%);
+      border:1px solid #d8e6f4;
+      border-radius:16px;
+      padding:34px 28px 30px;
+    }
+    .web-feature-sec .sec-heading { text-align:center; margin-bottom:24px; }
+    .web-feature-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .web-feature-card {
+      background:#fff;
+      border:1px solid #dde8f3;
+      border-radius:14px;
+      min-height:292px;
+      padding:18px 14px 16px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      text-align:center;
+      box-shadow:0 6px 14px rgba(23,58,96,.06);
+    }
+    .web-feature-illust {
+      width:100%;
+      max-width:272px;
+      height:216px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:2px;
+      background:transparent;
+      border-radius:0;
+      padding:0;
+    }
+    .web-feature-illust img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+    .web-feature-label {
+      margin-top:0;
+      font-size:1rem;
+      font-weight:700;
+      line-height:1.6;
+      color:#36516e;
+    }
+
+    .recommend-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 20px; }
+    .recommend-list li { display:flex; align-items:flex-start; gap:10px; background:#f6fafe; border:1px solid #d8e5f2; border-radius:9px; padding:13px 14px; color:#39526d; }
+    .recommend-list li::before { content:'✓'; color:#2f7fc4; font-weight:700; }
+
+    .works-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .work-card { border:1px solid #dce6f0; border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 4px 14px rgba(18,49,84,.06); display:flex; flex-direction:column; }
+    .work-card__img-wrap { aspect-ratio:16 / 10; background:linear-gradient(135deg,#eef5fc 0%, #ddeaf7 100%); }
+    .work-card__img { width:100%; height:100%; object-fit:cover; }
+    .work-card__body { padding:14px; display:flex; flex-direction:column; height:100%; }
+    .work-card__cats { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+    .work-card__cat { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.04em; color:#40658c; background:#e8f2fb; border-radius:999px; padding:5px 10px; }
+    .work-card__title { font-family:'Noto Serif JP',serif; font-size:1.05rem; color:var(--navy); line-height:1.5; margin-bottom:8px; }
+    .work-card__desc { font-size:.92rem; color:#576a80; line-height:1.75; }
+    .work-card__detail {
+      margin-top:10px;
+      padding-top:10px;
+      border-top:1px solid #e6edf5;
+    }
+    .work-card__detail-title {
+      font-size:.75rem;
+      font-weight:700;
+      color:#4f6580;
+      margin-bottom:6px;
+      letter-spacing:.02em;
+    }
+    .work-card__detail-text { font-size:.84rem; color:#60748b; line-height:1.72; }
+    .work-card__em { color:#2f6fb0; font-weight:700; }
+    .works-portfolio-cta {
+      margin-top:20px;
+      background:#f7f9fc;
+      border:1px solid #dce6f0;
+      border-radius:12px;
+      padding:22px 18px;
+      text-align:center;
+    }
+    .works-portfolio-cta h3 {
+      font-family:'Noto Serif JP',serif;
+      font-size:1.18rem;
+      color:var(--navy);
+      margin-bottom:8px;
+      line-height:1.5;
+    }
+    .works-portfolio-cta p {
+      font-size:.92rem;
+      color:#5f7389;
+      line-height:1.8;
+      margin-bottom:14px;
+    }
+    .works-portfolio-cta__btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:auto;
+      padding:0 0 6px;
+      border:none;
+      border-bottom:1px solid rgba(27,63,105,.42);
+      border-radius:0;
+      color:#1b3f69;
+      background:none;
+      font-size:1.02rem;
+      font-weight:700;
+      line-height:1.4;
+    }
+    .works-portfolio-cta__btn:hover { opacity:.72; }
+    .works-portfolio-cta__sub { display:none; }
+
+    .flow-list { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; }
+    .flow-step { background:#fff; border:1px solid #d8e4ef; border-radius:10px; padding:14px 12px; text-align:center; }
+    .flow-step__no { display:block; font-family:'Cormorant Garamond',serif; font-size:.8rem; letter-spacing:1.8px; color:#7590ad; margin-bottom:6px; }
+    .flow-step__title { font-size:.95rem; font-weight:700; color:#35506d; line-height:1.55; }
+
+    .web-cta { margin-top:70px; border-radius:12px; overflow:hidden; background:linear-gradient(rgba(21,51,84,.7), rgba(21,51,84,.7)), url('assets/haikei_m.jpg') center/cover no-repeat; border:1px solid #cbd9e8; }
+    .web-cta__inner { padding:40px 34px; color:#fff; }
+    .web-cta__title { font-family:'Noto Serif JP',serif; font-size:1.5rem; line-height:1.6; margin-bottom:12px; }
+    .web-cta__body { font-size:.98rem; line-height:1.9; color:#eef4fb; margin-bottom:20px; }
+    .web-cta__btn { display:inline-flex; align-items:center; justify-content:center; min-width:250px; height:46px; background:#fff; color:#1b3f69; border-radius:9px; font-size:.95rem; font-weight:700; }
+
+    .site-footer { position:relative; background:linear-gradient(135deg,#f9fcff 0%, #e6edf7 52%, #c6dcf3 100%); padding:0; margin-top:0; }
+    .site-footer::before { content:''; position:absolute; top:0; left:0; width:100%; height:2px; background:linear-gradient(90deg,rgba(228,214,165,0) 0%, rgba(217,197,140,.72) 22%, rgba(196,219,240,.82) 54%, rgba(217,197,140,.64) 82%, rgba(228,214,165,0) 100%); }
+    .footer-wm {
+      width:100%;
+      text-align:center;
+      font-family:'Noto Serif JP',serif;
+      font-weight:700;
+      font-size:4rem;
+      color:rgba(40,89,142,.08);
+      white-space:nowrap;
+      line-height:1;
+      padding:0;
+      overflow:hidden;
+      pointer-events:none;
+    }
+    .footer-inner { max-width:1140px; margin:0 auto; padding:0 108px; }
+    .footer-grid { display:grid; grid-template-columns:460px max-content max-content; gap:1.5rem; padding:3rem 0; border-bottom:1px solid #dfe8f2; justify-content:center; }
+    .footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:1.5rem; }
+    .footer-logo img { height:66px; width:auto; }
+    .footer-desc { font-size:.825rem; color:#748397; line-height:1.92; margin-bottom:1.5rem; }
+    .footer-email { display:inline-flex; align-items:center; gap:8px; font-size:.875rem; color:var(--navy); }
+    .footer-email:hover { opacity:.7; }
+    .footer-col h4 { font-size:.8125rem; font-weight:700; color:#5c6c80; letter-spacing:1.8px; text-transform:uppercase; margin-bottom:1.45rem; }
+    .footer-nav { display:flex; flex-direction:column; gap:1rem; }
+    .footer-nav a { display:flex; align-items:center; gap:8px; font-size:.9375rem; color:var(--g600); line-height:1.65; }
+    .footer-nav a::before { content:'–'; font-size:.875rem; color:#6b7280; }
+    .footer-nav a:hover { color:var(--navy); }
+    .footer-grid > .footer-col:last-child { margin-left:36px; }
+    .footer-copy { padding:2rem 0; text-align:center; font-size:.875rem; color:#6b7280; }
+
+    @media (max-width:980px) {
+      .web-feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .works-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .flow-list { grid-template-columns:repeat(3,minmax(0,1fr)); }
+      .footer-inner { padding:0 24px; }
+      .footer-grid { grid-template-columns:1fr; gap:2rem; }
+      .footer-grid > .footer-col:last-child { margin-left:0; }
+    }
+    @media (max-width:1024px) {
+      .site-header { position:fixed; top:0; left:0; right:0; }
+      body { padding-top:78px; }
+      .nav-list, .header-cta { display:none; }
+      .hamburger { display:flex; }
+      .mobile-nav {
+        position:fixed;
+        top:78px;
+        left:0;
+        right:0;
+        z-index:999;
+        max-height:calc(100dvh - 78px);
+        overflow-y:auto;
+        box-shadow:0 8px 20px rgba(12,38,68,.12);
+      }
+    }
+    @media (max-width:768px) {
+      .footer-wm { font-size:2.5rem; }
+      .pg-hero { padding:48px 18px; }
+      .pg-hero { min-height:170px; }
+      .pg-hero__en { font-size:2rem; }
+      .web-wrap { padding:42px 16px 56px; }
+      .web-intro { margin:0 auto 26px; font-size:.92rem; line-height:1.85; }
+      .web-intro-br-sp { display:block; }
+      .web-sec + .web-sec { margin-top:42px; }
+      .sec-heading { font-size:1.4rem; margin-bottom:14px; }
+      .web-feature-sec { padding:24px 14px 18px; border-radius:12px; }
+      .web-feature-sec .sec-heading { margin-bottom:16px; }
+      .web-feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+      .web-feature-card {
+        min-height:0;
+        aspect-ratio:1 / 1;
+        border-radius:12px;
+        padding:6px 8px 18px;
+        overflow:hidden;
+      }
+      .web-feature-illust { max-width:180px; height:128px; margin:0 0 -2px; }
+      .web-feature-label { font-size:.9rem; line-height:1.35; margin-top:-2px; }
+      .web-feature-card:nth-child(6) .web-feature-label { margin-top:-12px; }
+      .recommend-list { grid-template-columns:1fr; gap:10px; }
+      .works-grid { grid-template-columns:1fr; gap:14px; }
+      .works-portfolio-cta { margin-top:16px; padding:18px 14px; }
+      .works-portfolio-cta h3 { font-size:1.06rem; }
+      .works-portfolio-cta p { font-size:.88rem; margin-bottom:12px; }
+      .works-portfolio-cta__btn { min-width:0; font-size:.98rem; }
+      .flow-list { grid-template-columns:1fr; gap:9px; }
+      .web-cta { margin-top:48px; }
+      .web-cta__inner { padding:30px 16px; }
+      .web-cta__title { font-size:1.25rem; }
+      .web-cta__body { font-size:.9rem; }
+      .web-cta__btn { min-width:100%; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo" aria-label="YMデザイン企画 トップ">
+      <img src="assets/rogo_01.png" alt="YMデザイン企画">
+    </a>
+    <div class="header-right">
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html?page=top">TOP</a></li>
+          <li><a href="index.html?page=service">サービス</a></li>
+          <li><a href="web-production.html" class="active">WEB制作</a></li>
+          <li><a href="index.html?page=about">会社概要</a></li>
+          <li><a href="index.html?page=faq">よくある相談・FAQ</a></li>
+        </ul>
+      </nav>
+      <a href="index.html?page=contact" class="header-cta">お問い合わせ</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html?page=top">TOP</a>
+  <a href="index.html?page=service">サービス</a>
+  <a href="web-production.html">WEB制作</a>
+  <a href="index.html?page=about">会社概要</a>
+  <a href="index.html?page=faq">よくある相談・FAQ</a>
+  <a href="index.html?page=contact">お問い合わせ</a>
+</nav>
+
+<main>
+  <section class="pg-hero">
+    <span class="pg-hero__en">WEB PRODUCTION</span>
+    <span class="pg-hero__ja">WEB制作</span>
+  </section>
+
+  <div class="web-wrap">
+    <p class="web-intro">想いをくみ取り、伝わる形に。<br>事業の目的や届けたい相手に合わせて、<br class="web-intro-br-sp">ホームページ・LP・バナーなどを制作します。</p>
+    <section class="web-sec web-feature-sec">
+      <h2 class="sec-heading">WEB制作でできること</h2>
+      <div class="web-feature-grid">
+        <article class="web-feature-card">
+          <div class="web-feature-illust"><img src="assets/web-production-homepage.png" alt="ホームページ制作イラスト" loading="lazy" decoding="async"></div>
+          <p class="web-feature-label">ホームページ制作</p>
+        </article>
+        <article class="web-feature-card">
+          <div class="web-feature-illust"><img src="assets/web-production-lp.png" alt="LP制作イラスト" loading="lazy" decoding="async"></div>
+          <p class="web-feature-label">LP制作</p>
+        </article>
+        <article class="web-feature-card">
+          <div class="web-feature-illust"><img src="assets/web-production-banner.png" alt="バナー制作イラスト" loading="lazy" decoding="async"></div>
+          <p class="web-feature-label">バナー制作</p>
+        </article>
+        <article class="web-feature-card">
+          <div class="web-feature-illust"><img src="assets/web-production-sns.png" alt="SNS投稿画像制作イラスト" loading="lazy" decoding="async"></div>
+          <p class="web-feature-label">SNS投稿画像制作</p>
+        </article>
+        <article class="web-feature-card">
+          <div class="web-feature-illust"><img src="assets/web-production-structure.png" alt="構成整理・導線設計イラスト" loading="lazy" decoding="async"></div>
+          <p class="web-feature-label">構成整理・導線設計</p>
+        </article>
+        <article class="web-feature-card">
+          <div class="web-feature-illust"><img src="assets/web-production-support.png" alt="必要に応じた更新・改善サポートイラスト" loading="lazy" decoding="async"></div>
+          <p class="web-feature-label">必要に応じた更新・改善サポート</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="web-sec">
+      <h2 class="sec-heading">こんな方におすすめ</h2>
+      <ul class="recommend-list">
+        <li>ホームページを新しく作りたい</li>
+        <li>今のサイトを見直したい</li>
+        <li>サービスの魅力を整理して伝えたい</li>
+        <li>集客や問い合わせにつながる導線を整えたい</li>
+        <li>デザインや発信の雰囲気を統一したい</li>
+      </ul>
+    </section>
+
+    <section class="web-sec">
+      <h2 class="sec-heading">制作実績</h2>
+      <div class="works-grid">
+        <article class="work-card">
+          <div class="work-card__img-wrap"><img src="assets/works/works-01.webp" alt="集客LP制作" class="work-card__img" loading="lazy" decoding="async"></div>
+          <div class="work-card__body">
+            <div class="work-card__cats"><span class="work-card__cat">LP制作</span><span class="work-card__cat">コピー改善</span></div>
+            <h3 class="work-card__title">集客LP制作</h3>
+            <p class="work-card__desc">リスト獲得を目的としたLPを、ターゲットの悩みに寄り添う構成に全面見直し。読んで行動したくなる流れを意識して制作しました。</p>
+            <div class="work-card__detail">
+              <p class="work-card__detail-title">▸ 課題と取り組み</p>
+              <p class="work-card__detail-text">既存のLPで「刺さらない」という課題をヒアリング。ターゲット像を再定義し、ファーストビューと構成を全面改善。<span class="work-card__em">リスト獲得単価が約半分に。</span>その後も継続してご依頼をいただいています。</p>
+            </div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__img-wrap"><img src="assets/works/works-02.webp" alt="事業者向けホームページ" class="work-card__img" loading="lazy" decoding="async"></div>
+          <div class="work-card__body">
+            <div class="work-card__cats"><span class="work-card__cat">HP制作</span><span class="work-card__cat">AI活用</span></div>
+            <h3 class="work-card__title">事業者向けホームページ</h3>
+            <p class="work-card__desc">AIツールを活用したスピード制作で、クライアントの世界観をくみ取ったシンプルで伝わるホームページを制作しました。</p>
+            <div class="work-card__detail">
+              <p class="work-card__detail-title">▸ 課題と取り組み</p>
+              <p class="work-card__detail-text">「何を伝えればいいかわからない」という状態からスタート。ヒアリングで想いを整理し、AIツールを活用しながら短期間でクオリティの高いサイトを完成させました。</p>
+            </div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__img-wrap"><img src="assets/works/works-03.webp" alt="コーポレートサイト" class="work-card__img" loading="lazy" decoding="async"></div>
+          <div class="work-card__body">
+            <div class="work-card__cats"><span class="work-card__cat">HP制作</span><span class="work-card__cat">AI活用</span><span class="work-card__cat">継続依頼</span></div>
+            <h3 class="work-card__title">コーポレートサイト</h3>
+            <p class="work-card__desc">AIを使ったコンテンツ制作と組み合わせ、短納期でクオリティの高いコーポレートサイトを制作。継続依頼につながっています。</p>
+            <div class="work-card__detail">
+              <p class="work-card__detail-title">▸ 課題と取り組み</p>
+              <p class="work-card__detail-text">短納期・低コストでの制作希望に対し、AIツールを積極活用。デザインの丁寧さは落とさず、スピーディに納品。継続サポートへとつながっています。</p>
+            </div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__img-wrap"><img src="assets/works/works-04.webp" alt="SNS運用サポート" class="work-card__img" loading="lazy" decoding="async"></div>
+          <div class="work-card__body">
+            <div class="work-card__cats"><span class="work-card__cat">SNS運用</span><span class="work-card__cat">アカウント設計</span></div>
+            <h3 class="work-card__title">SNS運用サポート（進行中）</h3>
+            <p class="work-card__desc">アカウント設計から投稿画像・テキスト作成まで一括サポート。ブランドの雰囲気を統一したフィードを目指して運用中です。</p>
+            <div class="work-card__detail">
+              <p class="work-card__detail-title">▸ 取り組みの方針</p>
+              <p class="work-card__detail-text">「何を投稿すればいいかわからない」という状態から、ターゲット・世界観・投稿テーマを一緒に設計。継続発信の仕組みをつくっています。</p>
+            </div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__img-wrap"><img src="assets/works/works-05.webp" alt="WEB広告バナー制作" class="work-card__img" loading="lazy" decoding="async"></div>
+          <div class="work-card__body">
+            <div class="work-card__cats"><span class="work-card__cat">バナー制作</span><span class="work-card__cat">Web広告</span></div>
+            <h3 class="work-card__title">WEB広告バナー制作</h3>
+            <p class="work-card__desc">複数サイズのバナーをシリーズで制作。ターゲットに響くビジュアルとコピーの組み合わせで、クリック率向上に貢献しました。</p>
+            <div class="work-card__detail">
+              <p class="work-card__detail-title">▸ 課題と取り組み</p>
+              <p class="work-card__detail-text">既存バナーの数値が伸び悩んでいる状況から依頼。複数パターン制作とABテスト提案で、効果的な組み合わせを見つけるサポートをしました。</p>
+            </div>
+          </div>
+        </article>
+        <article class="work-card">
+          <div class="work-card__img-wrap"><img src="assets/works/works-06.webp" alt="チラシ・名刺制作" class="work-card__img" loading="lazy" decoding="async"></div>
+          <div class="work-card__body">
+            <div class="work-card__cats"><span class="work-card__cat">チラシ制作</span><span class="work-card__cat">名刺制作</span></div>
+            <h3 class="work-card__title">店舗向けチラシ・名刺制作</h3>
+            <p class="work-card__desc">小規模店舗のブランドイメージを整えるため、チラシと名刺をセットで制作。統一感のあるビジュアルに仕上げました。</p>
+            <div class="work-card__detail">
+              <p class="work-card__detail-title">▸ 課題と取り組み</p>
+              <p class="work-card__detail-text">「バラバラな印象」という課題に対し、カラーパレット・フォント・レイアウトを統一してブランドの雰囲気を整備。印刷入稿まで一括対応しました。</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="works-portfolio-cta">
+        <h3>ポートフォリオサイト公開中</h3>
+        <p>その他の制作実績は、ポートフォリオサイトからもご覧いただけます。</p>
+        <a href="https://fori.io/YM-DesignLab" target="_blank" rel="noopener noreferrer" class="works-portfolio-cta__btn">ポートフォリオを見る <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="web-sec">
+      <h2 class="sec-heading">ご依頼の流れ</h2>
+      <div class="flow-list">
+        <div class="flow-step"><span class="flow-step__no">STEP 01</span><div class="flow-step__title">お問い合わせ</div></div>
+        <div class="flow-step"><span class="flow-step__no">STEP 02</span><div class="flow-step__title">ヒアリング</div></div>
+        <div class="flow-step"><span class="flow-step__no">STEP 03</span><div class="flow-step__title">ご提案・お見積もり</div></div>
+        <div class="flow-step"><span class="flow-step__no">STEP 04</span><div class="flow-step__title">制作</div></div>
+        <div class="flow-step"><span class="flow-step__no">STEP 05</span><div class="flow-step__title">確認・納品</div></div>
+      </div>
+    </section>
+
+    <section class="web-cta" aria-label="WEB制作お問い合わせ">
+      <div class="web-cta__inner">
+        <h2 class="web-cta__title">WEB制作について、まずはお気軽にご相談ください。</h2>
+        <p class="web-cta__body">まだ内容がまとまっていない段階でも大丈夫です。目的や状況を整理しながら、必要な形を一緒に考えます。</p>
+        <a href="index.html?page=contact" class="web-cta__btn">お問い合わせはこちら</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="footer-wm">YM DESIGN KIKAKU &nbsp; YM DESIGN KIKAKU</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html?page=top" class="footer-logo">
+          <img src="assets/rogo_01.png" alt="YMデザイン企画">
+        </a>
+        <p class="footer-desc">産廃・リサイクル、工事・設備を中心に、<br>事業のお困りごとを整理し、<br>必要な専門先へつなぐサポートを行っています。</p>
+        <a class="footer-email" href="mailto:ymdesign.kikaku@gmail.com">ymdesign.kikaku@gmail.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>MENU</h4>
+        <nav class="footer-nav">
+          <a href="index.html?page=top">TOP</a>
+          <a href="index.html?page=about">ABOUT</a>
+          <a href="index.html?page=service">SERVICE</a>
+          <a href="web-production.html">WEB PRODUCTION</a>
+          <a href="index.html?page=faq">FAQ</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>INFO</h4>
+        <nav class="footer-nav">
+          <a href="index.html?page=contact">CONTACT</a>
+          <a href="index.html?page=privacy">PRIVACY POLICY</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 YMデザイン企画 / YM Design &amp; Co. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      const willOpen = !mobileNav.classList.contains('open');
+      mobileNav.classList.toggle('open', willOpen);
+      hamburger.classList.toggle('open', willOpen);
+      document.body.style.overflow = willOpen ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>
+</body>
+</html>
