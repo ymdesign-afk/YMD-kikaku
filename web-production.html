@@ -291,6 +291,22 @@
       .web-cta__body { font-size:.9rem; }
       .web-cta__btn { min-width:100%; }
     }
+    @media (max-width:380px) {
+      .web-feature-card {
+        aspect-ratio:1 / 1;
+        padding:6px 6px 20px;
+        overflow:hidden;
+      }
+      .web-feature-label {
+        font-size:.82rem;
+        line-height:1.25;
+        letter-spacing:0;
+        margin-top:-8px;
+      }
+      .web-feature-card:nth-child(6) .web-feature-label {
+        margin-top:-18px;
+      }
+    }
   </style>
 </head>
 <body>
