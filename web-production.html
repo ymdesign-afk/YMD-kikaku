@@ -64,10 +64,49 @@
     .pg-hero__en { display:block; font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:700; color:#fff; letter-spacing:4px; margin-bottom:8px; }
     .pg-hero__ja { display:block; font-size:.8125rem; color:rgba(255,255,255,.55); letter-spacing:3px; font-weight:700; }
 
-    .web-wrap { max-width:1080px; margin:0 auto; padding:72px 40px 88px; }
+    .web-wrap { max-width:1080px; margin:0 auto; padding:0 40px 70px; }
+    .web-lead-bg {
+      position:relative;
+      overflow:hidden;
+      margin:0;
+      padding:98px 0 72px;
+      background:#eef5fb url('assets/section3_bg.png') center center/cover no-repeat;
+    }
+    .web-lead-inner {
+      max-width:1080px;
+      margin:0 auto;
+      padding:0 40px;
+    }
+    .web-lead-area {
+      position:relative;
+      margin:0;
+      padding:0;
+    }
+    .web-lead-bg::after {
+      content:'';
+      position:absolute;
+      left:clamp(12px, 4vw, 40px);
+      right:clamp(12px, 4vw, 40px);
+      bottom:0;
+      height:2px;
+      background:linear-gradient(90deg, rgba(228,214,165,0) 0%, rgba(217,197,140,.78) 22%, rgba(196,219,240,.86) 54%, rgba(217,197,140,.72) 82%, rgba(228,214,165,0) 100%);
+      opacity:.78;
+      pointer-events:none;
+      z-index:1;
+    }
+    .web-intro-title {
+      max-width:760px;
+      margin:0 auto 16px;
+      font-family:'Noto Serif JP',serif;
+      font-size:1.75rem;
+      line-height:1.5;
+      color:var(--navy);
+      text-align:center;
+    }
+    .web-intro-title-br-sp { display:none; }
     .web-intro {
       max-width:760px;
-      margin:0 auto 38px;
+      margin:0 auto 58px;
       font-size:1rem;
       color:#5c6f84;
       line-height:1.9;
@@ -75,16 +114,20 @@
     }
     .web-intro-br-sp { display:none; }
     .web-sec + .web-sec { margin-top:56px; }
+    .web-lead-area .web-sec + .web-sec { margin-top:50px; }
     .sec-heading { font-family:'Noto Serif JP',serif; font-size:1.75rem; line-height:1.5; color:var(--navy); margin-bottom:20px; }
 
     .web-feature-sec {
-      background:linear-gradient(180deg, #f4faff 0%, #eef6ff 100%);
-      border:1px solid #d8e6f4;
-      border-radius:16px;
-      padding:34px 28px 30px;
+      background:none;
+      border:none;
+      border-radius:0;
+      padding:0;
     }
-    .web-feature-sec .sec-heading { text-align:center; margin-bottom:24px; }
-    .web-feature-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .web-lead-area .recommend-list {
+      margin-left:14px;
+      margin-right:14px;
+    }
+    .web-feature-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
     .web-feature-card {
       background:#fff;
       border:1px solid #dde8f3;
@@ -127,6 +170,49 @@
     .recommend-list li { display:flex; align-items:flex-start; gap:10px; background:#f6fafe; border:1px solid #d8e5f2; border-radius:9px; padding:13px 14px; color:#39526d; }
     .recommend-list li::before { content:'✓'; color:#2f7fc4; font-weight:700; }
 
+    .section-wm {
+      width:100%;
+      text-align:center;
+      font-family:'Noto Serif JP',serif;
+      font-weight:700;
+      font-size:4rem;
+      color:rgba(40,89,142,.08);
+      white-space:nowrap;
+      line-height:1;
+      padding:0;
+      overflow:hidden;
+      pointer-events:none;
+      margin:0;
+    }
+    .works-sec {
+      position:relative;
+      padding-top:128px;
+    }
+    .works-sec > .section-wm {
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:0;
+    }
+    .works-sec > *:not(.section-wm) {
+      position:relative;
+      z-index:1;
+    }
+    .works-sec .sec-heading,
+    .flow-sec .sec-heading {
+      margin-bottom:58px;
+    }
+    .sec-heading-en {
+      display:inline-block;
+      margin-left:10px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:.9rem;
+      font-weight:700;
+      letter-spacing:2px;
+      color:#7f97b2;
+      vertical-align:middle;
+      transform:translateY(-1px);
+    }
     .works-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
     .work-card { border:1px solid #dce6f0; border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 4px 14px rgba(18,49,84,.06); display:flex; flex-direction:column; }
     .work-card__img-wrap { aspect-ratio:16 / 10; background:linear-gradient(135deg,#eef5fc 0%, #ddeaf7 100%); }
@@ -151,7 +237,8 @@
     .work-card__detail-text { font-size:.84rem; color:#60748b; line-height:1.72; }
     .work-card__em { color:#2f6fb0; font-weight:700; }
     .works-portfolio-cta {
-      margin-top:20px;
+      margin-top:70px;
+      margin-bottom:50px;
       background:#f7f9fc;
       border:1px solid #dce6f0;
       border-radius:12px;
@@ -171,6 +258,7 @@
       line-height:1.8;
       margin-bottom:14px;
     }
+    .works-portfolio-br-sp { display:none; }
     .works-portfolio-cta__btn {
       display:inline-flex;
       align-items:center;
@@ -189,13 +277,58 @@
     }
     .works-portfolio-cta__btn:hover { opacity:.72; }
     .works-portfolio-cta__sub { display:none; }
+    @media (min-width:981px) {
+      .works-grid { gap:15px; }
+      .work-card__body { padding:13px; }
+      .work-card__desc {
+        font-size:.9rem;
+        line-height:1.72;
+        letter-spacing:-.01em;
+        text-wrap:pretty;
+      }
+      .work-card__detail-text {
+        font-size:.82rem;
+        line-height:1.68;
+        letter-spacing:-.01em;
+        text-wrap:pretty;
+      }
+    }
 
     .flow-list { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; }
+    .flow-sec {
+      position:relative;
+      background:linear-gradient(180deg, #f4fbff 0%, #e9f6ff 100%);
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      margin-right:calc(50% - 50vw);
+      padding:0;
+    }
+    .flow-sec::before,
+    .flow-sec::after {
+      content:'';
+      position:absolute;
+      left:0;
+      width:100%;
+      height:2px;
+      background:linear-gradient(90deg, rgba(228,214,165,0) 0%, rgba(217,197,140,.78) 22%, rgba(196,219,240,.86) 54%, rgba(217,197,140,.72) 82%, rgba(228,214,165,0) 100%);
+      opacity:.78;
+      pointer-events:none;
+      z-index:1;
+    }
+    .flow-sec::before { top:0; }
+    .flow-sec::after { bottom:0; }
+    .flow-sec__inner {
+      position:relative;
+      z-index:2;
+      max-width:1080px;
+      margin:0 auto;
+      padding:68px 40px 70px;
+    }
     .flow-step { background:#fff; border:1px solid #d8e4ef; border-radius:10px; padding:14px 12px; text-align:center; }
     .flow-step__no { display:block; font-family:'Cormorant Garamond',serif; font-size:.8rem; letter-spacing:1.8px; color:#7590ad; margin-bottom:6px; }
     .flow-step__title { font-size:.95rem; font-weight:700; color:#35506d; line-height:1.55; }
 
-    .web-cta { margin-top:70px; border-radius:12px; overflow:hidden; background:linear-gradient(rgba(21,51,84,.7), rgba(21,51,84,.7)), url('assets/haikei_m.jpg') center/cover no-repeat; border:1px solid #cbd9e8; }
+    .web-cta { margin:70px 0 0; border-radius:12px; overflow:hidden; background:linear-gradient(rgba(21,51,84,.7), rgba(21,51,84,.7)), url('assets/haikei_m.jpg') center/cover no-repeat; border:1px solid #cbd9e8; }
     .web-cta__inner { padding:40px 34px; color:#fff; }
     .web-cta__title { font-family:'Noto Serif JP',serif; font-size:1.5rem; line-height:1.6; margin-bottom:12px; }
     .web-cta__body { font-size:.98rem; line-height:1.9; color:#eef4fb; margin-bottom:20px; }
@@ -257,17 +390,50 @@
     }
     @media (max-width:768px) {
       .footer-wm { font-size:2.5rem; }
+      .section-wm { font-size:2.5rem; }
+      .works-sec { padding-top:90px; }
       .pg-hero { padding:48px 18px; }
       .pg-hero { min-height:170px; }
       .pg-hero__en { font-size:2rem; }
-      .web-wrap { padding:42px 16px 56px; }
-      .web-intro { margin:0 auto 26px; font-size:.92rem; line-height:1.85; }
+      .web-wrap { padding:0 16px 50px; }
+      .web-lead-bg {
+        margin:0;
+        padding:58px 0 44px;
+        background:#eef5fb url('assets/service_topbg_sp.png') center top/cover no-repeat;
+      }
+      .web-lead-inner { padding:0 16px; }
+      .web-lead-area {
+        margin:0;
+        padding:0;
+      }
+      .web-intro-title {
+        font-size:1.56rem;
+        line-height:1.55;
+        margin:0 auto 12px;
+      }
+      .web-intro-title-br-sp { display:block; }
+      .web-intro { margin:0 auto 34px; font-size:.92rem; line-height:1.85; }
       .web-intro-br-sp { display:block; }
       .web-sec + .web-sec { margin-top:42px; }
+      .web-lead-area .web-sec + .web-sec { margin-top:34px; }
       .sec-heading { font-size:1.4rem; margin-bottom:14px; }
-      .web-feature-sec { padding:24px 14px 18px; border-radius:12px; }
-      .web-feature-sec .sec-heading { margin-bottom:16px; }
-      .web-feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+      .works-sec .sec-heading,
+      .flow-sec .sec-heading {
+        margin-bottom:34px;
+      }
+      .sec-heading-en {
+        display:block;
+        margin:6px 0 0;
+        font-size:.78rem;
+        letter-spacing:1.8px;
+        transform:none;
+      }
+      .web-feature-sec { padding:0; border-radius:0; }
+      .web-lead-area .recommend-list {
+        margin-left:10px;
+        margin-right:10px;
+      }
+      .web-feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
       .web-feature-card {
         min-height:0;
         aspect-ratio:1 / 1;
@@ -280,12 +446,14 @@
       .web-feature-card:nth-child(6) .web-feature-label { margin-top:-12px; }
       .recommend-list { grid-template-columns:1fr; gap:10px; }
       .works-grid { grid-template-columns:1fr; gap:14px; }
-      .works-portfolio-cta { margin-top:16px; padding:18px 14px; }
+      .works-portfolio-cta { margin-top:44px; margin-bottom:28px; padding:18px 14px; }
       .works-portfolio-cta h3 { font-size:1.06rem; }
       .works-portfolio-cta p { font-size:.88rem; margin-bottom:12px; }
+      .works-portfolio-br-sp { display:block; }
       .works-portfolio-cta__btn { min-width:0; font-size:.98rem; }
       .flow-list { grid-template-columns:1fr; gap:9px; }
-      .web-cta { margin-top:48px; }
+      .flow-sec__inner { padding:48px 16px 50px; }
+      .web-cta { margin:50px 0 0; }
       .web-cta__inner { padding:30px 16px; }
       .web-cta__title { font-size:1.25rem; }
       .web-cta__body { font-size:.9rem; }
@@ -347,51 +515,58 @@
     <span class="pg-hero__ja">WEB制作</span>
   </section>
 
-  <div class="web-wrap">
-    <p class="web-intro">想いをくみ取り、伝わる形に。<br>事業の目的や届けたい相手に合わせて、<br class="web-intro-br-sp">ホームページ・LP・バナーなどを制作します。</p>
-    <section class="web-sec web-feature-sec">
-      <h2 class="sec-heading">WEB制作でできること</h2>
-      <div class="web-feature-grid">
-        <article class="web-feature-card">
-          <div class="web-feature-illust"><img src="assets/web-production-homepage.png" alt="ホームページ制作イラスト" loading="lazy" decoding="async"></div>
-          <p class="web-feature-label">ホームページ制作</p>
-        </article>
-        <article class="web-feature-card">
-          <div class="web-feature-illust"><img src="assets/web-production-lp.png" alt="LP制作イラスト" loading="lazy" decoding="async"></div>
-          <p class="web-feature-label">LP制作</p>
-        </article>
-        <article class="web-feature-card">
-          <div class="web-feature-illust"><img src="assets/web-production-banner.png" alt="バナー制作イラスト" loading="lazy" decoding="async"></div>
-          <p class="web-feature-label">バナー制作</p>
-        </article>
-        <article class="web-feature-card">
-          <div class="web-feature-illust"><img src="assets/web-production-sns.png" alt="SNS投稿画像制作イラスト" loading="lazy" decoding="async"></div>
-          <p class="web-feature-label">SNS投稿画像制作</p>
-        </article>
-        <article class="web-feature-card">
-          <div class="web-feature-illust"><img src="assets/web-production-structure.png" alt="構成整理・導線設計イラスト" loading="lazy" decoding="async"></div>
-          <p class="web-feature-label">構成整理・導線設計</p>
-        </article>
-        <article class="web-feature-card">
-          <div class="web-feature-illust"><img src="assets/web-production-support.png" alt="必要に応じた更新・改善サポートイラスト" loading="lazy" decoding="async"></div>
-          <p class="web-feature-label">必要に応じた更新・改善サポート</p>
-        </article>
+  <section class="web-lead-bg">
+    <div class="web-lead-inner">
+      <div class="web-lead-area">
+      <h2 class="web-intro-title">想いをくみ取り、<br class="web-intro-title-br-sp">伝わる形に。</h2>
+      <p class="web-intro">事業の目的や届けたい相手に合わせて、<br class="web-intro-br-sp">ホームページ・LP・バナーなどを制作します。</p>
+      <section class="web-sec web-feature-sec">
+        <div class="web-feature-grid">
+          <article class="web-feature-card">
+            <div class="web-feature-illust"><img src="assets/web-production-homepage.png" alt="ホームページ制作イラスト" loading="lazy" decoding="async"></div>
+            <p class="web-feature-label">ホームページ制作</p>
+          </article>
+          <article class="web-feature-card">
+            <div class="web-feature-illust"><img src="assets/web-production-lp.png" alt="LP制作イラスト" loading="lazy" decoding="async"></div>
+            <p class="web-feature-label">LP制作</p>
+          </article>
+          <article class="web-feature-card">
+            <div class="web-feature-illust"><img src="assets/web-production-banner.png" alt="バナー制作イラスト" loading="lazy" decoding="async"></div>
+            <p class="web-feature-label">バナー制作</p>
+          </article>
+          <article class="web-feature-card">
+            <div class="web-feature-illust"><img src="assets/web-production-sns.png" alt="SNS投稿画像制作イラスト" loading="lazy" decoding="async"></div>
+            <p class="web-feature-label">SNS投稿画像制作</p>
+          </article>
+          <article class="web-feature-card">
+            <div class="web-feature-illust"><img src="assets/web-production-structure.png" alt="構成整理・導線設計イラスト" loading="lazy" decoding="async"></div>
+            <p class="web-feature-label">構成整理・導線設計</p>
+          </article>
+          <article class="web-feature-card">
+            <div class="web-feature-illust"><img src="assets/web-production-support.png" alt="必要に応じた更新・改善サポートイラスト" loading="lazy" decoding="async"></div>
+            <p class="web-feature-label">必要に応じた更新・改善サポート</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="web-sec">
+        <h2 class="sec-heading">こんな方におすすめ</h2>
+        <ul class="recommend-list">
+          <li>ホームページを新しく作りたい</li>
+          <li>今のサイトを見直したい</li>
+          <li>サービスの魅力を整理して伝えたい</li>
+          <li>集客や問い合わせ導線を整えたい</li>
+          <li>デザインや発信の雰囲気を統一したい</li>
+        </ul>
+      </section>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="web-sec">
-      <h2 class="sec-heading">こんな方におすすめ</h2>
-      <ul class="recommend-list">
-        <li>ホームページを新しく作りたい</li>
-        <li>今のサイトを見直したい</li>
-        <li>サービスの魅力を整理して伝えたい</li>
-        <li>集客や問い合わせにつながる導線を整えたい</li>
-        <li>デザインや発信の雰囲気を統一したい</li>
-      </ul>
-    </section>
-
-    <section class="web-sec">
-      <h2 class="sec-heading">制作実績</h2>
+  <div class="web-wrap">
+    <section class="web-sec works-sec">
+      <div class="section-wm" aria-hidden="true">YM DESIGN KIKAKU &nbsp; YM DESIGN KIKAKU</div>
+      <h2 class="sec-heading">制作実績 <span class="sec-heading-en">GALLERY</span></h2>
       <div class="works-grid">
         <article class="work-card">
           <div class="work-card__img-wrap"><img src="assets/works/works-01.webp" alt="集客LP制作" class="work-card__img" loading="lazy" decoding="async"></div>
@@ -468,19 +643,21 @@
       </div>
       <div class="works-portfolio-cta">
         <h3>ポートフォリオサイト公開中</h3>
-        <p>その他の制作実績は、ポートフォリオサイトからもご覧いただけます。</p>
+        <p>その他の制作実績は、<br class="works-portfolio-br-sp">ポートフォリオサイトからもご覧いただけます。</p>
         <a href="https://fori.io/YM-DesignLab" target="_blank" rel="noopener noreferrer" class="works-portfolio-cta__btn">ポートフォリオを見る <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
-    <section class="web-sec">
-      <h2 class="sec-heading">ご依頼の流れ</h2>
-      <div class="flow-list">
-        <div class="flow-step"><span class="flow-step__no">STEP 01</span><div class="flow-step__title">お問い合わせ</div></div>
-        <div class="flow-step"><span class="flow-step__no">STEP 02</span><div class="flow-step__title">ヒアリング</div></div>
-        <div class="flow-step"><span class="flow-step__no">STEP 03</span><div class="flow-step__title">ご提案・お見積もり</div></div>
-        <div class="flow-step"><span class="flow-step__no">STEP 04</span><div class="flow-step__title">制作</div></div>
-        <div class="flow-step"><span class="flow-step__no">STEP 05</span><div class="flow-step__title">確認・納品</div></div>
+    <section class="web-sec flow-sec">
+      <div class="flow-sec__inner">
+        <h2 class="sec-heading">ご依頼の流れ <span class="sec-heading-en">FLOW</span></h2>
+        <div class="flow-list">
+          <div class="flow-step"><span class="flow-step__no">STEP 01</span><div class="flow-step__title">お問い合わせ</div></div>
+          <div class="flow-step"><span class="flow-step__no">STEP 02</span><div class="flow-step__title">ヒアリング</div></div>
+          <div class="flow-step"><span class="flow-step__no">STEP 03</span><div class="flow-step__title">ご提案・お見積もり</div></div>
+          <div class="flow-step"><span class="flow-step__no">STEP 04</span><div class="flow-step__title">制作</div></div>
+          <div class="flow-step"><span class="flow-step__no">STEP 05</span><div class="flow-step__title">確認・納品</div></div>
+        </div>
       </div>
     </section>
 
