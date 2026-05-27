@@ -552,6 +552,50 @@
     .svc-intro { padding:60px 24px; text-align:center; background:var(--g100); border-bottom:1px solid var(--g300); }
     .svc-intro h2 { font-family:'Noto Serif JP',serif; font-weight:700; font-size:1.625rem; color:var(--navy); line-height:1.65; margin-bottom:1.25rem; }
     .svc-intro p { font-size:1rem; color:var(--g600); line-height:1.9; max-width:640px; margin:0 auto; }
+    .svc-detail-area {
+      position:relative;
+      overflow:hidden;
+      background:#fff;
+      isolation:isolate;
+    }
+    #page-service > .svc-detail-area::before {
+      content:'';
+      position:absolute;
+      pointer-events:none;
+      z-index:0;
+      inset:0;
+      height:auto;
+      background-image:url("assets/service-bg-wave-pc.png?v=5");
+      background-repeat:no-repeat;
+      background-position:calc(50% - 100px) top;
+      background-size:185% auto;
+      opacity:.3;
+    }
+    #page-service > .svc-detail-area > * { position:relative; z-index:1; }
+    #page-service .svc-detail + .svc-detail::before {
+      content:'';
+      position:absolute;
+      top:0;
+      left:clamp(12px, 4vw, 72px);
+      right:clamp(12px, 4vw, 72px);
+      height:2px;
+      background:linear-gradient(90deg, rgba(228,214,165,0) 0%, rgba(217,197,140,.78) 22%, rgba(196,219,240,.86) 54%, rgba(217,197,140,.72) 82%, rgba(228,214,165,0) 100%);
+      opacity:.72;
+      pointer-events:none;
+      z-index:2;
+    }
+    #page-service .svc-detail-area .svc-detail:first-child::before {
+      content:'';
+      position:absolute;
+      top:0;
+      left:clamp(12px, 4vw, 72px);
+      right:clamp(12px, 4vw, 72px);
+      height:2px;
+      background:linear-gradient(90deg, rgba(228,214,165,0) 0%, rgba(217,197,140,.78) 22%, rgba(196,219,240,.86) 54%, rgba(217,197,140,.72) 82%, rgba(228,214,165,0) 100%);
+      opacity:.72;
+      pointer-events:none;
+      z-index:2;
+    }
     .svc-detail { padding:80px 0; border-bottom:1px solid var(--g300); }
     .svc-detail:last-of-type { border-bottom:none; }
     .svc-detail__inner { max-width:960px; margin:0 auto; padding:0 40px; display:flex; align-items:center; gap:60px; }
@@ -823,7 +867,30 @@
     .about-table__value { flex:1; font-weight:500; color:var(--g800); font-size:.9375rem; }
 
     /* ===== FAQ PAGE ===== */
-    .faq-examples { padding:80px 24px; background:var(--g100); }
+    .faq-examples {
+      position:relative;
+      overflow:hidden;
+      padding:80px 24px;
+      background:linear-gradient(180deg, #eff8fd 0%, #f5fbff 100%);
+      border-top:1px solid #dce9f5;
+      border-bottom:1px solid #e3edf7;
+    }
+    .faq-examples__deco {
+      position:absolute;
+      pointer-events:none;
+      opacity:.18;
+      z-index:0;
+      width:132%;
+      max-width:none;
+      left:calc(-10% + 100px);
+      bottom:-22px;
+      top:auto;
+      object-fit:cover;
+      object-position:left bottom;
+      transform:rotate(6deg) translateY(100px);
+      transform-origin:80% 100%;
+    }
+    .faq-examples > *:not(.faq-examples__deco) { position:relative; z-index:1; }
     .faq-examples__grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:900px; margin:0 auto 2rem; }
     .faq-example-card {
       --faq-accent:#0f4c81;
@@ -837,10 +904,11 @@
       box-shadow:0 2px 7px rgba(16,45,80,.045);
       min-height:172px;
     }
-    .faq-example-card.s-gold { --faq-accent:#d8be6a; --faq-accent-soft:#fcf8ed; --faq-accent-border:#eadfbe; }
-    .faq-example-card.s-teal { --faq-accent:#078c95; --faq-accent-soft:#f1f9fa; --faq-accent-border:#d0e8ea; }
-    .faq-example-card.s-greenblue { --faq-accent:#4f8f9b; --faq-accent-soft:#f2f8f9; --faq-accent-border:#d6e6e9; }
-    .faq-example-card.s-lavender { --faq-accent:#6f7ea6; --faq-accent-soft:#f4f6fb; --faq-accent-border:#dbe2ee; }
+    #page-faq .faq-example-card.s-sky { --faq-accent:#66A9CF; --faq-accent-soft:#f3f9fd; --faq-accent-border:#d4e8f4; }
+    #page-faq .faq-example-card.s-yellow { --faq-accent:#D8BE6A; --faq-accent-soft:#fcf8ed; --faq-accent-border:#eadfbe; }
+    #page-faq .faq-example-card.s-teal { --faq-accent:#078c95; --faq-accent-soft:#f1f9fa; --faq-accent-border:#d0e8ea; }
+    #page-faq .faq-example-card.s-other { --faq-accent:#6F7EA6; --faq-accent-soft:#f4f6fb; --faq-accent-border:#d8dfec; }
+    #page-faq .faq-example-card.s-indigo { --faq-accent:#0F4C81; --faq-accent-soft:#f5f9fd; --faq-accent-border:#d8e5f2; }
     .faq-example-card__q { font-weight:700; font-size:.9375rem; color:var(--g800); margin-bottom:12px; display:flex; gap:8px; }
     .faq-example-card__q span {
       color:var(--faq-accent);
@@ -858,6 +926,7 @@
     }
     .faq-example-card__a { font-size:.875rem; color:var(--g600); line-height:1.72; padding-top:12px; border-top:1px solid color-mix(in srgb, var(--faq-accent) 15%, #d7e1ec 85%); display:flex; gap:8px; }
     .faq-example-card__a span { color:var(--faq-accent); font-weight:700; flex-shrink:0; }
+    #page-faq .faq-examples .svc-note { background:#fff; }
     .faq-qlist { padding:80px 24px; background:#fff; border-top:1px solid var(--g300); }
     .faq-qlist__inner { max-width:768px; margin:0 auto; }
     .faq-qlist h2 { font-family:'Noto Serif JP',serif; font-weight:900; font-size:1.875rem; color:var(--navy); text-align:center; margin-bottom:3rem; }
@@ -1176,6 +1245,13 @@
       .about-values__grid { grid-template-columns:repeat(2,1fr); }
       .faq-examples__grid { grid-template-columns:1fr; }
       #page-faq .faq-examples { padding:64px 20px; }
+      #page-faq .faq-examples__deco {
+        width:138%;
+        left:-16%;
+        bottom:-14px;
+        opacity:.14;
+        transform:rotate(4deg) translateY(42px);
+      }
       #page-faq .faq-examples__grid { gap:14px; margin-bottom:1.5rem; }
       #page-faq .faq-example-card { padding:16px 18px; min-height:auto; border-left-width:3px; }
       #page-faq .faq-example-card__q { font-size:.93rem; line-height:1.68; margin-bottom:10px; gap:7px; }
@@ -1384,6 +1460,13 @@
       #page-about .about-values__card p { font-size:.86rem; line-height:1.68; max-width:18.5em; }
       .faq-examples, .faq-qlist { padding:48px 16px; }
       #page-faq .faq-examples { padding:48px 14px; }
+      #page-faq .faq-examples__deco {
+        width:140%;
+        left:-20%;
+        bottom:-8px;
+        opacity:.12;
+        transform:rotate(3deg) translateY(36px);
+      }
       #page-faq .faq-example-card { padding:14px 14px; border-radius:9px; }
       #page-faq .faq-example-card__q { font-size:.89rem; line-height:1.65; margin-bottom:9px; }
       #page-faq .faq-example-card__q span { font-size:.96rem; }
@@ -1634,6 +1717,7 @@
   <div class="pg-hero"><span class="pg-hero__en">SERVICE</span><span class="pg-hero__ja">相談できること</span></div>
   <div class="svc-intro"><h2><span class="svc-intro-main">産廃・リサイクル、<br class="sp-only">工事・設備</span><span class="svc-intro-tail">まわりの</span><br class="pc-only">「どこに相談すればいい？」<br class="sp-only">を整理してつなぎます。</h2><p>建設廃材・焼却物処分、太陽光パネル関連、廃油・塩ビ樹脂廃材買取、電気工事、中古車販売・買取を中心に、事業者様のお困りごとを丁寧にヒアリングし、内容に応じて必要な専門事業者・提携先へおつなぎします。</p></div>
 
+  <div class="svc-detail-area">
   <div id="service-01" class="svc-detail">
     <div class="svc-detail__inner">
       <div class="svc-detail__body svc01-head">
@@ -1875,6 +1959,7 @@
       </div>
     </div>
   </div>
+  </div>
 
   <div class="svc-note-wrap" style="max-width:900px;margin:0 auto 28px;padding:0 40px"><div class="svc-note"><strong>※ご注意</strong>各種処分・工事等は、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。</div></div>
   <div class="svc-note-wrap" style="max-width:900px;margin:0 auto 80px;padding:0 40px">
@@ -1960,14 +2045,15 @@
 <div id="page-faq" class="page-content hidden">
   <div class="pg-hero"><span class="pg-hero__en">FAQ</span><span class="pg-hero__ja">よくある相談例・ご質問</span></div>
   <div class="faq-examples">
+    <img src="assets/section7_bg.png" alt="" class="faq-examples__deco">
     <div style="text-align:center;margin-bottom:3rem;"><h2 class="sec-heading">よくあるご相談例</h2><p class="sec-sub" style="margin-bottom:0;">以下のような内容でご相談いただくケースが多くございます。<br class="sp-only"><br class="sp-only">「こんなことでも大丈夫？」という場合も、まずはお気軽にご相談ください。</p></div>
     <div class="faq-examples__grid">
-      <div class="faq-example-card"><div class="faq-example-card__q"><span>Q.</span>建設廃材や焼却物の処分先を探している</div><div class="faq-example-card__a"><span>A.</span>処分内容や条件を整理したうえで、対応可能な専門事業者・提携先へおつなぎします。</div></div>
-      <div class="faq-example-card s-gold"><div class="faq-example-card__q"><span>Q.</span>太陽光パネルの設置・撤去・処分について相談したい</div><div class="faq-example-card__a"><span>A.</span>案件内容に応じて、必要な専門先との連携を行います。</div></div>
-      <div class="faq-example-card"><div class="faq-example-card__q"><span>Q.</span>廃油や塩ビ・樹脂廃材の買取先を探している</div><div class="faq-example-card__a"><span>A.</span>リサイクルにつながる買取相談として、内容を確認しながら対応します。</div></div>
+      <div class="faq-example-card s-sky"><div class="faq-example-card__q"><span>Q.</span>建設廃材や焼却物の処分先を探している</div><div class="faq-example-card__a"><span>A.</span>処分内容や条件を整理したうえで、対応可能な専門事業者・提携先へおつなぎします。</div></div>
+      <div class="faq-example-card s-yellow"><div class="faq-example-card__q"><span>Q.</span>太陽光パネルの設置・撤去・処分について相談したい</div><div class="faq-example-card__a"><span>A.</span>案件内容に応じて、必要な専門先との連携を行います。</div></div>
+      <div class="faq-example-card s-sky"><div class="faq-example-card__q"><span>Q.</span>廃油や塩ビ・樹脂廃材の買取先を探している</div><div class="faq-example-card__a"><span>A.</span>リサイクルにつながる買取相談として、内容を確認しながら対応します。</div></div>
       <div class="faq-example-card s-teal"><div class="faq-example-card__q"><span>Q.</span>電気工事や足場工事の依頼先を探している</div><div class="faq-example-card__a"><span>A.</span>現場状況や条件を整理し、対応可能な専門事業者へおつなぎします。</div></div>
-      <div class="faq-example-card s-lavender"><div class="faq-example-card__q"><span>Q.</span>片付け・粗大ゴミ回収・遺品整理について相談したい</div><div class="faq-example-card__a"><span>A.</span>内容や状況を確認し、対応可能な専門先へのご案内・連携を行います。</div></div>
-      <div class="faq-example-card s-lavender"><div class="faq-example-card__q"><span>Q.</span>中古車関連やWEB制作について相談したい</div><div class="faq-example-card__a"><span>A.</span>中古車関連事業や、HP・バナー・LP制作などのWEB制作についても内容に応じてご相談いただけます。</div></div>
+      <div class="faq-example-card s-other"><div class="faq-example-card__q"><span>Q.</span>片付け・粗大ゴミ回収・遺品整理について相談したい</div><div class="faq-example-card__a"><span>A.</span>内容や状況を確認し、対応可能な専門先へのご案内・連携を行います。</div></div>
+      <div class="faq-example-card s-indigo"><div class="faq-example-card__q"><span>Q.</span>中古車関連やWEB制作について相談したい</div><div class="faq-example-card__a"><span>A.</span>中古車関連事業や、HP・バナー・LP制作などのWEB制作についても内容に応じてご相談いただけます。</div></div>
     </div>
     <div class="svc-note" style="max-width:900px;margin:0 auto;"><strong>※ご注意</strong>各種処分・工事等は、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。</div>
   </div>
