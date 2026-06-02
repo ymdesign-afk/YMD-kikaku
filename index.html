@@ -42,6 +42,14 @@
     "url": "https://ymd-kikaku.net/",
     "description": "産廃・リサイクル、工事・設備まわりのお困りごとを整理し、専門事業者・提携先へつなぐサポート",
     "email": "ymdesign.kikaku@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "postalCode": "170-0013",
+      "addressRegion": "東京都",
+      "addressLocality": "豊島区",
+      "streetAddress": "東池袋2丁目62番8号BIGオフィスプラザ池袋1206",
+      "addressCountry": "JP"
+    },
     "areaServed": "関東一円",
     "founder": {
       "@type": "Person",
@@ -864,7 +872,8 @@
     .about-table { max-width:640px; margin:0 auto; border-top:1px solid var(--g300); }
     .about-table__row { display:flex; border-bottom:1px solid var(--g300); padding:20px 8px; }
     .about-table__label { width:33%; font-weight:700; color:var(--g500); font-size:.9375rem; flex-shrink:0; }
-    .about-table__value { flex:1; font-weight:500; color:var(--g800); font-size:.9375rem; }
+    .about-table__value { flex:1; min-width:0; font-weight:500; color:var(--g800); font-size:.9375rem; overflow-wrap:anywhere; }
+    .about-table__nowrap { white-space:nowrap; }
 
     /* ===== FAQ PAGE ===== */
     .faq-examples {
@@ -1282,6 +1291,7 @@
     @media (max-width:480px) {
       .sp-only { display:inline; }
       .sp-only-inline { display:inline; }
+      .about-table__label { width:27%; }
       #page-top .services {
         background:#eef5fb url('assets/service_topbg_sp.png') center top/cover no-repeat;
       }
@@ -2034,9 +2044,10 @@
     <div class="about-table">
       <div class="about-table__row"><span class="about-table__label">屋号</span><span class="about-table__value">YMデザイン企画</span></div>
       <div class="about-table__row"><span class="about-table__label">代表者</span><span class="about-table__value">金沢由紀</span></div>
-      <div class="about-table__row"><span class="about-table__label">事業内容</span><span class="about-table__value">産廃・リサイクル、工事・設備、事業連携サポート、WEB制作等</span></div>
+      <div class="about-table__row"><span class="about-table__label">所在地</span><span class="about-table__value">〒170-0013<br>東京都豊島区東池袋2丁目<span class="about-table__nowrap">62番8号</span><br>BIGオフィスプラザ池袋1206<br>東京営業所</span></div>
+      <div class="about-table__row"><span class="about-table__label">事業内容</span><span class="about-table__value">産廃・リサイクル、工事・設備、事業連携サポート、<br>WEB制作等</span></div>
       <div class="about-table__row"><span class="about-table__label">対応エリア</span><span class="about-table__value">関東一円</span></div>
-      <div class="about-table__row"><span class="about-table__label">メールアドレス</span><span class="about-table__value">ymdesign.kikaku@gmail.com</span></div>
+      <div class="about-table__row"><span class="about-table__label">e-mail</span><span class="about-table__value">ymdesign.kikaku@gmail.com</span></div>
     </div>
   </div>
 </div><!-- /page-about -->
