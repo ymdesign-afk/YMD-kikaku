@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YMデザイン企画｜WEB制作を中心に事業のお困りごとを整理してつなぐ</title>
-  <meta name="description" content="WEB制作を中心に、高齢者施設入居支援、家財やオフィスの片付け・処分、中古車販売・買取などの相談窓口として、事業のお困りごとを整理してつなぐサポートをしています。">
+  <meta name="description" content="WEB制作を中心に、中古車販売・買取、家やオフィスの片付け・処分、高齢者施設への引越し支援、電気工事・太陽光パネル、足場事業まで。お困りごとを整理して必要な専門先へつなぎます。">
   <link rel="canonical" href="https://ymd-kikaku.net/">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -12,7 +12,7 @@
   <meta name="robots" content="index,follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="YMデザイン企画｜WEB制作を中心に事業のお困りごとを整理してつなぐ">
-  <meta property="og:description" content="WEB制作を中心に、高齢者施設入居支援、家財やオフィスの片付け・処分、中古車販売・買取などの相談窓口として、事業のお困りごとを整理してつなぐサポートをしています。">
+  <meta property="og:description" content="WEB制作を中心に、中古車販売・買取、家やオフィスの片付け・処分、高齢者施設への引越し支援、電気工事・太陽光パネル、足場事業まで。お困りごとを整理して必要な専門先へつなぎます。">
   <meta property="og:url" content="https://ymd-kikaku.net/">
   <meta property="og:site_name" content="YMデザイン企画">
   <meta property="og:locale" content="ja_JP">
@@ -21,7 +21,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="YMデザイン企画｜WEB制作を中心に事業のお困りごとを整理してつなぐ">
-  <meta name="twitter:description" content="WEB制作を中心に、高齢者施設入居支援、家財やオフィスの片付け・処分、中古車販売・買取などの相談窓口として、事業のお困りごとを整理してつなぐサポートをしています。">
+  <meta name="twitter:description" content="WEB制作を中心に、中古車販売・買取、家やオフィスの片付け・処分、高齢者施設への引越し支援、電気工事・太陽光パネル、足場事業まで。お困りごとを整理して必要な専門先へつなぎます。">
   <meta name="twitter:image" content="https://ymd-kikaku.net/assets/ogp_ymd.png">
   <script>
     (function () {
@@ -43,7 +43,7 @@
     "@type": "ProfessionalService",
     "name": "YMデザイン企画",
     "url": "https://ymd-kikaku.net/",
-    "description": "産廃・リサイクル、工事・設備まわりのお困りごとを整理し、専門事業者・提携先へつなぐサポート",
+    "description": "WEB制作を中心に、中古車、家やオフィスの片付け、施設入居支援、電気工事・太陽光パネル関連まで、相談内容を整理して必要な専門先へつなぐサポート",
     "email": "ymdesign.kikaku@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -156,9 +156,16 @@
 
     /* ===== HEADER ===== */
     .site-header { position:sticky; top:0; z-index:100; background:#fff; border-bottom:1px solid var(--g300); }
-    .header-inner { max-width:1440px; margin:0 auto; height:78px; display:flex; align-items:center; justify-content:space-between; padding:0 24px; }
-    .header-logo img { height:52px; width:auto; }
-    .header-right { display:flex; align-items:center; }
+    .header-inner { max-width:1440px; margin:0 auto; height:78px; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:0 24px; }
+    .header-brand { display:flex; align-items:center; gap:18px; min-width:0; }
+    .header-logo button { display:flex; align-items:center; background:none; border:none; padding:0; cursor:pointer; }
+    .header-logo img { height:60px; width:auto; }
+    .header-social { display:flex; align-items:center; gap:8px; flex-shrink:0; }
+    .social-link { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border:1px solid #d7e2ec; border-radius:9999px; color:var(--navy); background:#fff; transition:background .2s, border-color .2s, transform .2s; }
+    .social-link:hover { background:#f2f7fb; border-color:#b8c9da; transform:translateY(-1px); }
+    .social-link img { display:block; width:24px; height:24px; object-fit:contain; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    .header-right { display:flex; align-items:center; margin-left:auto; }
     .nav-list { display:flex; align-items:center; margin-right:34px; }
     .nav-list button, .nav-list a {
       display:flex; align-items:center; height:36px; padding:0 16px;
@@ -195,6 +202,7 @@
       border-bottom:1px solid var(--g300); background:none; border-left:none; border-right:none; border-top:none; text-align:left;
     }
     .mobile-nav button:last-child, .mobile-nav a:last-child { border-bottom:none; }
+    .mobile-social { display:none; }
 
     /* ===== HERO ===== */
     .hero { position:relative; height:724px; overflow:hidden; border-bottom:1px solid var(--g300); }
@@ -322,12 +330,12 @@
     .service-card:focus-within .service-link svg { transform:translateX(3px); }
     .service-card-wide .service-info { padding-bottom:16px; }
     .service-info.s07-compact { padding:14px 20px 11px; }
-    .s07-layout { display:grid; grid-template-columns:1.12fr .95fr .95fr auto; gap:18px; align-items:center; }
+    .s07-layout { display:grid; grid-template-columns:1.12fr .95fr .95fr auto; gap:18px; align-items:flex-start; }
     .s07-col-head .service-num { margin-bottom:6px; }
     .s07-col-head .service-title { margin-bottom:0; line-height:1.45; }
     .s07-compact .service-other-list { margin:0; }
     .s07-compact .service-other-list li { padding:3px 0; font-size:.96rem; line-height:1.6; }
-    .s07-link-col { display:flex; align-items:flex-end; justify-content:flex-end; }
+    .s07-link-col { display:flex; align-items:flex-start; justify-content:flex-end; }
     .s07-link { margin-top:0; align-self:auto; white-space:nowrap; }
 
     /* ===== POINTS ===== */
@@ -536,6 +544,12 @@
     .footer-desc { font-size:.825rem; color:#748397; line-height:1.92; margin-bottom:1.5rem; }
     .footer-email { display:inline-flex; align-items:center; gap:8px; font-size:.875rem; color:var(--navy); }
     .footer-email:hover { opacity:.7; }
+    .footer-social { margin-top:.8rem; display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; }
+    .footer-social__text { font-size:.8125rem; color:#748397; line-height:1.8; margin:0; }
+    .footer-social__links { display:inline-flex; flex-wrap:wrap; gap:8px; align-items:center; }
+    .footer-social__btn { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; padding:0; border:none; background:none; transition:opacity .22s, transform .22s; }
+    .footer-social__btn:hover { opacity:.74; transform:translateY(-1px); }
+    .footer-social__btn img { display:block; width:20px; height:20px; object-fit:contain; flex-shrink:0; }
     .footer-col h4 { font-size:.8125rem; font-weight:700; color:#5c6c80; letter-spacing:1.8px; text-transform:uppercase; margin-bottom:1.45rem; }
     .footer-nav { display:flex; flex-direction:column; gap:1rem; }
     .footer-nav a, .footer-nav button { display:flex; align-items:center; gap:8px; font-size:.9375rem; color:var(--g600); background:none; border:none; padding:2px 0; text-align:left; line-height:1.65; }
@@ -563,6 +577,23 @@
     .svc-intro { padding:60px 24px; text-align:center; background:var(--g100); border-bottom:1px solid var(--g300); }
     .svc-intro h2 { font-family:'Noto Serif JP',serif; font-weight:700; font-size:1.625rem; color:var(--navy); line-height:1.65; margin-bottom:1.25rem; }
     .svc-intro p { font-size:1rem; color:var(--g600); line-height:1.9; max-width:640px; margin:0 auto; }
+    .service-intro-web-link {
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      margin-top:16px;
+      padding:0 0 5px;
+      border:none;
+      border-bottom:1px solid rgba(25,58,99,.48);
+      color:var(--navy);
+      font-size:.9375rem;
+      font-weight:600;
+      background:none;
+      transition:color .28s, border-color .28s;
+    }
+    .service-intro-web-link .service-intro-web-link-tail { display:inline-block; transition:transform .28s ease; }
+    .service-intro-web-link:hover { color:#123052; border-color:#123052; }
+    .service-intro-web-link:hover .service-intro-web-link-tail { transform:translateX(3px); }
     .svc-detail-area {
       position:relative;
       overflow:hidden;
@@ -626,11 +657,11 @@
     .svc-detail__box--points { background:#f7fbff; border-color:#d7e4f0; }
     .svc-detail__list.tight li { font-size:.90625rem; line-height:1.65; }
     /* SERVICE accent system (01-06) */
-    #service-01 { --service-accent:#66A9CF; --service-accent-soft:#f3f9fd; --service-accent-border:#d4e8f4; --service-accent-icon:#5d9ec4; }
-    #service-02 { --service-accent:#d8be6a; --service-accent-soft:#fcf8ee; --service-accent-border:#eadfbd; --service-accent-icon:#a2832f; }
-    #service-03 { --service-accent:#66A9CF; --service-accent-soft:#f3f9fd; --service-accent-border:#d4e8f4; --service-accent-icon:#5d9ec4; }
-    #service-04 { --service-accent:#078c95; --service-accent-soft:#f1fafb; --service-accent-border:#cfe9eb; --service-accent-icon:#12727a; }
-    #service-05 { --service-accent:#C78478; --service-accent-soft:#fcf6f5; --service-accent-border:#edd9d5; --service-accent-icon:#b97467; }
+    #service-01 { --service-accent:#C78478; --service-accent-soft:#fcf6f5; --service-accent-border:#edd9d5; --service-accent-icon:#b97467; }
+    #service-02 { --service-accent:#66A9CF; --service-accent-soft:#f3f9fd; --service-accent-border:#d4e8f4; --service-accent-icon:#5d9ec4; }
+    #service-03 { --service-accent:#078c95; --service-accent-soft:#f1fafb; --service-accent-border:#cfe9eb; --service-accent-icon:#12727a; }
+    #service-04 { --service-accent:#d8be6a; --service-accent-soft:#fcf8ee; --service-accent-border:#eadfbd; --service-accent-icon:#a2832f; }
+    #service-05 { --service-accent:#078c95; --service-accent-soft:#f1fafb; --service-accent-border:#cfe9eb; --service-accent-icon:#12727a; }
     #service-06 {
       --service-accent:#6F7EA6;
       --service-accent-soft:#f4f6fb;
@@ -713,11 +744,11 @@
     #service-06 .svc01-body .svc-detail__img img { height:300px; object-fit:cover; transform:none; }
     #service-06.svc-detail { border-bottom:none; }
     #service-01.svc-detail { padding-bottom:68px; }
-    #service-05 .svc-partner-cta {
+    #service-01 .svc-partner-cta {
       margin-top:12px;
       padding:0;
     }
-    #service-05 .svc-partner-label {
+    #service-01 .svc-partner-label {
       display:block;
       margin:0 0 8px;
       font-size:.73rem;
@@ -726,7 +757,7 @@
       line-height:1.2;
       color:#7e5c56;
     }
-    #service-05 .svc-partner-card {
+    #service-01 .svc-partner-card {
       display:grid;
       grid-template-columns:120px 1fr;
       gap:12px;
@@ -734,22 +765,22 @@
       width:fit-content;
       margin-left:auto;
     }
-    #service-05 .svc-partner-info {
+    #service-01 .svc-partner-info {
       display:flex;
       flex-direction:column;
       justify-content:center;
     }
-    #service-05 .svc-partner-logo {
+    #service-01 .svc-partner-logo {
       border:none;
       padding:0;
     }
-    #service-05 .svc-partner-logo img {
+    #service-01 .svc-partner-logo img {
       display:block;
       width:85%;
       height:auto;
       margin:0 auto;
     }
-    #service-05 .svc-partner-name {
+    #service-01 .svc-partner-name {
       font-size:.94rem;
       font-weight:700;
       color:#3d4f62;
@@ -757,13 +788,13 @@
       margin-bottom:2px;
       white-space:nowrap;
     }
-    #service-05 .svc-partner-desc {
+    #service-01 .svc-partner-desc {
       font-size:.875rem;
       color:#5f6f83;
       line-height:1.62;
       margin-bottom:8px;
     }
-    #service-05 .svc-partner-link {
+    #service-01 .svc-partner-link {
       display:inline-flex;
       align-items:center;
       gap:4px;
@@ -775,28 +806,28 @@
       text-underline-offset:4px;
       text-decoration-thickness:1px;
     }
-    #service-05 .svc-partner-link:hover {
+    #service-01 .svc-partner-link:hover {
       color:#2f4257;
       text-decoration-color:#2f4257;
     }
-    #service-05 .svc-partner-link:focus-visible {
+    #service-01 .svc-partner-link:focus-visible {
       outline:2px solid color-mix(in srgb, var(--service-accent) 52%, #fff 48%);
       outline-offset:2px;
       border-radius:2px;
     }
-    #service-05 .svc-partner-cta--sp { display:none; }
+    #service-01 .svc-partner-cta--sp { display:none; }
     @media (max-width:768px) {
-      #service-05 .svc-partner-card {
+      #service-01 .svc-partner-card {
         grid-template-columns:100px 1fr;
         gap:12px;
         align-items:center;
       }
-      #service-05 .svc-partner-logo {
+      #service-01 .svc-partner-logo {
         max-width:100px;
       }
-      #service-05 .svc-partner-logo img { width:100%; }
-      #service-05 .svc-partner-cta--pc { display:none; }
-      #service-05 .svc-partner-cta--sp { display:block; margin-top:14px; }
+      #service-01 .svc-partner-logo img { width:100%; }
+      #service-01 .svc-partner-cta--pc { display:none; }
+      #service-01 .svc-partner-cta--sp { display:block; margin-top:14px; }
     }
     .svc-note { background:var(--g100); border:1px solid var(--g300); border-radius:6px; padding:16px 20px; font-size:.875rem; color:var(--g600); line-height:1.7; }
     .svc-note strong { display:block; font-size:.875rem; color:var(--navy); margin-bottom:4px; }
@@ -831,9 +862,10 @@
         linear-gradient(rgba(255,255,255,.14), rgba(255,255,255,.14)),
         #fff url('assets/about_1_bg.png') center top/cover no-repeat;
     }
-    .about-story__inner { max-width:640px; margin:0 auto; }
-    .about-story h2 { font-family:'Noto Serif JP',serif; font-weight:700; font-size:1.875rem; color:var(--navy); text-align:center; margin-bottom:2.5rem; line-height:1.5; }
-    .about-story p { font-size:1rem; color:var(--g600); line-height:2; margin-bottom:1.5rem; }
+    .about-story__inner { max-width:760px; margin:0 auto; }
+    .about-story h2 { font-family:'Noto Serif JP',serif; font-weight:700; font-size:1.875rem; color:var(--navy); text-align:center; margin-bottom:2rem; line-height:1.5; }
+    .about-story__body { max-width:740px; margin:0 auto; text-align:left; }
+    .about-story p { font-size:1rem; color:var(--g600); line-height:1.95; margin-bottom:1.25rem; text-align:left; }
     .about-values { padding:92px 24px 80px; background:linear-gradient(180deg, #f4fbff 0%, #e9f6ff 100%); border-top:1px solid #d7e4f0; border-bottom:1px solid var(--g300); }
     .about-values h2 { font-family:'Noto Serif JP',serif; font-weight:700; font-size:1.875rem; color:var(--navy); text-align:center; margin-bottom:.9rem; }
     .about-values__intro { max-width:760px; margin:0 auto 2.4rem; text-align:center; font-size:.95rem; line-height:1.9; color:#607188; }
@@ -1030,6 +1062,10 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width:1200px) {
+      .header-logo img { height:56px; }
+      .header-brand { gap:14px; }
+      .nav-list { margin-right:22px; }
+      .nav-list button, .nav-list a { padding:0 10px; font-size:.875rem; }
       .hero-inner { padding:100px 80px 80px; }
       .problems { padding:80px 100px; }
       .problems-bg { top:80px; width:42%; }
@@ -1045,7 +1081,28 @@
       .site-header { position:fixed; top:0; left:0; right:0; }
       main { padding-top:78px; }
       .nav-list, .header-cta { display:none !important; }
-      .hamburger { display:flex !important; }
+      .header-right { display:none; }
+      .header-inner { padding:0 16px; gap:12px; justify-content:flex-start; }
+      .header-brand { flex:1 1 auto; max-width:calc(100% - 52px); gap:10px; }
+      .header-social { display:flex; gap:6px; }
+      .header-social .social-link {
+        width:30px;
+        height:30px;
+      }
+      .header-social .social-link img {
+        width:19px;
+        height:19px;
+      }
+      .header-logo img { height:54px; }
+      .hamburger {
+        display:flex !important;
+        position:relative;
+        top:auto;
+        right:auto;
+        z-index:101;
+        margin:0 0 0 auto;
+        flex-shrink:0;
+      }
       .mobile-nav {
         position:fixed;
         top:78px;
@@ -1057,6 +1114,28 @@
         background:#fff;
         box-shadow:0 8px 20px rgba(12,38,68,.12);
       }
+      .mobile-nav .mobile-social {
+        display:flex;
+        align-items:center;
+        gap:10px;
+        padding:14px 1.5rem;
+        border-bottom:1px solid var(--g300);
+      }
+      .mobile-nav .mobile-social a {
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        gap:7px;
+        min-height:40px;
+        padding:0 13px;
+        border:1px solid #d7e2ec;
+        border-radius:9999px;
+        background:#fff;
+        color:var(--navy);
+        font-size:.8125rem;
+        font-weight:700;
+      }
+      .mobile-nav .mobile-social a img { display:block; width:24px; height:24px; object-fit:contain; flex-shrink:0; }
       .hero { height:auto; min-height:520px; }
       .hero-inner { padding:80px 40px 60px; }
       .hero h1 { font-size:2.15rem; }
@@ -1111,10 +1190,25 @@
       .contact-info { width:100%; }
     }
     @media (max-width:768px) {
+      .header-inner { padding:0 14px; gap:10px; }
+      .header-brand { max-width:calc(100% - 48px); gap:8px; }
+      .header-logo img { height:50px; }
+      .header-social { gap:6px; }
+      .header-social .social-link {
+        width:28px;
+        height:28px;
+      }
+      .header-social .social-link img {
+        width:18px;
+        height:18px;
+      }
       .hero { min-height:560px; }
       .hero-inner { padding:88px 24px 68px; }
+      .hero-text { max-width:min(100%, 342px); }
       .hero h1 { font-size:1.55rem; line-height:1.65; margin-bottom:1.35rem; }
-      .hero-sub { font-size:1rem; margin-bottom:2rem; }
+      .hero h1 .line-sub { white-space:normal; overflow-wrap:anywhere; }
+      .pc-only-inline { display:none; }
+      .hero-sub { font-size:1rem; margin-bottom:2rem; max-width:342px; overflow-wrap:anywhere; }
       .hero-btns { flex-direction:column; align-items:flex-start; gap:13px; }
       .problems-heading .txt-sm { font-size:1.15rem; line-height:1.6; }
       .problems-heading .txt-lg { font-size:1.45rem; line-height:1.7; }
@@ -1193,7 +1287,7 @@
       .s07-layout { grid-template-columns:1fr; gap:8px; }
       .s07-col-head { grid-column:auto; }
       .service-info.s07-compact { padding:12px 14px 10px; }
-      .s07-link-col { grid-column:auto; justify-content:flex-end; }
+      .s07-link-col { grid-column:auto; justify-content:flex-start; }
       .flow-card { padding:26px 20px; }
       .flow-step { grid-template-columns:60px 108px minmax(0,1fr); justify-content:center; column-gap:14px; padding:18px 0 22px; }
       .flow-step-num, .flow-step-media { min-height:111px; }
@@ -1241,9 +1335,10 @@
           linear-gradient(rgba(255,255,255,.22), rgba(255,255,255,.22)),
           #fff url('assets/about_1_bg.png') center 18%/150% auto no-repeat;
       }
-      #page-about .about-story__inner { max-width:620px; }
-      #page-about .about-story h2 { font-size:1.62rem; margin-bottom:2rem; line-height:1.52; }
-      #page-about .about-story p { font-size:.965rem; line-height:1.92; margin-bottom:1.35rem; }
+      #page-about .about-story__inner { max-width:760px; }
+      #page-about .about-story h2 { font-size:1.62rem; margin-bottom:1.8rem; line-height:1.52; }
+      #page-about .about-story__body { max-width:740px; padding:0 8px; }
+      #page-about .about-story p { font-size:.965rem; line-height:1.92; margin-bottom:1.15rem; }
       #page-about .about-values { padding:68px 20px 56px; }
       #page-about .about-values h2 { font-size:1.6rem; margin-bottom:.8rem; }
       #page-about .about-values__intro { margin-bottom:2rem; font-size:.92rem; line-height:1.85; }
@@ -1319,19 +1414,20 @@
         transform:translateY(46px);
       }
       .hero-bg { display:none; }
-      .hero-text { max-width:100%; }
+      .hero-text { max-width:min(100%, 342px); }
       .hero h1 { font-size:1.32rem; line-height:1.6; letter-spacing:0; }
       #page-top .hero-text > h1 { margin-top:.9rem; }
       .hero h1 .line { white-space:normal; }
       .hero h1 .line-main-1 { font-size:1.8rem; line-height:1.35; white-space:nowrap; margin-bottom:.14em; }
       .hero h1 .line-main-2 { font-size:1.28rem; line-height:1.58; white-space:nowrap; }
-      .hero h1 .line-sub { white-space:nowrap; font-size:1.3rem; line-height:1.68; letter-spacing:-0.01em; }
+      .hero h1 .line-sub { white-space:normal; font-size:1.22rem; line-height:1.68; letter-spacing:0; overflow-wrap:anywhere; }
       .pc-only-inline { display:none; }
       .about-logo { height:auto; width:min(84vw, 340px); max-width:100%; object-fit:contain; }
       .about-heading { font-size:1.54rem; line-height:1.52; letter-spacing:.003em; }
       .about-heading .about-heading-line2 { white-space:nowrap; display:inline-block; }
       .hero-badges { margin-bottom:1.15rem; }
       .hero-sub {
+        max-width:calc(100vw - 32px);
         line-height:1.88;
         margin-bottom:2.1rem;
         background:rgba(255,255,255,.5);
@@ -1340,6 +1436,7 @@
         letter-spacing:-0.015em;
         font-feature-settings:"palt" 1;
         text-wrap:pretty;
+        overflow-wrap:anywhere;
       }
       .hero-btns { margin-top:.3rem; }
       .hero .btn-primary {
@@ -1424,6 +1521,8 @@
       .footer-inner { padding:0 16px; }
       .footer-logo img { height:56px; }
       .footer-desc { font-size:.8125rem; line-height:1.88; }
+      .footer-social { align-items:flex-start; }
+      .footer-social__links { gap:10px; }
       .footer-inner { padding:0 14px; }
       .footer-grid { gap:1.2rem; padding-bottom:2rem; }
       .footer-logo { margin-bottom:1.05rem; }
@@ -1456,9 +1555,10 @@
           url('assets/about_sp1bg.png') center center/auto 100% no-repeat,
           #fff;
       }
-      #page-about .about-story h2 { font-size:1.46rem; margin-bottom:1.75rem; }
+      #page-about .about-story h2 { font-size:1.46rem; margin-bottom:1.5rem; }
       #page-about .about-story h2 .about-story-line1 { display:inline-block; font-size:2rem; }
-      #page-about .about-story p { font-size:.92rem; line-height:1.9; margin-bottom:1.22rem; }
+      #page-about .about-story__body { padding:0 6px; }
+      #page-about .about-story p { font-size:.92rem; line-height:1.9; margin-bottom:1.05rem; }
       .about-values { padding:58px 16px 48px; }
       #page-about .about-values { padding:58px 16px 46px; }
       #page-about .about-values h2 { font-size:1.45rem; margin-bottom:.72rem; }
@@ -1510,10 +1610,22 @@
 <!-- ===== HEADER ===== -->
 <header class="site-header">
   <div class="header-inner">
-    <div class="header-logo">
-      <button onclick="navigate('top')" style="background:none;border:none;padding:0;cursor:pointer;">
-        <img src="assets/rogo_01.png" alt="YMデザイン企画">
-      </button>
+    <div class="header-brand">
+      <div class="header-logo">
+        <button onclick="navigate('top')">
+          <img src="assets/rogo_01.png" alt="YMデザイン企画">
+        </button>
+      </div>
+      <div class="header-social" aria-label="SNSリンク">
+        <a href="https://www.instagram.com/ymd_kikaku/" class="social-link" aria-label="Instagramを見る" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icon-instagram.png" alt="" aria-hidden="true">
+          <span class="sr-only">Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61590621039422" class="social-link" aria-label="Facebookを見る" target="_blank" rel="noopener noreferrer">
+          <img src="assets/icon-facebook.png" alt="" aria-hidden="true">
+          <span class="sr-only">Facebook</span>
+        </a>
+      </div>
     </div>
     <div class="header-right">
       <nav>
@@ -1539,6 +1651,10 @@
   <button onclick="navigate('about')">会社概要</button>
   <button onclick="navigate('faq')">よくある相談・FAQ</button>
   <button onclick="navigate('contact')">お問い合わせ</button>
+  <div class="mobile-social" aria-label="SNSリンク">
+    <a href="https://www.instagram.com/ymd_kikaku/" target="_blank" rel="noopener noreferrer" aria-label="Instagramを見る"><img src="assets/icon-instagram.png" alt="" aria-hidden="true">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61590621039422" target="_blank" rel="noopener noreferrer" aria-label="Facebookを見る"><img src="assets/icon-facebook.png" alt="" aria-hidden="true">Facebook</a>
+  </div>
 </nav>
 
 <main>
@@ -1557,7 +1673,7 @@
         <span class="line line-main-1">「どこに相談すればいい？」</span>
         <span class="line line-sub">そのお困りごと、<span class="pc-only-inline">YMデザイン企画が<br></span>整理してつなぎます。</span>
       </h1>
-      <p class="hero-sub">WEB制作を中心に、高齢者施設入居支援、<br class="pc-only-inline">家財やオフィスの片付け・処分、中古車販売・買取まで。<br class="pc-only-inline">内容を丁寧に整理し、必要な専門事業者・提携先へおつなぎします。</p>
+      <p class="hero-sub">WEB制作を中心に、中古車販売・買取、家財・オフィスの片付けや処分、<br class="pc-only-inline">高齢者施設への引越し支援、電気工事・太陽光パネル関連まで。<br class="pc-only-inline">内容を丁寧に整理し、必要な専門事業者・提携先へおつなぎします。</p>
       <div class="hero-btns">
         <button onclick="navigate('contact')" class="btn-primary">無料相談する</button>
         <button onclick="navigate('service')" class="btn-outline">サービスを見る</button>
@@ -1575,11 +1691,11 @@
       <span class="txt-sm">で困っていませんか？</span>
     </h2>
     <div class="problems-grid">
-      <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">建設廃材や焼却物の処分先を探している</span></div>
-      <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">太陽光パネル関連の相談先がわからない</span></div>
-      <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">廃油や塩ビ・樹脂廃材の買取について相談したい</span></div>
-      <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">電気工事や足場工事の依頼先を探している</span></div>
-      <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">信頼できる専門事業者につないでほしい</span></div>
+      <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">ホームページ制作、何から始めるか迷っている</span></div>
+      <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">今のサイトやSNSの見せ方を整えたい</span></div>
+      <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">中古車の購入・買い替え・買取について相談したい</span></div>
+      <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">家財整理やオフィスの片付け・処分先を探している</span></div>
+      <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">親の施設入居に伴う引越しや準備に困っている</span></div>
       <div class="problem-card"><span class="problem-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="#2d83cc" stroke-width="1.5"/><path d="M8 12l2.5 2.5 5.5-5.5" stroke="#2d83cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="problem-text">まず相談内容を整理してほしい</span></div>
     </div>
   </div>
@@ -1590,15 +1706,15 @@
   <div class="services-inner">
     <span class="section-label">SERVICES</span>
     <h2 class="section-heading">対応可能な相談領域</h2>
-    <p class="section-sub">産廃・リサイクル、工事・設備を中心に<br class="sp-only">幅広くご相談いただけます</p>
+    <p class="section-sub">WEB制作を中心に<br class="sp-only">事業や暮らしのお困りごとを整理します</p>
     <div class="services-grid">
-      <div class="service-card"><div class="service-card-body"><img src="assets/service_01.png" alt="建設廃材・焼却物処分" class="service-photo"><div class="service-info sky"><div class="service-num">SERVICE 01</div><h3 class="service-title">建設廃材・焼却物処分</h3><p class="service-desc">処分先・相談先のご案内</p><button onclick="navigate('service','service-01')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
-      <div class="service-card"><div class="service-card-body"><img src="assets/service_02.png" alt="太陽光パネル関連" class="service-photo"><div class="service-info yellow"><div class="service-num">SERVICE 02</div><h3 class="service-title">太陽光パネル関連</h3><p class="service-desc">設置・撤去・処分に関するご相談</p><button onclick="navigate('service','service-02')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
-      <div class="service-card"><div class="service-card-body"><img src="assets/service_03.png" alt="廃油・塩ビ樹脂廃材買取" class="service-photo"><div class="service-info sky"><div class="service-num">SERVICE 03</div><h3 class="service-title">廃油・塩ビ樹脂廃材買取</h3><p class="service-desc">買取・リサイクルに関するご相談</p><button onclick="navigate('service','service-03')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
-      <div class="service-card"><div class="service-card-body"><img src="assets/service_04.png" alt="電気工事" class="service-photo"><div class="service-info teal"><div class="service-num">SERVICE 04</div><h3 class="service-title">電気工事</h3><p class="service-desc">設備まわりの工事相談・依頼先のご案内</p><button onclick="navigate('service','service-04')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
-      <div class="service-card"><div class="service-card-body"><img src="assets/service_05.png" alt="中古車販売・買取" class="service-photo"><div class="service-info coral"><div class="service-num">SERVICE 05</div><h3 class="service-title">中古車販売・買取</h3><p class="service-desc">購入・買い替え・買取のご相談</p><button onclick="navigate('service','service-05')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
-      <div class="service-card"><div class="service-card-body"><img src="assets/service_06.png" alt="WEB制作" class="service-photo"><div class="service-info indigo"><div class="service-num">SERVICE 06</div><h3 class="service-title">WEB制作</h3><p class="service-desc">HP・バナー・LP制作のご相談</p><a href="web-production.html" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
-      <div class="service-card service-card-wide"><div class="service-card-body"><div class="service-info gray s06 s07-compact"><div class="s07-layout"><div class="s07-col s07-col-head"><div class="service-num">SERVICE 07</div><h3 class="service-title">その他の相談領域</h3></div><div class="s07-col"><ul class="service-other-list"><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>足場工事</li><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>粗大ゴミ回収</li></ul></div><div class="s07-col"><ul class="service-other-list"><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>お片付け</li><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>遺品整理</li></ul></div><div class="s07-link-col"><button onclick="navigate('service','service-06')" class="service-link s07-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div></div></div>
+      <div class="service-card"><div class="service-card-body"><img src="assets/service_06.png" alt="WEB制作" class="service-photo"><div class="service-info indigo"><div class="service-num">SERVICE 01</div><h3 class="service-title">WEB制作</h3><p class="service-desc">HP・バナー・LP制作、SNSまわりのご相談</p><a href="web-production.html" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+      <div class="service-card"><div class="service-card-body"><img src="assets/service_05.png" alt="中古車販売・買取" class="service-photo"><div class="service-info coral"><div class="service-num">SERVICE 02</div><h3 class="service-title">中古車販売・買取</h3><p class="service-desc">購入・買い替え・買取のご相談</p><button onclick="navigate('service','service-01')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
+      <div class="service-card"><div class="service-card-body"><img src="assets/service_01.png" alt="家・オフィスの片付け・処分" class="service-photo"><div class="service-info teal"><div class="service-num">SERVICE 03</div><h3 class="service-title">家・オフィスの片付け・処分</h3><p class="service-desc">家財整理・オフィス家具処分のご相談</p><button onclick="navigate('service','service-02')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
+      <div class="service-card"><div class="service-card-body"><img src="assets/service06_2.png" alt="高齢者施設への引越し支援" class="service-photo"><div class="service-info sky"><div class="service-num">SERVICE 04</div><h3 class="service-title">高齢者施設への引越し支援</h3><p class="service-desc">施設入居に伴う引越し・準備のご相談</p><button onclick="navigate('service','service-03')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
+      <div class="service-card"><div class="service-card-body"><img src="assets/service_04.png" alt="電気工事・太陽光パネル関連" class="service-photo"><div class="service-info yellow"><div class="service-num">SERVICE 05</div><h3 class="service-title">電気工事・太陽光パネル関連</h3><p class="service-desc">設備まわりの工事相談、太陽光パネル関連のご相談</p><button onclick="navigate('service','service-04')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
+      <div class="service-card"><div class="service-card-body"><img src="assets/service_03.png" alt="足場事業" class="service-photo"><div class="service-info teal"><div class="service-num">SERVICE 06</div><h3 class="service-title">足場事業</h3><p class="service-desc">足場工事・仮設工事に関するご相談</p><button onclick="navigate('service','service-05')" class="service-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
+      <div class="service-card service-card-wide"><div class="service-card-body"><div class="service-info gray s06 s07-compact"><div class="s07-layout"><div class="s07-col s07-col-head"><div class="service-num">SERVICE 07</div><h3 class="service-title">その他の相談領域</h3></div><div class="s07-col"><ul class="service-other-list"><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>建設廃材・焼却物処分</li></ul></div><div class="s07-col"><ul class="service-other-list"><li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>廃油・塩ビ樹脂廃材買取</li></ul></div><div class="s07-link-col"><button onclick="navigate('service','service-06')" class="service-link s07-link">詳細を見る <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="#516476" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div></div></div>
     </div>
   </div>
 </section>
@@ -1712,10 +1828,10 @@
     <h2 class="faq-heading">よくあるご相談・ご質問</h2>
     <p class="faq-intro">「こんな内容でも相談できる？」<br>「YMデザイン企画が直接対応するの？」<br>そんな疑問にお答えします。</p>
     <div class="faq-list">
-      <div class="faq-item"><button class="faq-btn" type="button"><span class="faq-q-badge">Q.</span><span class="faq-q-text">建設廃材や焼却物の処分先を探している</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer">建設廃材や焼却物の処分についてのご相談は、対応可能です。処分内容（種別・数量・場所など）を丁寧にお聞きし、許可を持つ専門処分業者をご案内いたします。</div></div>
-      <div class="faq-item"><button class="faq-btn" type="button"><span class="faq-q-badge">Q.</span><span class="faq-q-text">太陽光パネルの設置・撤去・処分について相談したい</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer">太陽光パネルの設置・撤去・処分に関するご相談にも対応しています。現在のパネルの状態や設置場所、ご希望の時期などをお聞きした上で、内容に合った専門事業者・提携先をご案内させていただきます。</div></div>
-      <div class="faq-item"><button class="faq-btn" type="button"><span class="faq-q-badge">Q.</span><span class="faq-q-text">相談だけでも大丈夫ですか？</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer">もちろんです。ご相談は無料で承っています。「何に困っているのかうまく説明できない」という段階でも大丈夫です。まずはお困りごとをお気軽にお聞かせください。</div></div>
-      <div class="faq-item"><button class="faq-btn" type="button"><span class="faq-q-badge">Q.</span><span class="faq-q-text">YMデザイン企画が直接施工・処分するのですか？</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer">当社は直接施工・処分は行いません。当社の役割は、お客様のお困りごとをしっかりとお聞きして整理し、必要な許可・資格を持つ専門事業者・提携先をご案内・おつなぎすることです。</div></div>
+      <div class="faq-item"><button class="faq-btn" type="button"><span class="faq-q-badge">Q.</span><span class="faq-q-text">ホームページ制作だけでも相談できますか？</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer">はい。内容がまとまっていない段階でも大丈夫です。目的や見せたい相手を整理しながら、必要な形をご提案します。</div></div>
+      <div class="faq-item"><button class="faq-btn" type="button"><span class="faq-q-badge">Q.</span><span class="faq-q-text">中古車の購入や買取も相談できますか？</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer">はい。ご希望の条件やご予算、用途などをお聞きしたうえで、必要に応じて提携先へおつなぎします。</div></div>
+      <div class="faq-item"><button class="faq-btn" type="button"><span class="faq-q-badge">Q.</span><span class="faq-q-text">家やオフィスの片付け・処分も相談できますか？</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer">はい。家財整理、粗大ゴミ、オフィス家具の整理・処分など、内容に応じて対応可能な専門先へおつなぎします。</div></div>
+      <div class="faq-item"><button class="faq-btn" type="button"><span class="faq-q-badge">Q.</span><span class="faq-q-text">高齢者施設への引越しや準備も相談できますか？</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-answer">はい。施設入居に伴う荷物整理、引越し、家具の配置、片付けなど、状況を整理しながらご相談いただけます。</div></div>
     </div>
     <div class="faq-more">
       <button class="btn-faq" onclick="navigate('faq')">よくある相談例・FAQをもっと見る <span class="faq-link-arrow" aria-hidden="true">→</span></button>
@@ -1728,157 +1844,13 @@
 <!-- ================= SERVICEページ ================= -->
 <div id="page-service" class="page-content hidden">
   <div class="pg-hero"><span class="pg-hero__en">SERVICE</span><span class="pg-hero__ja">相談できること</span></div>
-  <div class="svc-intro"><h2><span class="svc-intro-main">産廃・リサイクル、<br class="sp-only">工事・設備</span><span class="svc-intro-tail">まわりの</span><br class="pc-only">「どこに相談すればいい？」<br class="sp-only">を整理してつなぎます。</h2><p>建設廃材・焼却物処分、太陽光パネル関連、廃油・塩ビ樹脂廃材買取、電気工事、中古車販売・買取を中心に、事業者様のお困りごとを丁寧にヒアリングし、内容に応じて必要な専門事業者・提携先へおつなぎします。</p></div>
+  <div class="svc-intro"><h2><span class="svc-intro-main">WEB制作を中心に、<br class="sp-only">必要な相談先</span><span class="svc-intro-tail">へ</span><br class="pc-only">「どこに相談すればいい？」<br class="sp-only">を整理してつなぎます。</h2><p>中古車販売・買取、家財・オフィスの片付け処分、高齢者施設への引越し支援、電気工事・太陽光パネル関連、足場事業など、事業や暮らしのお困りごとを丁寧にヒアリングし、内容に応じて必要な専門事業者・提携先へおつなぎします。</p><a href="web-production.html" class="service-intro-web-link">WEB制作の詳細は専用ページでご案内しています<span class="service-intro-web-link-tail">→</span></a></div>
 
   <div class="svc-detail-area">
   <div id="service-01" class="svc-detail">
     <div class="svc-detail__inner">
       <div class="svc-detail__body svc01-head">
         <span class="svc-detail__num">SERVICE 01</span>
-        <h3 class="svc-detail__title">建設廃材・焼却物処分</h3>
-        <p class="svc-detail__desc">建設現場や事業活動で発生する廃材・焼却物について、内容や状況を整理し、対応可能な専門事業者・提携先へおつなぎします。</p>
-      </div>
-      <div class="svc01-body">
-        <div class="svc-detail__img">
-          <img src="assets/service_01.png" alt="建設廃材・焼却物処分">
-        </div>
-        <div class="svc-detail__stack">
-          <div class="svc-detail__box">
-            <div class="svc-detail__box-label">こんなご相談に対応しています</div>
-            <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>建設廃材の処分先を探している</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>焼却物の扱いについて相談したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>現場や事業所の状況を整理したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>回収・処分に必要な条件を確認したい</li>
-            </ul>
-          </div>
-          <div class="svc-detail__box svc-detail__box--points">
-            <div class="svc-detail__box-label">整理するポイント</div>
-            <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>廃材・焼却物の種類</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>量や保管状況</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>現場・事業所の場所</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>希望時期や急ぎ度</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>許可・資格が必要な内容かどうか</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="service-02" class="svc-detail">
-    <div class="svc-detail__inner">
-      <div class="svc-detail__body svc01-head">
-        <span class="svc-detail__num">SERVICE 02</span>
-        <h3 class="svc-detail__title">太陽光パネル関連</h3>
-        <p class="svc-detail__desc">太陽光パネルの設置・撤去・処分など、案件内容に応じて必要な専門先へおつなぎします。</p>
-      </div>
-      <div class="svc01-body">
-        <div class="svc-detail__img">
-          <img src="assets/service_02.png" alt="太陽光パネル関連">
-        </div>
-        <div class="svc-detail__stack">
-          <div class="svc-detail__box">
-            <div class="svc-detail__box-label">こんなご相談に対応しています</div>
-            <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>太陽光パネルの処分先を探している</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>設置や撤去について相談したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>パネルや関連設備の扱いを確認したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>対応できる専門事業者を探している</li>
-            </ul>
-          </div>
-          <div class="svc-detail__box svc-detail__box--points">
-            <div class="svc-detail__box-label">整理するポイント</div>
-            <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>設置・撤去・処分の内容</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>パネルの枚数や設置状況</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>建物・土地の場所</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>希望時期や作業条件</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>関連設備の有無</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="service-03" class="svc-detail">
-    <div class="svc-detail__inner">
-      <div class="svc-detail__body svc01-head">
-        <span class="svc-detail__num">SERVICE 03</span>
-        <h3 class="svc-detail__title">廃油・塩ビ樹脂廃材買取</h3>
-        <p class="svc-detail__desc">廃油や塩ビ管・樹脂廃材など、リサイクルにつながる買取相談に対応します。</p>
-      </div>
-      <div class="svc01-body">
-        <div class="svc-detail__img">
-          <img src="assets/service_03.png" alt="廃油・塩ビ樹脂廃材買取">
-        </div>
-        <div class="svc-detail__stack">
-          <div class="svc-detail__box">
-            <div class="svc-detail__box-label">こんなご相談に対応しています</div>
-            <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>廃油の買取先を探している</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>塩ビ管・樹脂廃材を買い取ってほしい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>産廃として処分する前に相談したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>リサイクルできるか確認したい</li>
-            </ul>
-          </div>
-          <div class="svc-detail__box svc-detail__box--points">
-            <div class="svc-detail__box-label">整理するポイント</div>
-            <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>廃材・廃油の種類</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>数量や保管状態</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>引き取り場所</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>希望時期</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>買取・処分どちらが適切か</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="service-04" class="svc-detail">
-    <div class="svc-detail__inner">
-      <div class="svc-detail__body svc01-head">
-        <span class="svc-detail__num">SERVICE 04</span>
-        <h3 class="svc-detail__title">電気工事</h3>
-        <p class="svc-detail__desc">事業所・現場・設備まわりの電気工事について、相談内容を整理し、対応可能な専門事業者へおつなぎします。</p>
-      </div>
-      <div class="svc01-body">
-        <div class="svc-detail__img">
-          <img src="assets/service_04.png" alt="電気工事">
-        </div>
-        <div class="svc-detail__stack">
-          <div class="svc-detail__box">
-            <div class="svc-detail__box-label">こんなご相談に対応しています</div>
-            <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>電気工事の依頼先を探している</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>設備まわりの配線や電源について相談したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>現場で必要な電気工事を確認したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>対応できる専門業者を探している</li>
-            </ul>
-          </div>
-          <div class="svc-detail__box svc-detail__box--points">
-            <div class="svc-detail__box-label">整理するポイント</div>
-            <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>工事内容</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>現場や設備の状況</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>対応エリア</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>希望時期や工期</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>資格・専門対応が必要な内容か</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="service-05" class="svc-detail">
-    <div class="svc-detail__inner">
-      <div class="svc-detail__body svc01-head">
-        <span class="svc-detail__num">SERVICE 05</span>
         <h3 class="svc-detail__title">中古車販売・買取</h3>
         <p class="svc-detail__desc">中古車の購入・買い替え・買取について、条件やご希望を整理し、対応可能な専門先へおつなぎします。ご相談内容に応じて、株式会社Solviaオート商会をご紹介します。</p>
       </div>
@@ -1937,12 +1909,156 @@
     </div>
   </div>
 
+  <div id="service-02" class="svc-detail">
+    <div class="svc-detail__inner">
+      <div class="svc-detail__body svc01-head">
+        <span class="svc-detail__num">SERVICE 02</span>
+        <h3 class="svc-detail__title">家・オフィスの片付け・処分</h3>
+        <p class="svc-detail__desc">家財整理、粗大ゴミ、オフィス家具、事務所整理など、片付けや処分の内容を整理し、対応可能な専門先へおつなぎします。</p>
+      </div>
+      <div class="svc01-body">
+        <div class="svc-detail__img">
+          <img src="assets/service_01.png" alt="家・オフィスの片付け・処分">
+        </div>
+        <div class="svc-detail__stack">
+          <div class="svc-detail__box">
+            <div class="svc-detail__box-label">こんなご相談に対応しています</div>
+            <ul class="svc-detail__list tight">
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>家財整理を相談したい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>粗大ゴミの処分先を探している</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>オフィス家具を整理・処分したい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>事務所整理の相談先を探している</li>
+            </ul>
+          </div>
+          <div class="svc-detail__box svc-detail__box--points">
+            <div class="svc-detail__box-label">整理するポイント</div>
+            <ul class="svc-detail__list tight">
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>整理・処分したい品目</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>量や搬出条件</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>建物・事務所の場所</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>希望時期や急ぎ度</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>専門先への連携が必要な範囲</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="service-03" class="svc-detail">
+    <div class="svc-detail__inner">
+      <div class="svc-detail__body svc01-head">
+        <span class="svc-detail__num">SERVICE 03</span>
+        <h3 class="svc-detail__title">高齢者施設への引越し支援</h3>
+        <p class="svc-detail__desc">施設入居に伴う荷物整理、引越し、家具配置、必要な準備について、状況を整理しながらご相談いただけます。</p>
+      </div>
+      <div class="svc01-body">
+        <div class="svc-detail__img">
+          <img src="assets/service06_2.png" alt="高齢者施設への引越し支援">
+        </div>
+        <div class="svc-detail__stack">
+          <div class="svc-detail__box">
+            <div class="svc-detail__box-label">こんなご相談に対応しています</div>
+            <ul class="svc-detail__list tight">
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>施設入居に伴う引越しを相談したい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>入居前の荷物整理を進めたい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>家具の持ち込みや配置を確認したい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>家族だけでは準備が進まない</li>
+            </ul>
+          </div>
+          <div class="svc-detail__box svc-detail__box--points">
+            <div class="svc-detail__box-label">整理するポイント</div>
+            <ul class="svc-detail__list tight">
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>入居予定日や引越し時期</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>運ぶ荷物と整理する荷物</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>施設側の搬入条件</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>家具配置や準備物</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>片付けや処分の必要範囲</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="service-04" class="svc-detail">
+    <div class="svc-detail__inner">
+      <div class="svc-detail__body svc01-head">
+        <span class="svc-detail__num">SERVICE 04</span>
+        <h3 class="svc-detail__title">電気工事・太陽光パネル関連</h3>
+        <p class="svc-detail__desc">設備まわりの工事相談や、太陽光パネルの設置・撤去・処分について、内容に応じて対応可能な専門事業者へおつなぎします。</p>
+      </div>
+      <div class="svc01-body">
+        <div class="svc-detail__img">
+          <img src="assets/service_04.png" alt="電気工事・太陽光パネル関連">
+        </div>
+        <div class="svc-detail__stack">
+          <div class="svc-detail__box">
+            <div class="svc-detail__box-label">こんなご相談に対応しています</div>
+            <ul class="svc-detail__list tight">
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>設備まわりの工事相談をしたい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>太陽光パネルの設置・撤去・処分を相談したい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>パネルや関連設備の扱いを確認したい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>対応できる専門業者を探している</li>
+            </ul>
+          </div>
+          <div class="svc-detail__box svc-detail__box--points">
+            <div class="svc-detail__box-label">整理するポイント</div>
+            <ul class="svc-detail__list tight">
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>工事内容や相談したい設備</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>パネルの枚数や設置状況</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>現場・建物・土地の場所</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>希望時期や作業条件</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>専門事業者への確認が必要な内容</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="service-05" class="svc-detail">
+    <div class="svc-detail__inner">
+      <div class="svc-detail__body svc01-head">
+        <span class="svc-detail__num">SERVICE 05</span>
+        <h3 class="svc-detail__title">足場事業</h3>
+        <p class="svc-detail__desc">建設現場や改修工事などに伴う足場工事・仮設工事について、内容を整理し、対応可能な専門事業者へおつなぎします。</p>
+      </div>
+      <div class="svc01-body">
+        <div class="svc-detail__img">
+          <img src="assets/service_03.png" alt="足場事業">
+        </div>
+        <div class="svc-detail__stack">
+          <div class="svc-detail__box">
+            <div class="svc-detail__box-label">こんなご相談に対応しています</div>
+            <ul class="svc-detail__list tight">
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>足場工事のご相談</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>仮設工事に関するご相談</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>現場条件に合わせた対応先の確認</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>施工時期や範囲の整理</li>
+            </ul>
+          </div>
+          <div class="svc-detail__box svc-detail__box--points">
+            <div class="svc-detail__box-label">整理するポイント</div>
+            <ul class="svc-detail__list tight">
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>工事内容</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>現場の所在地</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>建物の規模や階数</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>希望時期</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>対応してほしい範囲</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="service-06" class="svc-detail">
     <div class="svc-detail__inner">
       <div class="svc-detail__body svc01-head">
         <span class="svc-detail__num">SERVICE 06</span>
         <h3 class="svc-detail__title">その他の相談領域</h3>
-        <p class="svc-detail__desc">産廃・工事・設備まわり以外にも、事業のお困りごとに応じて、内容を整理し必要な専門先へおつなぎします。</p>
+        <p class="svc-detail__desc">建設廃材・焼却物処分、廃油・塩ビ樹脂廃材の買取相談など、事業まわりの専門相談について内容を整理し、必要な専門先へおつなぎします。</p>
       </div>
       <div class="svc01-body">
         <div class="svc-detail__img">
@@ -1952,20 +2068,19 @@
           <div class="svc-detail__box">
             <div class="svc-detail__box-label">こんなご相談に対応しています</div>
             <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>足場工事について相談したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>粗大ゴミ回収の依頼先を探している</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>お片付けについて相談したい</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>遺品整理について相談したい</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>建設廃材・焼却物処分のご相談</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>廃油・塩ビ樹脂廃材の買取相談</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>その他、事業まわりの専門相談</li>
             </ul>
           </div>
           <div class="svc-detail__box svc-detail__box--points">
             <div class="svc-detail__box-label">整理するポイント</div>
             <ul class="svc-detail__list tight">
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>相談したい内容の種類</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>現在困っていること</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>対応してほしい範囲</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>希望時期や予算感</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>専門先への連携が必要かどうか</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>廃材や廃油の種類</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>量や保管状況</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>現場や保管場所の所在地</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>回収・買取の希望時期</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>専門事業者への確認が必要な内容</li>
             </ul>
           </div>
         </div>
@@ -1974,7 +2089,7 @@
   </div>
   </div>
 
-  <div class="svc-note-wrap" style="max-width:900px;margin:0 auto 28px;padding:0 40px"><div class="svc-note"><strong>※ご注意</strong>各種処分・工事等は、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。</div></div>
+  <div class="svc-note-wrap" style="max-width:900px;margin:0 auto 28px;padding:0 40px"><div class="svc-note"><strong>※ご注意</strong>一部サービスは、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。</div></div>
   <div class="svc-note-wrap" style="max-width:900px;margin:0 auto 80px;padding:0 40px">
     <div class="svc-note svc-note--web">
       <a href="web-production.html">WEB制作について詳しくは<span class="svc-note-link-tail">こちら</span></a>
@@ -1987,12 +2102,14 @@
   <div class="pg-hero"><span class="pg-hero__en">ABOUT US</span><span class="pg-hero__ja">YMデザイン企画について</span></div>
   <div class="about-story"><div class="about-story__inner">
     <h2><span class="about-story-line1">“人と人をつなぐ”</span><br>それが、私たちの仕事です。</h2>
+    <div class="about-story__body">
     <p>YMデザイン企画が大切にしているのは、ただ仕事を紹介することでも、ただサービスを提供することでもありません。</p>
     <p>目の前の方が抱えているお困りごとを丁寧に受け止め、「何に困っているのか」「どこに相談すればよいのか」を一緒に整理し、必要な人・会社・専門先へ、責任を持ってつなぐこと。</p>
-    <p>人と人をつなげる仕事こそ、<br class="sp-only">私たちの天職だと考えています。</p>
+    <p>人と人をつなげる仕事こそ、私たちの天職だと考えています。</p>
     <p>真摯に、丁寧に、そしてスピード感を持って対応する。相手の立場に寄り添いながら、今いちばん必要な選択肢を一緒に考える。</p>
     <p>その積み重ねが、安心につながり、信頼につながり、やがて人の笑顔や豊かさにつながっていくと信じています。</p>
     <p>YMデザイン企画は、Giveの心を大切に、人と人、想いと解決策をつなぐ存在であり続けます。</p>
+    </div>
   </div></div>
   <div class="about-values">
     <h2>大切にしている姿勢</h2>
@@ -2048,7 +2165,7 @@
       <div class="about-table__row"><span class="about-table__label">屋号</span><span class="about-table__value">YMデザイン企画</span></div>
       <div class="about-table__row"><span class="about-table__label">代表者</span><span class="about-table__value">金沢由紀</span></div>
       <div class="about-table__row"><span class="about-table__label">所在地</span><span class="about-table__value">〒170-0013<br>東京都豊島区東池袋2丁目<span class="about-table__nowrap">62番8号</span><br>BIGオフィスプラザ池袋1206<br>東京営業所</span></div>
-      <div class="about-table__row"><span class="about-table__label">事業内容</span><span class="about-table__value">産廃・リサイクル、工事・設備、事業連携サポート、<br>WEB制作等</span></div>
+      <div class="about-table__row"><span class="about-table__label">事業内容</span><span class="about-table__value">WEB制作、中古車販売・買取のご相談、家財・オフィスの片付け処分相談、高齢者施設への引越し支援、電気工事・太陽光パネル関連、足場事業、その他の相談領域</span></div>
       <div class="about-table__row"><span class="about-table__label">対応エリア</span><span class="about-table__value">関東一円</span></div>
       <div class="about-table__row"><span class="about-table__label">e-mail</span><span class="about-table__value">ymdesign.kikaku@gmail.com</span></div>
     </div>
@@ -2062,25 +2179,28 @@
     <img src="assets/section7_bg.png" alt="" class="faq-examples__deco">
     <div style="text-align:center;margin-bottom:3rem;"><h2 class="sec-heading">よくあるご相談例</h2><p class="sec-sub" style="margin-bottom:0;">以下のような内容でご相談いただくケースが多くございます。<br class="sp-only"><br class="sp-only">「こんなことでも大丈夫？」という場合も、まずはお気軽にご相談ください。</p></div>
     <div class="faq-examples__grid">
-      <div class="faq-example-card s-sky"><div class="faq-example-card__q"><span>Q.</span>建設廃材や焼却物の処分先を探している</div><div class="faq-example-card__a"><span>A.</span>処分内容や条件を整理したうえで、対応可能な専門事業者・提携先へおつなぎします。</div></div>
-      <div class="faq-example-card s-yellow"><div class="faq-example-card__q"><span>Q.</span>太陽光パネルの設置・撤去・処分について相談したい</div><div class="faq-example-card__a"><span>A.</span>案件内容に応じて、必要な専門先との連携を行います。</div></div>
-      <div class="faq-example-card s-sky"><div class="faq-example-card__q"><span>Q.</span>廃油や塩ビ・樹脂廃材の買取先を探している</div><div class="faq-example-card__a"><span>A.</span>リサイクルにつながる買取相談として、内容を確認しながら対応します。</div></div>
-      <div class="faq-example-card s-teal"><div class="faq-example-card__q"><span>Q.</span>電気工事や足場工事の依頼先を探している</div><div class="faq-example-card__a"><span>A.</span>現場状況や条件を整理し、対応可能な専門事業者へおつなぎします。</div></div>
-      <div class="faq-example-card s-other"><div class="faq-example-card__q"><span>Q.</span>片付け・粗大ゴミ回収・遺品整理について相談したい</div><div class="faq-example-card__a"><span>A.</span>内容や状況を確認し、対応可能な専門先へのご案内・連携を行います。</div></div>
-      <div class="faq-example-card s-indigo"><div class="faq-example-card__q"><span>Q.</span>中古車関連やWEB制作について相談したい</div><div class="faq-example-card__a"><span>A.</span>中古車関連事業や、HP・バナー・LP制作などのWEB制作についても内容に応じてご相談いただけます。</div></div>
+      <div class="faq-example-card s-indigo"><div class="faq-example-card__q"><span>Q.</span>ホームページ制作だけでも相談できますか？</div><div class="faq-example-card__a"><span>A.</span>はい。内容がまとまっていない段階でも、目的や見せたい相手を整理しながら必要な形をご提案します。</div></div>
+      <div class="faq-example-card s-other"><div class="faq-example-card__q"><span>Q.</span>中古車の購入や買取も相談できますか？</div><div class="faq-example-card__a"><span>A.</span>はい。条件やご予算、用途などをお聞きしたうえで、必要に応じて提携先へおつなぎします。</div></div>
+      <div class="faq-example-card s-teal"><div class="faq-example-card__q"><span>Q.</span>家やオフィスの片付け・処分も相談できますか？</div><div class="faq-example-card__a"><span>A.</span>はい。家財整理、粗大ゴミ、オフィス家具の整理・処分など、内容に応じて専門先へおつなぎします。</div></div>
+      <div class="faq-example-card s-sky"><div class="faq-example-card__q"><span>Q.</span>高齢者施設への引越しや準備も相談できますか？</div><div class="faq-example-card__a"><span>A.</span>はい。荷物整理、引越し、家具配置、準備内容を整理しながらご相談いただけます。</div></div>
+      <div class="faq-example-card s-yellow"><div class="faq-example-card__q"><span>Q.</span>電気工事や太陽光パネル関連も相談できますか？</div><div class="faq-example-card__a"><span>A.</span>はい。設備まわりの工事相談や太陽光パネルの設置・撤去・処分について、内容に応じて専門先へおつなぎします。</div></div>
+      <div class="faq-example-card s-teal"><div class="faq-example-card__q"><span>Q.</span>足場工事や仮設工事も相談できますか？</div><div class="faq-example-card__a"><span>A.</span>はい。現場条件や施工時期、対応範囲を整理し、対応可能な専門事業者へおつなぎします。</div></div>
+      <div class="faq-example-card s-other"><div class="faq-example-card__q"><span>Q.</span>その他の相談領域も相談できますか？</div><div class="faq-example-card__a"><span>A.</span>はい。建設廃材・焼却物処分、廃油・塩ビ樹脂廃材の買取相談など、内容を整理して専門先へおつなぎします。</div></div>
     </div>
-    <div class="svc-note" style="max-width:900px;margin:0 auto;"><strong>※ご注意</strong>各種処分・工事等は、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。</div>
+    <div class="svc-note" style="max-width:900px;margin:0 auto;"><strong>※ご注意</strong>一部サービスは、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。</div>
   </div>
   <div class="faq-qlist"><div class="faq-qlist__inner">
     <h2>よくあるご質問</h2>
     <div class="faq-accord">
+      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">ホームページ制作だけでも相談できますか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">はい。内容がまとまっていない段階でも大丈夫です。目的や見せたい相手を整理しながら、必要な形をご提案します。</div></div>
+      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">中古車の購入や買取も相談できますか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">はい。ご希望の条件やご予算、用途などをお聞きしたうえで、必要に応じて提携先へおつなぎします。</div></div>
+      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">家やオフィスの片付け・処分も相談できますか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">はい。家財整理、粗大ゴミ、オフィス家具の整理・処分など、内容に応じて対応可能な専門先へおつなぎします。</div></div>
+      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">高齢者施設への引越しや準備も相談できますか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">はい。施設入居に伴う荷物整理、引越し、家具の配置、片付けなど、状況を整理しながらご相談いただけます。</div></div>
+      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">電気工事・太陽光パネル関連も相談できますか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">はい。設備まわりの工事内容や、太陽光パネルの設置・撤去・処分などを確認したうえで、必要な専門先へおつなぎします。</div></div>
+      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">足場事業も相談できますか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">はい。足場工事・仮設工事について、現場条件や希望時期、対応してほしい範囲を整理し、専門事業者へおつなぎします。</div></div>
+      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">その他の相談領域も相談できますか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">はい。建設廃材・焼却物処分、廃油・塩ビ樹脂廃材の買取相談など、事業まわりの専門相談について内容を整理し、必要な専門先へおつなぎします。</div></div>
       <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">相談だけでも大丈夫ですか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">はい。「どこに相談すればいいかわからない」という段階でもご相談いただけます。内容を丁寧にヒアリングし、必要な専門先を一緒に整理します。</div></div>
-      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">相談は無料ですか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">はい。ご相談は無料です。具体的な費用が発生する場合は、内容を確認したうえでご案内します。</div></div>
-      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">YMデザイン企画が直接施工・処分するのですか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">すべてをYMデザイン企画が直接施工・処分するものではありません。内容に応じて、必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。</div></div>
-      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">対応エリアはどこですか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">関東一円を中心に対応しています。案件内容によって対応可否が異なる場合がありますので、まずはご相談ください。</div></div>
-      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">法人でなくても相談できますか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">基本的には法人・事業者様を中心に対応しています。内容によっては個人の方からのご相談も確認可能です。</div></div>
-      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">急ぎの相談もできますか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">可能な限りスピード感を持って対応いたします。お急ぎの場合は、お問い合わせ時にその旨をご記入ください。</div></div>
-      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">WEB制作だけの相談もできますか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">はい。ホームページ制作・バナー広告・LP制作などのWEB制作もご相談いただけます。</div></div>
+      <div class="faq-accord__item"><button class="faq-accord__btn"><span class="faq-accord__badge">Q.</span><span class="faq-accord__q">YMデザイン企画が直接対応する範囲はどこまでですか？</span><svg class="faq-accord__icon" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-accord__ans">WEB制作や相談内容の整理を中心に対応します。一部サービスは、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。</div></div>
     </div>
   </div></div>
 </div><!-- /page-faq -->
@@ -2102,7 +2222,7 @@
         <div class="contact-form__field"><label class="contact-form__label">メールアドレス <span class="contact-form__req">必須</span></label><input type="email" name="email" class="contact-form__input" placeholder="example@email.com"></div>
         <div class="contact-form__field"><label class="contact-form__label">電話番号 <span class="contact-form__opt">任意</span></label><input type="tel" name="phone" class="contact-form__input" placeholder="090-0000-0000"></div>
         <div class="contact-form__field"><label class="contact-form__label">希望連絡方法 <span class="contact-form__req">必須</span></label><div class="contact-form__radio-wrap"><label class="contact-form__radio"><input type="radio" name="method" value="メール" checked style="accent-color:var(--navy)"> メール</label><label class="contact-form__radio"><input type="radio" name="method" value="電話" style="accent-color:var(--navy)"> 電話</label></div></div>
-        <div class="contact-form__field"><label class="contact-form__label">相談領域 <span class="contact-form__req">必須</span></label><select name="category" class="contact-form__select"><option value="">― 選択してください ―</option><option value="建設廃材・焼却物処分">建設廃材・焼却物処分</option><option value="太陽光パネル関連">太陽光パネル関連</option><option value="廃油・塩ビ樹脂廃材買取">廃油・塩ビ樹脂廃材買取</option><option value="電気工事">電気工事</option><option value="足場工事">足場工事</option><option value="お片付け・粗大ゴミ回収・遺品整理">お片付け・粗大ゴミ回収・遺品整理</option><option value="中古車関連事業">中古車関連事業</option><option value="WEB制作">WEB制作</option><option value="その他">その他</option></select></div>
+        <div class="contact-form__field"><label class="contact-form__label">相談領域 <span class="contact-form__req">必須</span></label><select name="category" class="contact-form__select"><option value="">― 選択してください ―</option><option value="WEB制作">WEB制作</option><option value="中古車販売・買取">中古車販売・買取</option><option value="家財・オフィスの片付け処分相談">家財・オフィスの片付け処分相談</option><option value="高齢者施設への引越し支援">高齢者施設への引越し支援</option><option value="電気工事・太陽光パネル関連">電気工事・太陽光パネル関連</option><option value="足場事業">足場事業</option><option value="その他の相談領域">その他の相談領域</option></select></div>
         <div class="contact-form__field"><label class="contact-form__label">お問い合わせ内容 <span class="contact-form__req">必須</span></label><textarea name="message" class="contact-form__textarea" placeholder="ご依頼の内容・現在の状況など、わかる範囲でお知らせください。「まだ何も決まっていない」でも大丈夫です。"></textarea></div>
         <div class="contact-form__privacy"><input type="checkbox" id="chk-privacy" style="accent-color:var(--navy);width:16px;height:16px;flex-shrink:0;"><label for="chk-privacy" style="font-size:.875rem;color:var(--g600);"><button type="button" onclick="navigate('privacy')" class="contact-form__privacy-link">プライバシーポリシー</button>に同意のうえ、送信します。</label></div>
         <div><button type="submit" class="contact-form__submit">送信する</button><p class="contact-form__note">送信後、24時間以内にご返信します。</p></div>
@@ -2134,7 +2254,7 @@
         <p style="font-size:.8125rem;color:var(--g500);line-height:1.7;margin-bottom:16px;">対応可能エリアや相談費用など、よくある疑問をFAQにまとめています。</p>
         <button onclick="navigate('faq')" class="contact-info__faq-btn">FAQ を見る</button>
       </div>
-      <div class="svc-note"><strong>※ご注意</strong>各種処分・工事等は、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。</div>
+      <div class="svc-note"><strong>※ご注意</strong>一部サービスは、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。</div>
     </div>
   </div></div>
 </div><!-- /page-contact -->
@@ -2164,7 +2284,7 @@
         <h2 class="cta-sect__heading">
           <span class="h1">まずはお気軽にご相談ください。</span>
         </h2>
-        <p class="cta-sect__body">産廃・工事・設備まわりのお困りごとを丁寧にお伺いし、<br class="pc-only-inline">内容に応じて必要な専門事業者・提携先へおつなぎします。</p>
+        <p class="cta-sect__body">WEB制作を中心に、中古車、家やオフィスの片付け、施設入居支援、<br class="pc-only-inline">電気工事・太陽光パネル関連、足場事業まで。<br class="pc-only-inline">事業や暮らしの「どこに相談すればいい？」を整理して、必要な形へつなぎます。</p>
       </div>
       <div class="cta-sect__right">
         <ul class="cta-checklist">
@@ -2178,7 +2298,7 @@
     <div class="cta-sect__btn-wrap">
       <button class="btn-cta" onclick="navigate('contact')">無料で相談する <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
-    <div class="cta-sect__note"><strong>※ご注意</strong>各種処分・工事等は、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。ご相談内容を整理したうえで、適切な専門先へのご案内・連携を行います。</div>
+    <div class="cta-sect__note"><strong>※ご注意</strong>一部サービスは、内容に応じて必要な許可・資格を有する専門事業者・提携先と連携して対応いたします。YMデザイン企画がすべての業務を直接施工・処分するものではありません。ご相談内容を整理したうえで、適切な専門先へのご案内・連携を行います。</div>
     </div>
   </div>
   <div class="cta-sect__wm bottom">YM DESIGN KIKAKU &nbsp; YM DESIGN KIKAKU</div>
@@ -2190,8 +2310,15 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo"><img src="assets/rogo_01.png" alt="YMデザイン企画"></div>
-        <p class="footer-desc">産廃・リサイクル、工事・設備を中心に、<br>事業のお困りごとを整理し、<br>必要な専門先へつなぐサポートを行っています。</p>
+        <p class="footer-desc">WEB制作を中心に、中古車、家やオフィスの片付け、<br>施設入居支援、電気工事・太陽光パネル関連、足場事業まで。<br>事業や暮らしの「どこに相談すればいい？」を整理して、<br>必要な形へつなぎます。</p>
         <a href="mailto:ymdesign.kikaku@gmail.com" class="footer-email"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3.5" width="13" height="9" rx="1" stroke="#193a63" stroke-width="1.2"/><path d="M1.5 5l6.5 4.5L14.5 5" stroke="#193a63" stroke-width="1.2" stroke-linecap="round"/></svg>ymdesign.kikaku@gmail.com</a>
+        <div class="footer-social">
+          <p class="footer-social__text">SNSでも日々の活動を発信しています。</p>
+          <div class="footer-social__links">
+            <a href="https://www.instagram.com/ymd_kikaku/" class="footer-social__btn" aria-label="Instagramを見る" target="_blank" rel="noopener noreferrer"><img src="assets/icon-instagram.png" alt="" aria-hidden="true"></a>
+            <a href="https://www.facebook.com/profile.php?id=61590621039422" class="footer-social__btn" aria-label="Facebookを見る" target="_blank" rel="noopener noreferrer"><img src="assets/icon-facebook.png" alt="" aria-hidden="true"></a>
+          </div>
+        </div>
       </div>
       <div class="footer-col">
         <h4>MENU</h4>
@@ -2218,11 +2345,11 @@
 <script>
   /* ===== Page meta definitions ===== */
   const PAGE_META = {
-    top:     { title:'YMデザイン企画 | 事業のお困りごとをつなぐサポート', desc:'産廃・リサイクル、工事・設備まわりのお困りごとを整理し、専門事業者へつなぐサポートを行います。' },
-    service: { title:'サービス | YMデザイン企画', desc:'建設廃材・焼却物処分、太陽光パネル、廃油・塩ビ買取、電気工事、足場工事など幅広く対応します。' },
-    about:   { title:'会社概要 | YMデザイン企画', desc:'人と人をつなぐことを軸に、産廃・工事・設備まわりの事業連携サポートを行います。' },
+    top:     { title:'YMデザイン企画 | WEB制作を中心に相談内容を整理してつなぐ', desc:'WEB制作を中心に、中古車販売・買取、家財・オフィスの片付け処分、高齢者施設への引越し支援、電気工事・太陽光パネル関連まで相談内容を整理してつなぎます。' },
+    service: { title:'サービス | YMデザイン企画', desc:'中古車販売・買取、家財・オフィスの片付け処分、高齢者施設への引越し支援、電気工事・太陽光パネル関連、足場事業などの相談に対応します。' },
+    about:   { title:'会社概要 | YMデザイン企画', desc:'人と人をつなぐことを軸に、WEB制作や事業・暮らしの相談内容を整理して必要な形へつなぎます。' },
     faq:     { title:'よくある相談・FAQ | YMデザイン企画', desc:'よくある相談例やFAQをまとめています。' },
-    contact: { title:'お問い合わせ | YMデザイン企画', desc:'無料相談フォーム。産廃・工事・設備まわりのお困りごとをお気軽にご相談ください。' },
+    contact: { title:'お問い合わせ | YMデザイン企画', desc:'無料相談フォーム。WEB制作、中古車販売・買取、片付け処分、施設入居支援、電気工事・太陽光パネル関連などお気軽にご相談ください。' },
     privacy: { title:'プライバシーポリシー | YMデザイン企画', desc:'YMデザイン企画のプライバシーポリシーです。' }
   };
 
@@ -2305,7 +2432,7 @@
       unlockBodyScroll();
     }
   });
-  mobileNav.querySelectorAll('button').forEach(btn => {
+  mobileNav.querySelectorAll('button, a').forEach(btn => {
     btn.addEventListener('click', () => {
       hamburger.classList.remove('open');
       mobileNav.classList.remove('open');
@@ -2354,19 +2481,27 @@
   }
 
   function parseHashState() {
+    const raw = window.location.hash.replace(/^#/, '').trim();
+    if (raw) {
+      const [page, hashId] = raw.split('/');
+      if (PAGE_IDS.includes(page)) {
+        return { page, hashId: hashId || null };
+      }
+    }
     const queryPage = new URLSearchParams(window.location.search).get('page');
     if (queryPage && PAGE_IDS.includes(queryPage)) {
       return { page: queryPage, hashId: null };
     }
-    const raw = window.location.hash.replace(/^#/, '').trim();
-    if (!raw) return { page: 'top', hashId: null };
-    const [page, hashId] = raw.split('/');
-    if (!PAGE_IDS.includes(page)) return { page: 'top', hashId: null };
-    return { page, hashId: hashId || null };
+    return { page: 'top', hashId: null };
   }
 
   function getHashForPage(pageId, hashId = null) {
     return hashId ? `#${pageId}/${hashId}` : `#${pageId}`;
+  }
+
+  function getUrlForPage(pageId, hashId = null) {
+    if (pageId === 'top' && !hashId) return window.location.pathname;
+    return `${window.location.pathname}${getHashForPage(pageId, hashId)}`;
   }
 
   function saveContactDraft() {
@@ -2488,14 +2623,14 @@
     }
 
     if (opts.push) {
-      const nextHash = getHashForPage(pageId, hashId);
+      const nextUrl = getUrlForPage(pageId, hashId);
       const state = { page: pageId, hashId: hashId || null };
       if (opts.replace) {
-        history.replaceState(state, '', nextHash);
-      } else if (nextHash !== window.location.hash) {
-        history.pushState(state, '', nextHash);
+        history.replaceState(state, '', nextUrl);
+      } else if (nextUrl !== `${window.location.pathname}${window.location.hash}` || !history.state || history.state.page !== pageId || (history.state.hashId || null) !== (hashId || null)) {
+        history.pushState(state, '', nextUrl);
       } else {
-        history.replaceState(state, '', nextHash);
+        history.replaceState(state, '', nextUrl);
       }
     }
 
@@ -2586,7 +2721,11 @@
 
   /* ===== Init ===== */
   const initial = parseHashState();
-  navigate(initial.page, initial.hashId, { push: false, replace: true, instant: true });
+  navigate(initial.page, initial.hashId, {
+    push: Boolean(new URLSearchParams(window.location.search).get('page')),
+    replace: true,
+    instant: true
+  });
 </script>
 </body>
 </html>
