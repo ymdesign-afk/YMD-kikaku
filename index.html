@@ -677,7 +677,7 @@
     #page-service .svc01-head { max-width:860px; margin:0 0 32px; }
     #page-service .svc01-head .svc-detail__title { margin-bottom:.9rem; font-size:1.68rem; line-height:1.45; }
     #page-service .svc01-head .svc-detail__desc { margin-bottom:0; font-size:.96875rem; max-width:860px; }
-    .svc-desc-break-pc { display:none; }
+    br.svc-desc-break-pc { display:none; }
     #page-service .svc01-body { display:grid; grid-template-columns:42% 1fr; gap:44px; align-items:start; }
     #page-service .svc-detail__num { color:var(--service-accent); }
     #page-service .svc01-body .svc-detail__img {
@@ -1639,7 +1639,10 @@
       .contact-wrap { padding:40px 16px; }
     }
     @media (min-width:769px) {
-      .svc-desc-break-pc { display:block; }
+      br.svc-desc-break-pc {
+        display:block;
+        content:"";
+      }
     }
   </style>
 </head>
