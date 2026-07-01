@@ -220,6 +220,48 @@
     .btn-outline { display:inline-flex; align-items:center; justify-content:center; min-width:178px; height:46px; padding:0 28px; background:rgba(255,255,255,.86); border:1px solid rgba(7,140,149,.45); color:#06757c; font-size:.9375rem; font-weight:600; border-radius:10px; transition:background .2s, border-color .2s, color .2s; }
     .btn-outline:hover { background:rgba(230,245,246,.78); border-color:rgba(7,140,149,.62); color:#05656b; }
 
+    /* ===== SUPPORTER ===== */
+    .supporter { padding:68px 144px 76px; background:linear-gradient(180deg, #fff 0%, #f7f9fc 100%); border-bottom:1px solid var(--g300); }
+    .supporter-inner { max-width:1152px; min-width:0; margin:0 auto; }
+    .supporter .section-heading { margin-bottom:2.35rem; }
+    .supporter-layout { display:grid; grid-template-columns:minmax(0,2fr) minmax(280px,1fr); gap:32px; align-items:stretch; width:100%; min-width:0; }
+    .supporter-banner { display:flex; align-items:center; justify-content:center; width:100%; min-width:0; height:100%; border-radius:14px; overflow:hidden; background:#050505; box-shadow:0 14px 32px rgba(18,48,84,.14); }
+    .supporter-banner-img { width:100%; height:100%; object-fit:contain; }
+    .supporter-links { display:grid; grid-template-rows:1fr 1fr; gap:18px; min-width:0; }
+    .supporter-card { isolation:isolate; position:relative; display:flex; align-items:center; gap:16px; min-height:0; padding:19px 22px; border:1px solid #dbe4ee; border-radius:12px; background:#fff; box-shadow:0 8px 20px rgba(18,48,84,.08); overflow:hidden; transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
+    .supporter-card::before { content:''; position:absolute; z-index:2; inset:0 auto 0 0; width:6px; opacity:.95; }
+    .supporter-card::after {
+      content:'';
+      position:absolute;
+      z-index:0;
+      top:0;
+      right:0;
+      bottom:0;
+      left:42%;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.86) 42%, rgba(255,255,255,.62) 100%),
+        url('assets/images/supporter-testosterone-gym-banner.png') right center/cover no-repeat;
+      opacity:.72;
+      pointer-events:none;
+    }
+    .supporter-card--instagram::before { background:linear-gradient(180deg, #f58529 0%, #dd2a7b 48%, #515bd4 100%); }
+    .supporter-card--youtube::before { background:#d9251d; }
+    .supporter-card:hover,
+    .supporter-card:focus-visible { transform:translateY(-4px); box-shadow:0 14px 28px rgba(18,48,84,.14); border-color:#c9d8e8; }
+    .supporter-card:focus-visible { outline:2px solid rgba(27,63,105,.28); outline-offset:4px; }
+    .supporter-card__icon { flex-shrink:0; display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; }
+    .supporter-card__icon img { display:block; width:44px; height:44px; object-fit:contain; }
+    .supporter-card--youtube .supporter-card__icon img { width:56px; height:48px; transform:scale(1.18); transform-origin:center; }
+    .supporter-card__icon,
+    .supporter-card__body,
+    .supporter-card__arrow { position:relative; z-index:1; }
+    .supporter-card__body { min-width:0; }
+    .supporter-card__label { display:block; font-family:'Cormorant Garamond',serif; font-size:1.34rem; font-weight:700; letter-spacing:.05em; color:var(--navy); line-height:1.2; }
+    .supporter-card__text { display:block; margin-top:7px; font-size:.8125rem; font-weight:500; color:var(--g500); line-height:1.55; }
+    .supporter-card__arrow { margin-left:auto; flex-shrink:0; color:#8a9caf; font-size:1.2rem; transition:transform .28s ease, color .28s ease; }
+    .supporter-card:hover .supporter-card__arrow,
+    .supporter-card:focus-visible .supporter-card__arrow { transform:translateX(4px); color:var(--navy); }
+
     /* ===== PROBLEMS ===== */
     .problems { position:relative; padding:120px 280px; overflow:hidden; }
     .problems-bg { position:absolute; top:242px; left:-128px; width:47%; height:auto; opacity:.25; pointer-events:none; object-fit:contain; object-position:top left; }
@@ -1073,6 +1115,7 @@
       .nav-list { margin-right:22px; }
       .nav-list button, .nav-list a { padding:0 10px; font-size:.875rem; }
       .hero-inner { padding:100px 80px 80px; }
+      .supporter { padding:62px 80px 68px; }
       .problems { padding:80px 100px; }
       .problems-bg { top:80px; width:42%; }
       .problem-text { white-space:normal; }
@@ -1146,6 +1189,9 @@
       .hero-inner { padding:80px 40px 60px; }
       .hero h1 { font-size:2.15rem; }
       .hero h1 .line { white-space:normal; }
+      .supporter { padding:54px 40px 60px; }
+      .supporter-layout { gap:24px; }
+      .supporter-card { padding:18px 20px; }
       .problems { padding:60px 40px; }
       .problems-bg { top:60px; width:50%; left:-56px; }
       .problems-inner { padding:0; }
@@ -1228,6 +1274,14 @@
       .problem-text { white-space:normal; }
       .section-heading { font-size:1.55rem; }
       .section-sub { margin-bottom:2.6rem; }
+      .supporter { padding:48px 24px 56px; }
+      .supporter .section-heading { margin-bottom:1.9rem; }
+      .supporter-layout { grid-template-columns:1fr; gap:20px; }
+      .supporter-banner { width:calc(100vw - 48px); max-width:100%; margin:0 auto; }
+      .supporter-banner,
+      .supporter-banner-img { height:auto; }
+      .supporter-links { display:flex; flex-direction:column; gap:14px; }
+      .supporter-card { min-height:104px; }
       .service-title { font-size:1.075rem; }
       .points-heading .h-lg { font-size:1.45rem; }
       .points-heading .h-no { font-size:1.25rem; }
@@ -1478,6 +1532,14 @@
         background:rgba(244,249,255,.95);
       }
       .problems { padding:40px 16px; }
+      .supporter { padding:38px 16px 44px; }
+      .supporter-banner { width:calc(100vw - 32px); max-width:100%; margin:0 auto; border-radius:10px; }
+      .supporter-card { border-radius:10px; padding:18px 18px 18px 20px; gap:14px; }
+      .supporter-card__icon { width:46px; height:46px; }
+      .supporter-card__icon img { width:42px; height:42px; }
+      .supporter-card--youtube .supporter-card__icon img { width:54px; height:46px; transform:scale(1.16); }
+      .supporter-card__label { font-size:1.28rem; }
+      .supporter-card__text { font-size:.8125rem; }
       .services { padding:40px 16px; }
       .points { padding:40px 16px 60px; }
       .points { padding:44px 14px 60px; }
@@ -1730,6 +1792,40 @@
       <div class="hero-btns">
         <button onclick="navigate('contact')" class="btn-primary">無料相談する</button>
         <button onclick="navigate('service')" class="btn-outline">サービスを見る</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="supporter">
+  <div class="supporter-inner">
+    <span class="section-label">SPECIAL CONTENT</span>
+    <h2 class="section-heading">公式サポーター</h2>
+    <div class="supporter-layout">
+      <div class="supporter-banner">
+        <img src="assets/images/supporter-testosterone-gym-banner.png" alt="YMデザイン企画 公式サポーター 扇谷開登選手 応援バナー" class="supporter-banner-img">
+      </div>
+      <div class="supporter-links" aria-label="公式サポーターSNSリンク">
+        <a href="https://www.instagram.com/ogitani_kaito/" class="supporter-card supporter-card--instagram" target="_blank" rel="noopener noreferrer">
+          <span class="supporter-card__icon">
+            <img src="assets/Instagram_Glyph_Gradient.png" alt="Instagram">
+          </span>
+          <span class="supporter-card__body">
+            <span class="supporter-card__label">Instagram</span>
+            <span class="supporter-card__text">扇谷開登選手の最新情報を見る</span>
+          </span>
+          <span class="supporter-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="https://www.youtube.com/channel/UCtdvn2h42X8SGbyTc1Dwh0g?si=PuErnNdOnUnGof0H" class="supporter-card supporter-card--youtube" target="_blank" rel="noopener noreferrer">
+          <span class="supporter-card__icon">
+            <img src="assets/yt_icon_red_digital.png" alt="YouTube">
+          </span>
+          <span class="supporter-card__body">
+            <span class="supporter-card__label">YouTube</span>
+            <span class="supporter-card__text">公式チャンネルで動画を見る</span>
+          </span>
+          <span class="supporter-card__arrow" aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
   </div>
