@@ -792,90 +792,79 @@
     #service-06 .svc01-body .svc-detail__img img { height:300px; object-fit:cover; transform:none; }
     #service-06.svc-detail { border-bottom:none; }
     #service-01.svc-detail { padding-bottom:68px; }
-    #service-01 .svc-partner-cta {
-      margin-top:12px;
-      padding:0;
-    }
-    #service-01 .svc-partner-label {
-      display:block;
-      margin:0 0 8px;
-      font-size:.73rem;
-      letter-spacing:.08em;
-      font-weight:700;
-      line-height:1.2;
-      color:#7e5c56;
-    }
-    #service-01 .svc-partner-card {
-      display:grid;
-      grid-template-columns:120px 1fr;
-      gap:12px;
-      align-items:center;
-      width:fit-content;
-      margin-left:auto;
-    }
-    #service-01 .svc-partner-info {
+    .partner-link {
       display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-    #service-01 .svc-partner-logo {
-      border:none;
+      align-items:flex-start;
+      gap:16px;
+      margin-top:16px;
       padding:0;
     }
-    #service-01 .svc-partner-logo img {
-      display:block;
-      width:85%;
-      height:auto;
-      margin:0 auto;
-    }
-    #service-01 .svc-partner-name {
-      font-size:.94rem;
+    .partner-link__label {
+      flex:0 0 auto;
+      margin:0;
+      font-size:.875rem;
       font-weight:700;
       color:#3d4f62;
-      line-height:1.3;
-      margin-bottom:2px;
+      line-height:1.45;
       white-space:nowrap;
     }
-    #service-01 .svc-partner-desc {
-      font-size:.875rem;
-      color:#5f6f83;
-      line-height:1.62;
-      margin-bottom:8px;
-    }
-    #service-01 .svc-partner-link {
-      display:inline-flex;
+    .partner-link__body {
+      display:flex;
+      flex-direction:column;
       align-items:center;
-      gap:4px;
+      min-width:0;
+    }
+    .partner-link__button {
+      display:block;
+      width:min(300px, 100%);
+      line-height:0;
+      transition:transform .25s ease, filter .25s ease;
+    }
+    .partner-link__button:hover {
+      transform:translateY(-2px);
+      filter:brightness(1.06);
+    }
+    .partner-link__button:focus-visible {
+      outline:3px solid rgba(20,74,116,.35);
+      outline-offset:4px;
+      border-radius:4px;
+    }
+    .partner-link__button img {
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .partner-link__text {
+      display:inline-block;
+      margin-top:6px;
       font-size:.86rem;
-      font-weight:600;
+      font-weight:700;
       color:#3d4f62;
       text-decoration:underline;
       text-decoration-color:#3d4f62;
       text-underline-offset:4px;
       text-decoration-thickness:1px;
+      text-align:center;
+      transition:opacity .25s ease, color .25s ease, text-decoration-color .25s ease;
     }
-    #service-01 .svc-partner-link:hover {
+    .partner-link__text:hover {
+      opacity:.75;
       color:#2f4257;
       text-decoration-color:#2f4257;
     }
-    #service-01 .svc-partner-link:focus-visible {
-      outline:2px solid color-mix(in srgb, var(--service-accent) 52%, #fff 48%);
-      outline-offset:2px;
-      border-radius:2px;
+    .partner-link__text:focus-visible {
+      outline:3px solid rgba(20,74,116,.35);
+      outline-offset:4px;
+      border-radius:4px;
     }
-    #service-01 .svc-partner-cta--sp { display:none; }
     @media (max-width:768px) {
-      #service-01 .svc-partner-card {
-        grid-template-columns:100px 1fr;
-        gap:12px;
-        align-items:center;
+      .partner-link {
+        flex-direction:column;
+        gap:8px;
       }
-      #service-01 .svc-partner-logo {
-        max-width:100px;
+      .partner-link__button {
+        width:min(250px, 82%);
       }
-      #service-01 .svc-partner-logo img { width:100%; }
-      #service-01 .svc-partner-cta--pc { display:none; }
-      #service-01 .svc-partner-cta--sp { display:block; margin-top:14px; }
     }
     .svc-note { background:var(--g100); border:1px solid var(--g300); border-radius:6px; padding:16px 20px; font-size:.875rem; color:var(--g600); line-height:1.7; }
     .svc-note strong { display:block; font-size:.875rem; color:var(--navy); margin-bottom:4px; }
@@ -2008,16 +1997,13 @@
           <div class="svc-detail__img">
             <img src="assets/service_02.png" alt="中古車販売・買取">
           </div>
-          <div class="svc-partner-cta svc-partner-cta--pc">
-            <span class="svc-partner-label">提携・ご紹介先</span>
-            <div class="svc-partner-card">
-              <div class="svc-partner-logo">
-                <img src="assets/solvia_2.webp" alt="株式会社Solviaオート商会 ロゴ">
-              </div>
-              <div class="svc-partner-info">
-                <div class="svc-partner-name">株式会社Solviaオート商会</div>
-                <a href="https://www.solviainfo.jp/" target="_blank" rel="noopener noreferrer" class="svc-partner-link">公式サイトを見る →</a>
-              </div>
+          <div class="partner-link">
+            <p class="partner-link__label">提携・ご紹介先</p>
+            <div class="partner-link__body">
+              <a class="partner-link__button" href="https://www.solviainfo.jp/" target="_blank" rel="noopener noreferrer">
+                <img src="assets/service-solvia-auto-button.webp" alt="株式会社Solviaオート商会 公式サイト">
+              </a>
+              <a class="partner-link__text" href="https://www.solviainfo.jp/" target="_blank" rel="noopener noreferrer">公式サイトを見る</a>
             </div>
           </div>
         </div>
@@ -2040,18 +2026,6 @@
               <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>車検の有無</li>
               <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#2d83cc" stroke-width="1.2"/><path d="M5 8l2 2 4-4" stroke="#2d83cc" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>買取・下取りの希望</li>
             </ul>
-          </div>
-        </div>
-      </div>
-      <div class="svc-partner-cta svc-partner-cta--sp">
-        <span class="svc-partner-label">提携・ご紹介先</span>
-        <div class="svc-partner-card">
-          <div class="svc-partner-logo">
-            <img src="assets/solvia_2.webp" alt="株式会社Solviaオート商会 ロゴ">
-          </div>
-          <div class="svc-partner-info">
-            <div class="svc-partner-name">株式会社Solviaオート商会</div>
-            <a href="https://www.solviainfo.jp/" target="_blank" rel="noopener noreferrer" class="svc-partner-link">公式サイトを見る →</a>
           </div>
         </div>
       </div>
@@ -2102,8 +2076,20 @@
         <p class="svc-detail__desc">施設入居に伴う荷物整理、引越し、家具配置、必要な準備について、<br class="svc-desc-break-pc">状況を整理しながらご相談いただけます。</p>
       </div>
       <div class="svc01-body">
-        <div class="svc-detail__img">
-          <img src="assets/service_04.png" alt="高齢者施設への引越し支援">
+        <div>
+          <div class="svc-detail__img">
+            <img src="assets/service_04.png" alt="高齢者施設への引越し支援">
+          </div>
+          <div class="partner-link">
+            <p class="partner-link__label">提携・ご紹介先</p>
+            <div class="partner-link__body">
+              <!-- TODO: ドアドアサポート公式URLを設定 -->
+              <a class="partner-link__button" href="#" target="_blank" rel="noopener noreferrer">
+                <img src="assets/service-door-door-support-button.webp" alt="ドアドアサポート 公式サイト">
+              </a>
+              <a class="partner-link__text" href="#" target="_blank" rel="noopener noreferrer">公式サイトを見る</a>
+            </div>
+          </div>
         </div>
         <div class="svc-detail__stack">
           <div class="svc-detail__box">
