@@ -23,6 +23,14 @@
   <meta name="twitter:title" content="YMデザイン企画｜WEB制作を中心に事業のお困りごとを整理してつなぐ">
   <meta name="twitter:description" content="WEB制作を中心に、中古車販売・買取、家やオフィスの片付け・処分、高齢者施設への引越し支援、電気工事・太陽光パネル、足場事業まで。お困りごとを整理して必要な専門先へつなぎます。">
   <meta name="twitter:image" content="https://ymd-kikaku.net/assets/ogp_ymd.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BXWTFR6E5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2BXWTFR6E5', { send_page_view: false });
+  </script>
   <script>
     (function () {
       const OPENING_STORAGE_KEY = 'ym_opening_seen_session_v1';
@@ -2661,6 +2669,24 @@
   const CONTACT_DRAFT_KEY = 'ymdk_contact_draft_v1';
   const contactForm = document.querySelector('#page-contact form');
   const contactSuccessMessage = document.getElementById('contact-success-message');
+  let lastTrackedPagePath = null;
+
+  function trackEvent(eventName, params = {}) {
+    if (typeof gtag !== 'function') return;
+    gtag('event', eventName, params);
+  }
+
+  function trackPageView(pageId, hashId = null) {
+    const meta = PAGE_META[pageId];
+    const pagePath = getUrlForPage(pageId, hashId);
+    if (pagePath === lastTrackedPagePath) return;
+    lastTrackedPagePath = pagePath;
+    trackEvent('page_view', {
+      page_title: meta ? meta.title : document.title,
+      page_location: `${window.location.origin}${pagePath}`,
+      page_path: pagePath
+    });
+  }
 
   function setContactSubmitting(isSubmitting) {
     if (!contactForm) return;
@@ -2787,6 +2813,12 @@
           contactSuccessMessage.classList.add('is-visible');
           scrollToContactFeedback(contactSuccessMessage);
         }
+        trackEvent('generate_lead', {
+          form_name: 'contact_form',
+          event_category: 'contact',
+          method: formData.get('method') || '',
+          category: formData.get('category') || ''
+        });
         sessionStorage.removeItem(CONTACT_DRAFT_KEY);
       } catch (_err) {
         if (errorEl) {
@@ -2854,6 +2886,8 @@
       restoreContactDraft();
     }
 
+    trackPageView(pageId, hashId);
+
     if (hashId) {
       setTimeout(() => {
         const el = document.getElementById(hashId);
@@ -2916,6 +2950,26 @@
     const isOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-accord__item.open').forEach(el => el.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
+  });
+
+  document.addEventListener('click', e => {
+    const target = e.target.closest('a, button');
+    if (!target) return;
+    const label = (target.innerText || target.getAttribute('aria-label') || '').trim().replace(/\s+/g, ' ').slice(0, 80);
+    const href = target.getAttribute('href') || '';
+    if (href && (/^mailto:/i.test(href) || /^https?:\/\//i.test(href))) {
+      trackEvent('click_external_link', {
+        link_url: href,
+        link_text: label
+      });
+      return;
+    }
+    if (target.matches('.header-cta, .btn-primary, .btn-cta, .contact-form__submit')) {
+      trackEvent('click_cta', {
+        cta_text: label,
+        page_path: window.location.pathname + window.location.hash
+      });
+    }
   });
 
   /* ===== Scroll fade-in (TOP page only) ===== */
