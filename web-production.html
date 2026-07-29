@@ -6,6 +6,14 @@
   <title>WEB制作 | YMデザイン企画</title>
   <meta name="description" content="YMデザイン企画のWEB制作ページ。ホームページ・LP・バナー制作から導線設計、更新改善まで、目的に合わせて丁寧に制作します。">
   <meta name="robots" content="index,follow">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BXWTFR6E5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2BXWTFR6E5');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
@@ -712,6 +720,10 @@
 <script>
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
+  function trackEvent(eventName, params = {}) {
+    if (typeof gtag !== 'function') return;
+    gtag('event', eventName, params);
+  }
   if (hamburger && mobileNav) {
     hamburger.addEventListener('click', () => {
       const willOpen = !mobileNav.classList.contains('open');
@@ -727,6 +739,25 @@
       });
     });
   }
+  document.addEventListener('click', (event) => {
+    const target = event.target.closest('a');
+    if (!target) return;
+    const href = target.getAttribute('href') || '';
+    const label = (target.innerText || target.getAttribute('aria-label') || '').trim().replace(/\s+/g, ' ').slice(0, 80);
+    if (/^https?:\/\//i.test(href) || /^mailto:/i.test(href)) {
+      trackEvent('click_external_link', {
+        link_url: href,
+        link_text: label
+      });
+      return;
+    }
+    if (href.includes('page=contact')) {
+      trackEvent('click_cta', {
+        cta_text: label,
+        page_path: window.location.pathname
+      });
+    }
+  });
 </script>
 </body>
 </html>
