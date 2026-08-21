@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WEB制作 | YMデザイン企画</title>
-  <meta name="description" content="YMデザイン企画のWEB制作ページ。ホームページ・LP・バナー制作から導線設計、更新改善まで、目的に合わせて丁寧に制作します。">
+  <title>WEB制作・業務Webアプリ開発 | YMデザイン企画</title>
+  <meta name="description" content="YMデザイン企画のWEB制作ページ。ホームページ・LP・バナー制作から、業務Webアプリ・見積もりツールの設計開発、導線設計、更新改善まで対応します。">
   <meta name="robots" content="index,follow">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BXWTFR6E5"></script>
@@ -114,7 +114,7 @@
     .web-intro-title-br-sp { display:none; }
     .web-intro-comma-sphide { display:inline; }
     .web-intro {
-      max-width:760px;
+      max-width:1000px;
       margin:0 auto 58px;
       font-size:1rem;
       color:#5c6f84;
@@ -229,6 +229,37 @@
     .work-card { border:1px solid #dce6f0; border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 4px 14px rgba(18,49,84,.06); display:flex; flex-direction:column; }
     .work-card__img-wrap { aspect-ratio:16 / 10; background:linear-gradient(135deg,#eef5fc 0%, #ddeaf7 100%); }
     .work-card__img { width:100%; height:100%; object-fit:cover; }
+    .work-card__img--contain { object-fit:contain; background:#f6f5f2; }
+    .work-card__img-button {
+      position:relative;
+      width:100%;
+      padding:0;
+      border:0;
+      overflow:hidden;
+      appearance:none;
+      cursor:zoom-in;
+      font:inherit;
+      text-align:left;
+    }
+    .work-card__img-button .work-card__img { transition:transform .25s ease; }
+    .work-card__img-button:hover .work-card__img { transform:scale(1.025); }
+    .work-card__img-button:focus-visible { outline:3px solid #2f7fc4; outline-offset:-3px; }
+    .work-card__gallery-badge {
+      position:absolute;
+      right:10px;
+      bottom:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      padding:6px 10px;
+      border-radius:999px;
+      color:#fff;
+      background:rgba(17,45,75,.88);
+      box-shadow:0 3px 9px rgba(8,31,56,.2);
+      font-size:.72rem;
+      font-weight:700;
+      line-height:1;
+    }
     .work-card__body { padding:14px; display:flex; flex-direction:column; height:100%; }
     .work-card__cats { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
     .work-card__cat { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.04em; color:#40658c; background:#e8f2fb; border-radius:999px; padding:5px 10px; }
@@ -248,6 +279,114 @@
     }
     .work-card__detail-text { font-size:.84rem; color:#60748b; line-height:1.72; }
     .work-card__em { color:#2f6fb0; font-weight:700; }
+    .work-card__note { margin-top:7px; font-size:.72rem; line-height:1.55; color:#7a8998; }
+
+    body.gallery-open { overflow:hidden; }
+    .work-gallery-modal[hidden] { display:none; }
+    .work-gallery-modal {
+      position:fixed;
+      inset:0;
+      z-index:3000;
+      display:grid;
+      place-items:center;
+      padding:20px;
+    }
+    .works-sec > .work-gallery-modal {
+      position:fixed;
+      z-index:3000;
+    }
+    .work-gallery-modal__backdrop {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      padding:0;
+      border:0;
+      background:rgba(8,25,44,.76);
+      cursor:pointer;
+    }
+    .work-gallery-modal__dialog {
+      position:relative;
+      z-index:1;
+      width:min(1080px,100%);
+      max-height:calc(100dvh - 40px);
+      overflow:auto;
+      border-radius:16px;
+      background:#fff;
+      box-shadow:0 24px 70px rgba(0,0,0,.35);
+    }
+    .work-gallery-modal__header { padding:22px 66px 14px 24px; }
+    .work-gallery-modal__label { margin-bottom:4px; color:#7189a2; font-size:.76rem; font-weight:700; letter-spacing:1.4px; }
+    .work-gallery-modal__title { font-family:'Noto Serif JP',serif; font-size:1.35rem; line-height:1.5; color:var(--navy); }
+    .work-gallery-modal__close {
+      position:absolute;
+      top:14px;
+      right:14px;
+      z-index:2;
+      width:40px;
+      height:40px;
+      border:1px solid #d8e3ee;
+      border-radius:50%;
+      background:#fff;
+      color:#294b70;
+      font-size:1.45rem;
+      line-height:1;
+      cursor:pointer;
+    }
+    .work-gallery-modal__stage {
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:280px;
+      padding:0 56px;
+      background:#eef3f8;
+    }
+    .work-gallery-modal__image {
+      display:block;
+      width:100%;
+      max-height:64dvh;
+      object-fit:contain;
+      background:#fff;
+    }
+    .work-gallery-modal__nav {
+      position:absolute;
+      top:50%;
+      z-index:2;
+      width:42px;
+      height:42px;
+      border:1px solid rgba(255,255,255,.5);
+      border-radius:50%;
+      transform:translateY(-50%);
+      color:#fff;
+      background:rgba(18,52,87,.82);
+      font-size:1.5rem;
+      cursor:pointer;
+    }
+    .work-gallery-modal__nav--prev { left:8px; }
+    .work-gallery-modal__nav--next { right:8px; }
+    .work-gallery-modal__footer { padding:14px 20px 20px; }
+    .work-gallery-modal__count { margin-bottom:10px; text-align:center; color:#63778d; font-size:.8rem; font-weight:700; }
+    .work-gallery-modal__thumbs {
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      overflow-x:auto;
+      padding:2px 2px 5px;
+    }
+    .work-gallery-modal__thumb {
+      flex:0 0 106px;
+      aspect-ratio:16 / 9;
+      padding:0;
+      overflow:hidden;
+      border:2px solid transparent;
+      border-radius:7px;
+      background:#edf2f7;
+      opacity:.66;
+      cursor:pointer;
+    }
+    .work-gallery-modal__thumb.is-active { border-color:#2f7fc4; opacity:1; }
+    .work-gallery-modal__thumb img { width:100%; height:100%; object-fit:cover; }
     .works-portfolio-cta {
       margin-top:70px;
       margin-bottom:50px;
@@ -290,6 +429,7 @@
     .works-portfolio-cta__btn:hover { opacity:.72; }
     .works-portfolio-cta__sub { display:none; }
     @media (min-width:981px) {
+      .web-intro { white-space:nowrap; }
       .works-grid { gap:15px; }
       .work-card__body { padding:13px; }
       .work-card__desc {
@@ -455,10 +595,23 @@
         overflow:hidden;
       }
       .web-feature-illust { max-width:180px; height:128px; margin:0 0 -2px; }
+      .web-feature-card--app .web-feature-illust { height:102px; }
       .web-feature-label { font-size:.9rem; line-height:1.35; margin-top:-2px; }
       .web-feature-card:nth-child(6) .web-feature-label { margin-top:-12px; }
       .recommend-list { grid-template-columns:1fr; gap:10px; }
       .works-grid { grid-template-columns:1fr; gap:14px; }
+      .work-gallery-modal { padding:10px; }
+      .work-gallery-modal__dialog { max-height:calc(100dvh - 20px); border-radius:12px; }
+      .work-gallery-modal__header { padding:18px 56px 12px 16px; }
+      .work-gallery-modal__title { font-size:1.08rem; }
+      .work-gallery-modal__stage { min-height:190px; padding:0 38px; }
+      .work-gallery-modal__image { max-height:56dvh; }
+      .work-gallery-modal__nav { width:34px; height:34px; font-size:1.15rem; }
+      .work-gallery-modal__nav--prev { left:3px; }
+      .work-gallery-modal__nav--next { right:3px; }
+      .work-gallery-modal__footer { padding:10px 12px 14px; }
+      .work-gallery-modal__thumbs { justify-content:flex-start; }
+      .work-gallery-modal__thumb { flex-basis:86px; }
       .works-portfolio-cta { margin-top:44px; margin-bottom:28px; padding:18px 14px; }
       .works-portfolio-cta h3 { font-size:1.06rem; }
       .works-portfolio-cta p { font-size:.88rem; margin-bottom:12px; }
@@ -532,7 +685,7 @@
     <div class="web-lead-inner">
       <div class="web-lead-area">
       <h2 class="web-intro-title">想いをくみ取り<span class="web-intro-comma-sphide">、</span><br class="web-intro-title-br-sp">伝わる形に。</h2>
-      <p class="web-intro">事業の目的や届けたい相手に合わせて、<br class="web-intro-br-sp">ホームページ・LP・バナーなどを制作します。</p>
+      <p class="web-intro">事業の目的や届けたい相手に合わせて、<br class="web-intro-br-sp">ホームページ・LP・バナーから、業務Webアプリ・Webツールまで制作します。</p>
       <section class="web-sec web-feature-sec">
         <div class="web-feature-grid">
           <article class="web-feature-card">
@@ -547,9 +700,9 @@
             <div class="web-feature-illust"><img src="assets/web-production-banner.png" alt="バナー制作イラスト" loading="lazy" decoding="async"></div>
             <p class="web-feature-label">バナー制作</p>
           </article>
-          <article class="web-feature-card">
-            <div class="web-feature-illust"><img src="assets/web-production-sns.png" alt="SNS投稿画像制作イラスト" loading="lazy" decoding="async"></div>
-            <p class="web-feature-label">SNS投稿画像制作</p>
+          <article class="web-feature-card web-feature-card--app">
+            <div class="web-feature-illust"><img src="assets/service-web-app-tools-transparent.png" alt="業務Webアプリ・Webツール開発のイラスト" loading="lazy" decoding="async"></div>
+            <p class="web-feature-label">業務Webアプリ・Webツール開発</p>
           </article>
           <article class="web-feature-card">
             <div class="web-feature-illust"><img src="assets/web-production-structure.png" alt="構成整理・導線設計イラスト" loading="lazy" decoding="async"></div>
@@ -570,6 +723,7 @@
           <li>サービスの魅力を整理して伝えたい</li>
           <li>集客や問い合わせ導線を整えたい</li>
           <li>デザインや発信の雰囲気を統一したい</li>
+          <li>業務管理や見積もりをWeb上で使いやすくしたい</li>
         </ul>
       </section>
       </div>
@@ -618,14 +772,17 @@
           </div>
         </article>
         <article class="work-card">
-          <div class="work-card__img-wrap"><img src="assets/works/works-04.webp" alt="SNS運用サポート" class="work-card__img" loading="lazy" decoding="async"></div>
+          <button type="button" class="work-card__img-wrap work-card__img-button" data-work-gallery="business-app" aria-label="業務進捗管理Webアプリの画面を6枚見る">
+            <img src="assets/works/business-app/business-app-01.webp" alt="業務進捗管理Webアプリの紹介画面" class="work-card__img work-card__img--contain" loading="lazy" decoding="async">
+            <span class="work-card__gallery-badge" aria-hidden="true">全6枚を見る ＋</span>
+          </button>
           <div class="work-card__body">
-            <div class="work-card__cats"><span class="work-card__cat">SNS運用</span><span class="work-card__cat">アカウント設計</span></div>
-            <h3 class="work-card__title">SNS運用サポート（進行中）</h3>
-            <p class="work-card__desc">アカウント設計から投稿画像・テキスト作成まで一括サポート。ブランドの雰囲気を統一したフィードを目指して運用中です。</p>
+            <div class="work-card__cats"><span class="work-card__cat">業務Webアプリ</span><span class="work-card__cat">進捗管理</span></div>
+            <h3 class="work-card__title">業務進捗管理Webアプリ</h3>
+            <p class="work-card__desc">案件情報や進捗履歴、担当者・関係業者の情報をまとめて管理・共有できるWebアプリを開発しました。スマートフォンのホーム画面からも利用できます。</p>
             <div class="work-card__detail">
-              <p class="work-card__detail-title">▸ 取り組みの方針</p>
-              <p class="work-card__detail-text">「何を投稿すればいいかわからない」という状態から、ターゲット・世界観・投稿テーマを一緒に設計。継続発信の仕組みをつくっています。</p>
+              <p class="work-card__detail-title">▸ 業務に合わせた機能設計</p>
+              <p class="work-card__detail-text">現在の運用方法を確認し、案件管理、進捗履歴、更新通知、未読管理、地図表示、完了案件のアーカイブなど、日々の業務に必要な機能を整理しました。</p>
             </div>
           </div>
         </article>
@@ -642,17 +799,41 @@
           </div>
         </article>
         <article class="work-card">
-          <div class="work-card__img-wrap"><img src="assets/works/works-06.webp" alt="チラシ・名刺制作" class="work-card__img" loading="lazy" decoding="async"></div>
+          <button type="button" class="work-card__img-wrap work-card__img-button" data-work-gallery="estimate-tool" aria-label="かんたん見積もりシミュレーションの画面を3枚見る">
+            <img src="assets/works/estimate-tool/estimate-tool-01.jpg" alt="かんたん見積もりシミュレーションの選択画面" class="work-card__img" loading="lazy" decoding="async">
+            <span class="work-card__gallery-badge" aria-hidden="true">全3枚を見る ＋</span>
+          </button>
           <div class="work-card__body">
-            <div class="work-card__cats"><span class="work-card__cat">チラシ制作</span><span class="work-card__cat">名刺制作</span></div>
-            <h3 class="work-card__title">店舗向けチラシ・名刺制作</h3>
-            <p class="work-card__desc">小規模店舗のブランドイメージを整えるため、チラシと名刺をセットで制作。統一感のあるビジュアルに仕上げました。</p>
+            <div class="work-card__cats"><span class="work-card__cat">見積もりツール</span><span class="work-card__cat">シミュレーション</span></div>
+            <h3 class="work-card__title">かんたん見積もりシミュレーション</h3>
+            <p class="work-card__desc">住居条件や荷物量、残置物量などを順に選ぶと、引越し・処分費用の概算を確認できるWebツールを開発しました。</p>
             <div class="work-card__detail">
-              <p class="work-card__detail-title">▸ 課題と取り組み</p>
-              <p class="work-card__detail-text">「バラバラな印象」という課題に対し、カラーパレット・フォント・レイアウトを統一してブランドの雰囲気を整備。印刷入稿まで一括対応しました。</p>
+              <p class="work-card__detail-title">▸ 相談につなげる導線設計</p>
+              <p class="work-card__detail-text">依頼内容に応じて質問を切り替え、入力内容の確認・修正、概算結果の表示、結果のコピー、LINE・電話相談までを一つの流れに設計しました。</p>
+              <p class="work-card__note">※掲載画面・金額は撮影時点の表示例です。</p>
             </div>
           </div>
         </article>
+      </div>
+
+      <div class="work-gallery-modal" id="workGalleryModal" role="dialog" aria-modal="true" aria-labelledby="workGalleryTitle" hidden>
+        <button type="button" class="work-gallery-modal__backdrop" data-gallery-close aria-label="画面ギャラリーを閉じる"></button>
+        <div class="work-gallery-modal__dialog">
+          <button type="button" class="work-gallery-modal__close" data-gallery-close aria-label="閉じる">×</button>
+          <div class="work-gallery-modal__header">
+            <p class="work-gallery-modal__label" id="workGalleryLabel"></p>
+            <h3 class="work-gallery-modal__title" id="workGalleryTitle"></h3>
+          </div>
+          <div class="work-gallery-modal__stage">
+            <button type="button" class="work-gallery-modal__nav work-gallery-modal__nav--prev" id="workGalleryPrev" aria-label="前の画像">‹</button>
+            <img src="" alt="" class="work-gallery-modal__image" id="workGalleryImage">
+            <button type="button" class="work-gallery-modal__nav work-gallery-modal__nav--next" id="workGalleryNext" aria-label="次の画像">›</button>
+          </div>
+          <div class="work-gallery-modal__footer">
+            <p class="work-gallery-modal__count"><span id="workGalleryCurrent">1</span> / <span id="workGalleryTotal">1</span></p>
+            <div class="work-gallery-modal__thumbs" id="workGalleryThumbs" aria-label="画面一覧"></div>
+          </div>
+        </div>
       </div>
       <div class="works-portfolio-cta">
         <h3>ポートフォリオサイト公開中</h3>
@@ -676,7 +857,7 @@
 
     <section class="web-cta" aria-label="WEB制作お問い合わせ">
       <div class="web-cta__inner">
-        <h2 class="web-cta__title">WEB制作について、まずはお気軽にご相談ください。</h2>
+        <h2 class="web-cta__title">ホームページから業務Webアプリ・Webツールまで、<br>まずはお気軽にご相談ください。</h2>
         <p class="web-cta__body">まだ内容がまとまっていない段階でも大丈夫です。目的や状況を整理しながら、必要な形を一緒に考えます。</p>
         <a href="index.html?page=contact" class="web-cta__btn">お問い合わせはこちら</a>
       </div>
@@ -718,6 +899,103 @@
 </footer>
 
 <script>
+  const workGalleryData = {
+    'business-app': {
+      label: 'BUSINESS APP',
+      title: '業務進捗管理Webアプリ',
+      images: [
+        { src: 'assets/works/business-app/business-app-01.webp', alt: '業務進捗管理Webアプリの概要とスマートフォン画面' },
+        { src: 'assets/works/business-app/business-app-02.webp', alt: '案件情報と進捗を一覧で確認する画面の紹介' },
+        { src: 'assets/works/business-app/business-app-03.webp', alt: '新規登録、案件一覧、案件詳細の画面構成' },
+        { src: 'assets/works/business-app/business-app-04.webp', alt: '進捗の選択、登録、履歴確認の画面構成' },
+        { src: 'assets/works/business-app/business-app-05.webp', alt: '業務に合わせてテーマと管理項目を変更できる構成' },
+        { src: 'assets/works/business-app/business-app-06.webp', alt: '企画整理、画面設計、UIデザイン、アプリ制作の紹介' }
+      ]
+    },
+    'estimate-tool': {
+      label: 'WEB TOOL',
+      title: 'かんたん見積もりシミュレーション',
+      images: [
+        { src: 'assets/works/estimate-tool/estimate-tool-01.jpg', alt: '見積もりシミュレーションの入口と依頼内容選択画面' },
+        { src: 'assets/works/estimate-tool/estimate-tool-02.jpg', alt: '家具や荷物の数量を選ぶ入力画面' },
+        { src: 'assets/works/estimate-tool/estimate-tool-03.jpg', alt: '引越し分、処分分、合計概算を確認する結果画面' }
+      ]
+    }
+  };
+
+  const workGalleryModal = document.getElementById('workGalleryModal');
+  const workGalleryLabel = document.getElementById('workGalleryLabel');
+  const workGalleryTitle = document.getElementById('workGalleryTitle');
+  const workGalleryImage = document.getElementById('workGalleryImage');
+  const workGalleryCurrent = document.getElementById('workGalleryCurrent');
+  const workGalleryTotal = document.getElementById('workGalleryTotal');
+  const workGalleryThumbs = document.getElementById('workGalleryThumbs');
+  const workGalleryPrev = document.getElementById('workGalleryPrev');
+  const workGalleryNext = document.getElementById('workGalleryNext');
+  let activeWorkGallery = null;
+  let activeWorkGalleryIndex = 0;
+  let lastWorkGalleryTrigger = null;
+
+  function renderWorkGallery() {
+    const gallery = workGalleryData[activeWorkGallery];
+    if (!gallery) return;
+    const item = gallery.images[activeWorkGalleryIndex];
+    workGalleryLabel.textContent = gallery.label;
+    workGalleryTitle.textContent = gallery.title;
+    workGalleryImage.src = item.src;
+    workGalleryImage.alt = item.alt;
+    workGalleryCurrent.textContent = String(activeWorkGalleryIndex + 1);
+    workGalleryTotal.textContent = String(gallery.images.length);
+    workGalleryThumbs.innerHTML = gallery.images.map((image, index) => `
+      <button type="button" class="work-gallery-modal__thumb${index === activeWorkGalleryIndex ? ' is-active' : ''}" data-gallery-index="${index}" aria-label="${index + 1}枚目を表示">
+        <img src="${image.src}" alt="" loading="lazy" decoding="async">
+      </button>
+    `).join('');
+    workGalleryThumbs.querySelectorAll('[data-gallery-index]').forEach((button) => {
+      button.addEventListener('click', () => {
+        activeWorkGalleryIndex = Number(button.dataset.galleryIndex);
+        renderWorkGallery();
+      });
+    });
+  }
+
+  function openWorkGallery(key, trigger) {
+    if (!workGalleryData[key]) return;
+    activeWorkGallery = key;
+    activeWorkGalleryIndex = 0;
+    lastWorkGalleryTrigger = trigger;
+    renderWorkGallery();
+    workGalleryModal.hidden = false;
+    document.body.classList.add('gallery-open');
+    workGalleryModal.querySelector('.work-gallery-modal__close').focus();
+  }
+
+  function closeWorkGallery() {
+    workGalleryModal.hidden = true;
+    document.body.classList.remove('gallery-open');
+    if (lastWorkGalleryTrigger) lastWorkGalleryTrigger.focus();
+  }
+
+  function moveWorkGallery(direction) {
+    const gallery = workGalleryData[activeWorkGallery];
+    if (!gallery) return;
+    activeWorkGalleryIndex = (activeWorkGalleryIndex + direction + gallery.images.length) % gallery.images.length;
+    renderWorkGallery();
+  }
+
+  document.querySelectorAll('[data-work-gallery]').forEach((trigger) => {
+    trigger.addEventListener('click', () => openWorkGallery(trigger.dataset.workGallery, trigger));
+  });
+  workGalleryModal.querySelectorAll('[data-gallery-close]').forEach((button) => button.addEventListener('click', closeWorkGallery));
+  workGalleryPrev.addEventListener('click', () => moveWorkGallery(-1));
+  workGalleryNext.addEventListener('click', () => moveWorkGallery(1));
+  document.addEventListener('keydown', (event) => {
+    if (workGalleryModal.hidden) return;
+    if (event.key === 'Escape') closeWorkGallery();
+    if (event.key === 'ArrowLeft') moveWorkGallery(-1);
+    if (event.key === 'ArrowRight') moveWorkGallery(1);
+  });
+
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   function trackEvent(eventName, params = {}) {
